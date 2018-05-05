@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../snake.srcs/sources_1/new/prescaler.vhd" \
-"../../../../snake.srcs/sim_1/new/timersim.vhd" \
-
-# Do not sort compile order
-nosort

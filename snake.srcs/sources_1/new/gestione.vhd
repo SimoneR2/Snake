@@ -149,7 +149,7 @@ end if;
 end process;
 
 process (present_state) begin
-    next_state<=present_state;
+    --next_state<=present_state;
     case present_state is
     when init => next_state<= read_ram;
     when read_ram=> next_state<=read_rom;
@@ -159,22 +159,19 @@ process (present_state) begin
  end process;
  
  process(present_state) begin
- --   enROM<='0';
- --   enableRAM_A<='0';
-    if present_state<= read_ram then
+    if present_state = read_ram then
+    
         addRAM_A<= std_logic_vector(((unsigned(addv_msb))*to_unsigned(80,7)+unsigned(addh_msb)));
         wrRAM_A<="0";
-        --if (enableRAM_B<='0') then --TEST!!
         enableRAM_A<='1';
-        --else enableRAM_A<='0'; --test
-        --end if; --test
     end if;
-    if present_state<= read_rom then
+    if present_state = read_rom then
         enROM<='1';
-        --enableRAM_A<='0';        
+        enableRAM_A<='0';        
     end if;
-    if present_state<= send_vga then
+    if present_state = send_vga then
         redpixel<=doutROM(to_integer(unsigned(addv_lsb)*to_unsigned(8,4)+unsigned(addh_lsb)));
+        enROM<='0';
     end if;
 end process;    
 

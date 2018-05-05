@@ -98,7 +98,7 @@ elsif (rising_edge(ck2)) then
 end if;
 end process;
 
-Blanking: process (rst, blank) is
+Blanking: process (rst, ck2) is
 begin
 if (rst ='0') or (blank = '1') then
     r<= (others=>'0');

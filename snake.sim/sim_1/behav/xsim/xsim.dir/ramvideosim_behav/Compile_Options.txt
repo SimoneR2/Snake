@@ -1,1 +1,0 @@
--wto "a72e3c3731a54cbc9562f032f7dc352d" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "ramvideosim_behav" "xil_defaultlib.ramvideosim" -log "elaborate.log" 
