@@ -44,10 +44,7 @@ end component;
 
 signal sx: std_logic;
 signal dx: std_logic;
-signal dir:std_logic_vector(1 downto 0):="01";--direzione 00 su    (inizialmente va verso dx
-                                                  --01 dx
-                                                  --10 giù
-                                                   --11 sx      
+    
 --FSM snake
 type std_logic is (up,dxx,down,sxx);
 signal present_state, next_state: std_logic;                                    
