@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1525437785">
+  <File Type="PWROPT-DCP" Name="gestione_pwropt.dcp"/>
   <File Type="ROUTE-PWR" Name="gestione_power_routed.rpt"/>
   <File Type="PA-TCL" Name="gestione.tcl"/>
-  <File Type="PWROPT-DCP" Name="gestione_pwropt.dcp"/>
   <File Type="ROUTE-PWR-SUM" Name="gestione_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="gestione_reports.tcl"/>
   <File Type="BG-DRC" Name="gestione.drc"/>
-  <File Type="OPT-HWDEF" Name="gestione.hwdef"/>
   <File Type="OPT-DCP" Name="gestione_opt.dcp"/>
+  <File Type="OPT-HWDEF" Name="gestione.hwdef"/>
   <File Type="OPT-DRC" Name="gestione_drc_opted.rpt"/>
   <File Type="PLACE-DCP" Name="gestione_placed.dcp"/>
   <File Type="PLACE-IO" Name="gestione_io_placed.rpt"/>
@@ -23,22 +23,22 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="gestione_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="gestione_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="gestione_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="gestione_drc_routed.rpx"/>
   <File Type="BITSTR-MSK" Name="gestione.msk"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="gestione_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="gestione_drc_routed.rpx"/>
   <File Type="BG-BGN" Name="gestione.bgn"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="gestione_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="gestione_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-RBT" Name="gestione.rbt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="gestione_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="gestione_methodology_drc_routed.rpx"/>
   <File Type="BG-BIN" Name="gestione.bin"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="gestione_methodology_drc_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="gestione_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="gestione_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="gestione_route_status.pb"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="gestione_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="gestione_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="gestione_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-CLK" Name="gestione_clock_utilization_routed.rpt"/>
   <File Type="RDI-RDI" Name="gestione.vdi"/>
+  <File Type="ROUTE-CLK" Name="gestione_clock_utilization_routed.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="gestione_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="gestione_postroute_physopt_bb.dcp"/>
   <File Type="BITSTR-NKY" Name="gestione.nky"/>

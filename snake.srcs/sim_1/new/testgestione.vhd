@@ -37,23 +37,46 @@ end testgestione;
 
 architecture Behavioral of testgestione is
 component gestione 
- Port (
-clk,rst: in std_logic;
+port(
+ clk,rst: in std_logic;
+addRAM: in std_logic_vector (12 downto 0);
+dinRAM: in std_logic_vector (3 downto 0);
+writeREQUEST: in std_logic;
 sincH, sincV: out std_logic;
 r,g,b: out std_logic_vector (3 downto 0)
  );
  end component;
  signal clk,rst,sinch,sincv: std_logic;
+ signal addRAM: std_logic_vector (12 downto 0);
+ signal dinRAM: std_logic_vector (3 downto 0);
+ signal writeREQUEST: std_logic:='0';
  signal r,g,b: std_logic_vector (3 downto 0);
 begin
-U1: gestione port map (clk,rst,sinch,sincv,r,g,b);
+U1: gestione port map (clk,rst,addRAM,dinRAM,writeREQUEST,sinch,sincv,r,g,b);
 rst<='1';
-process
+
+CK:process
 begin
 clk<='1';
-wait for 1ns;
+wait for 5ns;
 clk<='0';
-wait for 1ns;
+wait for 5ns;
 end process;
 
+TEST_ROUTINE: process
+begin
+addRAM<="0000000000001";
+dinRAM<="0101";
+wait for 1us;
+writeREQUEST<='1';
+wait for 50ns;
+writeREQUEST<='0';
+addRAM<="0000000000011";
+dinRAM<="0011";
+wait for 50ns;
+writeREQUEST<='1';
+wait for 50ns;
+writeREQUEST<='0';
+wait;
+end process;
 end Behavioral;

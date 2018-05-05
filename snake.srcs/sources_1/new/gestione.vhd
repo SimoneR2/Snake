@@ -34,6 +34,9 @@ use IEEE.NUMERIC_STD.ALL;
 entity gestione is
  Port (
  clk,rst: in std_logic;
+ addRAM: in std_logic_vector (12 downto 0);
+ dinRAM: in std_logic_vector (3 downto 0);
+ writeREQUEST: in std_logic;
  sincH, sincV: out std_logic;
  r,g,b: out std_logic_vector (3 downto 0)
   );
@@ -102,7 +105,6 @@ signal addV_msb: std_logic_vector (5 downto 0);
 signal addH_msb: std_logic_vector (6 downto 0);
 signal addV_lsb: std_logic_vector (2 downto 0);
 signal addH_lsb: std_logic_vector (2 downto 0);
-signal first: std_logic:='0'; --debug
 --FSM RAM/ROM
 type std_logic is (init, read_ram, read_rom, send_vga);
 signal present_state, next_state: std_logic;
@@ -157,16 +159,19 @@ process (present_state) begin
  end process;
  
  process(present_state) begin
-    enROM<='0';
-    enableRAM_A<='0';
+ --   enROM<='0';
+ --   enableRAM_A<='0';
     if present_state<= read_ram then
         addRAM_A<= std_logic_vector(((unsigned(addv_msb))*to_unsigned(80,7)+unsigned(addh_msb)));
         wrRAM_A<="0";
+        --if (enableRAM_B<='0') then --TEST!!
         enableRAM_A<='1';
+        --else enableRAM_A<='0'; --test
+        --end if; --test
     end if;
     if present_state<= read_rom then
         enROM<='1';
-        enableRAM_A<='0';        
+        --enableRAM_A<='0';        
     end if;
     if present_state<= send_vga then
         redpixel<=doutROM(to_integer(unsigned(addv_lsb)*to_unsigned(8,4)+unsigned(addh_lsb)));
@@ -175,13 +180,14 @@ end process;
 
 process(clk) --scrittura ram
 begin
-if (rising_edge(clk) and first='0') then
-    wrRAM_B<="1";
-    addRAM_B<="0000000000001";
-    dinRAM_B<="1000";
-    enableRAM_B<='1';
-    first<='1';
-    else enableRAM_B<='0';
+if (rising_edge(clk)) then
+    if (writeREQUEST = '1') then
+        wrRAM_B<="1";
+        addRAM_B<=addRAM;
+        dinRAM_B<=dinRAM;
+        enableRAM_B<='1';
+    else enableRAM_B<='0'; wrRAM_A<="0";
+    end if;
     end if;
     end process;   
 end Behavioral;
