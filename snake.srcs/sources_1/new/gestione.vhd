@@ -160,7 +160,6 @@ process (present_state) begin
  
  process(present_state) begin
     if present_state = read_ram then
-    
         addRAM_A<= std_logic_vector(((unsigned(addv_msb))*to_unsigned(80,7)+unsigned(addh_msb)));
         wrRAM_A<="0";
         enableRAM_A<='1';
