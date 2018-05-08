@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Fri May  4 14:44:37 2018
+| Date         : Tue May  8 22:14:02 2018
 | Host         : PCSTUDIO running 64-bit major release  (build 9200)
 | Command      : report_methodology -file gestione_methodology_drc_routed.rpt -pb gestione_methodology_drc_routed.pb -rpx gestione_methodology_drc_routed.rpx
 | Design       : gestione
@@ -23,12 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 12
+             Violations found: 27
 +-----------+----------+------------------------------------------------------------------+------------+
 | Rule      | Severity | Description                                                      | Violations |
 +-----------+----------+------------------------------------------------------------------+------------+
 | CKLD-2    | Warning  | Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads | 1          |
-| TIMING-17 | Warning  | Non-clocked sequential cell                                      | 10         |
+| TIMING-17 | Warning  | Non-clocked sequential cell                                      | 9          |
+| TIMING-20 | Warning  | Non-clocked latch                                                | 16         |
 | TIMING-27 | Warning  | Invalid primary clock on hierarchical pin                        | 1          |
 +-----------+----------+------------------------------------------------------------------+------------+
 
@@ -61,22 +62,22 @@ Related violations: <none>
 
 TIMING-17#5 Warning
 Non-clocked sequential cell  
-The clock pin ram/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK is not reached by a timing clock
+The clock pin ram/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#6 Warning
 Non-clocked sequential cell  
-The clock pin ram/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/ram/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_cooolgate_en_gate_7_cooolDelFlop/C is not reached by a timing clock
+The clock pin rom/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM36.ram/CLKARDCLK is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#7 Warning
 Non-clocked sequential cell  
-The clock pin rom/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM36.ram/CLKARDCLK is not reached by a timing clock
+The clock pin rom/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM36.ram/CLKBWRCLK is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#8 Warning
 Non-clocked sequential cell  
-The clock pin rom/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM36.ram/CLKBWRCLK is not reached by a timing clock
+The clock pin rom/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/rom/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM36.ram_cooolgate_en_gate_2_cooolDelFlop/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#9 Warning
@@ -84,9 +85,84 @@ Non-clocked sequential cell
 The clock pin rom/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/rom/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM36.ram_cooolgate_en_gate_3_cooolDelFlop/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#10 Warning
-Non-clocked sequential cell  
-The clock pin rom/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/rom/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM36.ram_cooolgate_en_gate_4_cooolDelFlop/C is not reached by a timing clock
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch addRAM_A_reg[0] cannot be properly analyzed as its control pin addRAM_A_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch addRAM_A_reg[10] cannot be properly analyzed as its control pin addRAM_A_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch addRAM_A_reg[11] cannot be properly analyzed as its control pin addRAM_A_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch addRAM_A_reg[12] cannot be properly analyzed as its control pin addRAM_A_reg[12]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch addRAM_A_reg[1] cannot be properly analyzed as its control pin addRAM_A_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch addRAM_A_reg[2] cannot be properly analyzed as its control pin addRAM_A_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch addRAM_A_reg[3] cannot be properly analyzed as its control pin addRAM_A_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch addRAM_A_reg[4] cannot be properly analyzed as its control pin addRAM_A_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#9 Warning
+Non-clocked latch  
+The latch addRAM_A_reg[5] cannot be properly analyzed as its control pin addRAM_A_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#10 Warning
+Non-clocked latch  
+The latch addRAM_A_reg[6] cannot be properly analyzed as its control pin addRAM_A_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#11 Warning
+Non-clocked latch  
+The latch addRAM_A_reg[7] cannot be properly analyzed as its control pin addRAM_A_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#12 Warning
+Non-clocked latch  
+The latch addRAM_A_reg[8] cannot be properly analyzed as its control pin addRAM_A_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#13 Warning
+Non-clocked latch  
+The latch addRAM_A_reg[9] cannot be properly analyzed as its control pin addRAM_A_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#14 Warning
+Non-clocked latch  
+The latch enROM_reg cannot be properly analyzed as its control pin enROM_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#15 Warning
+Non-clocked latch  
+The latch enableRAM_A_reg cannot be properly analyzed as its control pin enableRAM_A_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#16 Warning
+Non-clocked latch  
+The latch redpixel_reg cannot be properly analyzed as its control pin redpixel_reg/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-27#1 Warning

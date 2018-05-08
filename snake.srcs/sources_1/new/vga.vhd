@@ -105,9 +105,9 @@ if (rst ='0') or (blank = '1') then
     g<= (others=>'0');
     b<= (others=>'0');
 elsif (blank = '0') then
-    r<= (3=>redpixel, others=>'0'); --terzo bit a redpixel, gli altri a zero (così otteniamo una sfumatura leggera)
+    r<= (3=>redpixel, others=>redpixel); --terzo bit a redpixel, gli altri a zero (così otteniamo una sfumatura leggera)
     g<= (3=>greenpixel, others=>'0'); --idem
-    b<= "1000"; --valore settato a caso
+    b<= (others=>'1'and not(redpixel)); --valore settato a caso
 end if;
 end process;
 

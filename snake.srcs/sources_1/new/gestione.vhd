@@ -34,9 +34,9 @@ use IEEE.NUMERIC_STD.ALL;
 entity gestione is
  Port (
  clk,rst: in std_logic;
- addRAM: in std_logic_vector (12 downto 0);
- dinRAM: in std_logic_vector (3 downto 0);
- writeREQUEST: in std_logic;
+ --addRAM: in std_logic_vector (12 downto 0);
+ --dinRAM: in std_logic_vector (3 downto 0);
+ --writeREQUEST: in std_logic;
  sincH, sincV: out std_logic;
  r,g,b: out std_logic_vector (3 downto 0)
   );
@@ -87,6 +87,10 @@ addH: out std_logic_vector ( 9 downto 0);
 r,g,b: out std_logic_vector(3 downto 0)
 );
 end component;
+
+signal addRAM: std_logic_vector (12 downto 0);
+signal dinRAM: std_logic_vector (3 downto 0);
+signal writeREQUEST: std_logic;
 
 signal ck25: std_logic;
 signal redpixel: std_logic;
@@ -182,7 +186,7 @@ if (rising_edge(clk)) then
         addRAM_B<=addRAM;
         dinRAM_B<=dinRAM;
         enableRAM_B<='1';
-    else enableRAM_B<='0'; wrRAM_A<="0";
+    else enableRAM_B<='0';
     end if;
     end if;
     end process;   

@@ -16,6 +16,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -30,6 +31,7 @@ set_property target_language VHDL [current_project]
 set_property ip_output_repo {d:/DOCUMENTI LUIGINO/GitHub/Snake/snake.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 add_files {{D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/ip/romvideo.coe}}
+add_files {{d:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/ip/blk_mem_gen_0/raminit.coe}}
 read_vhdl -library xil_defaultlib {
   {D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/vga.vhd}
   {D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd}
