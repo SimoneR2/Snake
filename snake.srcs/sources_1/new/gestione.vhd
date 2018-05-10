@@ -173,7 +173,7 @@ process (present_state) begin
         enableRAM_A<='0';        
     end if;
     if present_state = send_vga then
-        redpixel<=doutROM(to_integer(unsigned(addv_lsb)*to_unsigned(8,4)+unsigned(addh_lsb)));
+        redpixel<=doutROM(to_integer(((unsigned(addv_lsb)-to_unsigned(1,3))*to_unsigned(8,4))+(unsigned(addh_lsb)-to_unsigned(1,3))));
         enROM<='0';
     end if;
 end process;    

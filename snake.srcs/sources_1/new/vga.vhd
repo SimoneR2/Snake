@@ -115,14 +115,14 @@ VERTICAL: process (rst, ck2) is
 
 begin
     if (rst='0') then 
-       addressV <= 0;
+       addressV <= 1;
        sincV<='1';
     elsif (rising_edge(ck2)) then
     if (vcount<480) then --data
         sincV<='1';
         if (hcount=799) then addressV<=addressV+1;
         end if;    
-    elsif (vcount<490) then addressV<=0; --front porch
+    elsif (vcount<490) then addressV<=1; --front porch
     elsif (vcount<492) then sincV <= '0';--sync
     elsif (vcount<521) then sincV <= '1';--back porch    
     end if;
