@@ -2,11 +2,11 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Tue May  8 22:11:44 2018
-# Process ID: 4812
+# Start of session at: Fri May 11 17:22:20 2018
+# Process ID: 10044
 # Current directory: D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1
-# Command line: vivado.exe -log gestione.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source gestione.tcl
-# Log file: D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/gestione.vds
+# Command line: vivado.exe -log logicagenerale.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source logicagenerale.tcl
+# Log file: D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/logicagenerale.vds
 # Journal file: D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source gestione.tcl -notrace
+source logicagenerale.tcl -notrace

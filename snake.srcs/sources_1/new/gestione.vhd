@@ -34,9 +34,9 @@ use IEEE.NUMERIC_STD.ALL;
 entity gestione is
  Port (
  clk,rst: in std_logic;
- --addRAM: in std_logic_vector (12 downto 0);
- --dinRAM: in std_logic_vector (3 downto 0);
- --writeREQUEST: in std_logic;
+ addRAM: in std_logic_vector (12 downto 0);
+ dinRAM: in std_logic_vector (3 downto 0);
+ writeREQUEST: in std_logic;
  sincH, sincV: out std_logic;
  r,g,b: out std_logic_vector (3 downto 0)
   );
@@ -88,9 +88,6 @@ r,g,b: out std_logic_vector(3 downto 0)
 );
 end component;
 
-signal addRAM: std_logic_vector (12 downto 0);
-signal dinRAM: std_logic_vector (3 downto 0);
-signal writeREQUEST: std_logic;
 
 signal ck25: std_logic;
 signal redpixel: std_logic;
@@ -107,10 +104,11 @@ signal dinRAM_A, dinRAM_B: std_logic_vector (3 downto 0);
 signal doutRAM_B: std_logic_vector (3 downto 0);
 signal addV_msb: std_logic_vector (5 downto 0);
 signal addH_msb: std_logic_vector (6 downto 0);
-signal addV_lsb: std_logic_vector (2 downto 0);
-signal addH_lsb: std_logic_vector (2 downto 0);
+signal addV_lsb: std_logic_vector (3 downto 0);
+signal addH_lsb: std_logic_vector (3 downto 0);
+signal debug: integer range 0 to 640:=0;
 --FSM RAM/ROM
-type std_logic is (init, read_ram, read_rom, send_vga);
+type std_logic is ( init,read_ram, read_rom);
 signal present_state, next_state: std_logic;
 
 begin
@@ -143,8 +141,11 @@ dinb => dinRAM_B,
 doutb => doutRAM_B);
 addv_msb<= addv (8 downto 3); --indirizzi ram troncati
 addh_msb<= addh (9 downto 3); --indirizzi ram troncati
-addv_lsb<= addv (2 downto 0); --indirizzi ROM troncati
-addH_lsb<= addh (2 downto 0); --indirizzi ROM troncati
+addv_lsb(2 downto 0)<= addv (2 downto 0); --indirizzi ROM troncati
+addH_lsb(2 downto 0)<= addh (2 downto 0); --indirizzi ROM troncati
+addv_lsb(3)<='0';
+addh_lsb(3)<='0';
+
 process (clk) --lettura ram 
 begin
 if (rising_edge(clk)) then
@@ -155,10 +156,15 @@ end process;
 process (present_state) begin
     --next_state<=present_state;
     case present_state is
-    when init => next_state<= read_ram;
-    when read_ram=> next_state<=read_rom;
-    when read_rom=> next_state<=send_vga;
-    when send_vga=> next_state<=init;
+    when init => if (addH_lsb="0110") then 
+                        next_state<= read_ram; 
+                        else next_state<=read_rom; 
+                 end if; 
+    when read_ram=> if(addH_lsb="0111") then 
+                        next_state<=read_rom; 
+                        else next_state<=init;
+                    end if;
+    when read_rom=> next_state<=init; 
  end case;
  end process;
  
@@ -167,23 +173,25 @@ process (present_state) begin
         addRAM_A<= std_logic_vector(((unsigned(addv_msb))*to_unsigned(80,7)+unsigned(addh_msb)));
         wrRAM_A<="0";
         enableRAM_A<='1';
+        enROM<='0';
     end if;
     if present_state = read_rom then
         enROM<='1';
-        enableRAM_A<='0';        
+              
     end if;
-    if present_state = send_vga then
-        redpixel<=doutROM(to_integer(((unsigned(addv_lsb)-to_unsigned(1,3))*to_unsigned(8,4))+(unsigned(addh_lsb)-to_unsigned(1,3))));
-        enROM<='0';
-    end if;
+    --if present_state = init then
+    --    enableRAM_A<='0';  
+    --end if;
 end process;    
 
 process(clk) --scrittura ram
 begin
+debug<=to_integer((((unsigned(addv_lsb))*to_unsigned(8,4))+((unsigned(addh_lsb)))));
+redpixel<=doutROM(debug);   
 if (rising_edge(clk)) then
-    if (writeREQUEST = '1') then
+if (writerequest='1') then
         wrRAM_B<="1";
-        addRAM_B<=addRAM;
+        addRAM_B<=addram;
         dinRAM_B<=dinRAM;
         enableRAM_B<='1';
     else enableRAM_B<='0';

@@ -1,55 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1525810302">
-  <File Type="ROUTE-PWR" Name="gestione_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="gestione.tcl"/>
-  <File Type="PWROPT-DCP" Name="gestione_pwropt.dcp"/>
-  <File Type="ROUTE-PWR-SUM" Name="gestione_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="gestione_reports.tcl"/>
-  <File Type="BG-DRC" Name="gestione.drc"/>
-  <File Type="OPT-HWDEF" Name="gestione.hwdef"/>
-  <File Type="OPT-DCP" Name="gestione_opt.dcp"/>
-  <File Type="OPT-DRC" Name="gestione_drc_opted.rpt"/>
-  <File Type="PLACE-DCP" Name="gestione_placed.dcp"/>
-  <File Type="PLACE-IO" Name="gestione_io_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="gestione_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="gestione_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="gestione_control_sets_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="gestione_incremental_reuse_pre_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="gestione_postplace_pwropt.dcp"/>
-  <File Type="PHYSOPT-DCP" Name="gestione_physopt.dcp"/>
-  <File Type="BG-BIT" Name="gestione.bit"/>
-  <File Type="ROUTE-ERROR-DCP" Name="gestione_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="gestione_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="gestione_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="gestione_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="gestione_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="gestione_drc_routed.rpx"/>
-  <File Type="BITSTR-MSK" Name="gestione.msk"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="gestione_methodology_drc_routed.rpt"/>
-  <File Type="BG-BGN" Name="gestione.bgn"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="gestione_methodology_drc_routed.rpx"/>
-  <File Type="BITSTR-RBT" Name="gestione.rbt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="gestione_methodology_drc_routed.pb"/>
-  <File Type="BG-BIN" Name="gestione.bin"/>
-  <File Type="ROUTE-PWR-RPX" Name="gestione_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="gestione_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="gestione_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="gestione_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="gestione_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="gestione_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-CLK" Name="gestione_clock_utilization_routed.rpt"/>
-  <File Type="RDI-RDI" Name="gestione.vdi"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="gestione_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="gestione_postroute_physopt_bb.dcp"/>
-  <File Type="BITSTR-NKY" Name="gestione.nky"/>
-  <File Type="BITSTR-BMM" Name="gestione_bd.bmm"/>
-  <File Type="BITSTR-MMI" Name="gestione.mmi"/>
-  <File Type="BITSTR-LTX" Name="gestione.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="gestione.sysdef"/>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1526052138">
+  <File Type="PWROPT-DCP" Name="logicagenerale_pwropt.dcp"/>
+  <File Type="ROUTE-PWR" Name="logicagenerale_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="logicagenerale.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="logicagenerale_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="logicagenerale_reports.tcl"/>
+  <File Type="BG-DRC" Name="logicagenerale.drc"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="logicagenerale_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="logicagenerale_timing_summary_init.rpt"/>
+  <File Type="OPT-HWDEF" Name="logicagenerale.hwdef"/>
+  <File Type="OPT-DCP" Name="logicagenerale_opt.dcp"/>
+  <File Type="OPT-DRC" Name="logicagenerale_drc_opted.rpt"/>
+  <File Type="OPT-TIMING" Name="logicagenerale_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="logicagenerale_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="logicagenerale_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="logicagenerale_placed.dcp"/>
+  <File Type="PLACE-IO" Name="logicagenerale_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="logicagenerale_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="logicagenerale_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="logicagenerale_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="logicagenerale_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="logicagenerale_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="logicagenerale_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="logicagenerale_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="logicagenerale_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="logicagenerale_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="logicagenerale_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="logicagenerale_drc_physopted.rpt"/>
+  <File Type="BG-BIT" Name="logicagenerale.bit"/>
+  <File Type="PHYSOPT-TIMING" Name="logicagenerale_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="logicagenerale_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="logicagenerale_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="logicagenerale_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="logicagenerale_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="logicagenerale_drc_routed.pb"/>
+  <File Type="BITSTR-MSK" Name="logicagenerale.msk"/>
+  <File Type="ROUTE-DRC-RPX" Name="logicagenerale_drc_routed.rpx"/>
+  <File Type="BG-BGN" Name="logicagenerale.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="logicagenerale_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-RBT" Name="logicagenerale.rbt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="logicagenerale_methodology_drc_routed.rpx"/>
+  <File Type="BG-BIN" Name="logicagenerale.bin"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="logicagenerale_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="logicagenerale_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="logicagenerale_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="logicagenerale_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="logicagenerale_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="logicagenerale_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="logicagenerale_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="logicagenerale_incremental_reuse_routed.rpt"/>
+  <File Type="RDI-RDI" Name="logicagenerale.vdi"/>
+  <File Type="ROUTE-CLK" Name="logicagenerale_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="logicagenerale_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="logicagenerale_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="logicagenerale_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="logicagenerale_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="logicagenerale_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="logicagenerale.nky"/>
+  <File Type="BITSTR-BMM" Name="logicagenerale_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="logicagenerale.mmi"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="logicagenerale.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="logicagenerale.sysdef"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/vga.vhd">
+    <File Path="$PSRCDIR/sources_1/new/edgebutton.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -61,14 +77,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/edgebutton.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/ip/romvideo.coe">
+    <File Path="$PSRCDIR/sources_1/new/prescaler1hz.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -76,7 +85,24 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/snakemov.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/vga.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/logicagenerale.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/romvideo.coe">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -89,8 +115,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="gestione"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="TopModule" Val="logicagenerale"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

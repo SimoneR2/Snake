@@ -1,0 +1,568 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
+| Date         : Fri May 11 17:24:49 2018
+| Host         : PCSTUDIO running 64-bit major release  (build 9200)
+| Command      : report_methodology -file logicagenerale_methodology_drc_routed.rpt -pb logicagenerale_methodology_drc_routed.pb -rpx logicagenerale_methodology_drc_routed.rpx
+| Design       : logicagenerale
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 106
++-----------+----------+-------------------------------------------+------------+
+| Rule      | Severity | Description                               | Violations |
++-----------+----------+-------------------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert              | 2          |
+| TIMING-17 | Warning  | Non-clocked sequential cell               | 59         |
+| TIMING-20 | Warning  | Non-clocked latch                         | 44         |
+| TIMING-27 | Warning  | Invalid primary clock on hierarchical pin | 1          |
++-----------+----------+-------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell MOVIMENTO/dataRAM_reg[1]_i_1, with 2 or more inputs, drives asynchronous reset pin(s) MOVIMENTO/dataRAM_reg[0]/CLR, MOVIMENTO/dataRAM_reg[1]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#2 Warning
+LUT drives async reset alert  
+LUT cell VGA/enROM_reg_i_2, with 2 or more inputs, drives asynchronous reset pin(s) VGA/enROM_reg/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-17#1 Warning
+Non-clocked sequential cell  
+The clock pin MOVIMENTO/RAMpresent_state_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#2 Warning
+Non-clocked sequential cell  
+The clock pin MOVIMENTO/RAMpresent_state_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#3 Warning
+Non-clocked sequential cell  
+The clock pin MOVIMENTO/RAMpresent_state_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#4 Warning
+Non-clocked sequential cell  
+The clock pin MOVIMENTO/dxbut/FSM_sequential_present_state_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#5 Warning
+Non-clocked sequential cell  
+The clock pin MOVIMENTO/dxbut/FSM_sequential_present_state_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#6 Warning
+Non-clocked sequential cell  
+The clock pin MOVIMENTO/present_state_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#7 Warning
+Non-clocked sequential cell  
+The clock pin MOVIMENTO/present_state_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#8 Warning
+Non-clocked sequential cell  
+The clock pin MOVIMENTO/sxbut/FSM_sequential_present_state_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#9 Warning
+Non-clocked sequential cell  
+The clock pin MOVIMENTO/sxbut/FSM_sequential_present_state_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#10 Warning
+Non-clocked sequential cell  
+The clock pin MOVIMENTO/vitaminaV_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#11 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/clock_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#12 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#13 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[10]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#14 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[11]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#15 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[12]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#16 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[13]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#17 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[14]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#18 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[15]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#19 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[16]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#20 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[17]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#21 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[18]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#22 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[19]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#23 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#24 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[20]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#25 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[21]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#26 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[22]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#27 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[23]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#28 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[24]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#29 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#30 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#31 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#32 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#33 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#34 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#35 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#36 Warning
+Non-clocked sequential cell  
+The clock pin PRESCALER/count_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#37 Warning
+Non-clocked sequential cell  
+The clock pin VGA/addRAM_B_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#38 Warning
+Non-clocked sequential cell  
+The clock pin VGA/addRAM_B_reg[10]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#39 Warning
+Non-clocked sequential cell  
+The clock pin VGA/addRAM_B_reg[11]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#40 Warning
+Non-clocked sequential cell  
+The clock pin VGA/addRAM_B_reg[12]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#41 Warning
+Non-clocked sequential cell  
+The clock pin VGA/addRAM_B_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#42 Warning
+Non-clocked sequential cell  
+The clock pin VGA/addRAM_B_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#43 Warning
+Non-clocked sequential cell  
+The clock pin VGA/addRAM_B_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#44 Warning
+Non-clocked sequential cell  
+The clock pin VGA/addRAM_B_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#45 Warning
+Non-clocked sequential cell  
+The clock pin VGA/addRAM_B_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#46 Warning
+Non-clocked sequential cell  
+The clock pin VGA/addRAM_B_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#47 Warning
+Non-clocked sequential cell  
+The clock pin VGA/addRAM_B_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#48 Warning
+Non-clocked sequential cell  
+The clock pin VGA/addRAM_B_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#49 Warning
+Non-clocked sequential cell  
+The clock pin VGA/addRAM_B_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#50 Warning
+Non-clocked sequential cell  
+The clock pin VGA/dinRAM_B_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#51 Warning
+Non-clocked sequential cell  
+The clock pin VGA/dinRAM_B_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#52 Warning
+Non-clocked sequential cell  
+The clock pin VGA/dinRAM_B_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#53 Warning
+Non-clocked sequential cell  
+The clock pin VGA/enableRAM_B_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#54 Warning
+Non-clocked sequential cell  
+The clock pin VGA/present_state_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#55 Warning
+Non-clocked sequential cell  
+The clock pin VGA/present_state_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#56 Warning
+Non-clocked sequential cell  
+The clock pin VGA/ram/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#57 Warning
+Non-clocked sequential cell  
+The clock pin VGA/ram/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKBWRCLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#58 Warning
+Non-clocked sequential cell  
+The clock pin VGA/rom/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM36.ram/CLKARDCLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#59 Warning
+Non-clocked sequential cell  
+The clock pin VGA/rom/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM36.ram/CLKBWRCLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch MOVIMENTO/addRAM_reg[0] cannot be properly analyzed as its control pin MOVIMENTO/addRAM_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch MOVIMENTO/addRAM_reg[10] cannot be properly analyzed as its control pin MOVIMENTO/addRAM_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch MOVIMENTO/addRAM_reg[11] cannot be properly analyzed as its control pin MOVIMENTO/addRAM_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch MOVIMENTO/addRAM_reg[12] cannot be properly analyzed as its control pin MOVIMENTO/addRAM_reg[12]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch MOVIMENTO/addRAM_reg[1] cannot be properly analyzed as its control pin MOVIMENTO/addRAM_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch MOVIMENTO/addRAM_reg[2] cannot be properly analyzed as its control pin MOVIMENTO/addRAM_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch MOVIMENTO/addRAM_reg[3] cannot be properly analyzed as its control pin MOVIMENTO/addRAM_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch MOVIMENTO/addRAM_reg[4] cannot be properly analyzed as its control pin MOVIMENTO/addRAM_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#9 Warning
+Non-clocked latch  
+The latch MOVIMENTO/addRAM_reg[5] cannot be properly analyzed as its control pin MOVIMENTO/addRAM_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#10 Warning
+Non-clocked latch  
+The latch MOVIMENTO/addRAM_reg[6] cannot be properly analyzed as its control pin MOVIMENTO/addRAM_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#11 Warning
+Non-clocked latch  
+The latch MOVIMENTO/addRAM_reg[7] cannot be properly analyzed as its control pin MOVIMENTO/addRAM_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#12 Warning
+Non-clocked latch  
+The latch MOVIMENTO/addRAM_reg[8] cannot be properly analyzed as its control pin MOVIMENTO/addRAM_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#13 Warning
+Non-clocked latch  
+The latch MOVIMENTO/addRAM_reg[9] cannot be properly analyzed as its control pin MOVIMENTO/addRAM_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#14 Warning
+Non-clocked latch  
+The latch MOVIMENTO/dataRAM_reg[0] cannot be properly analyzed as its control pin MOVIMENTO/dataRAM_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#15 Warning
+Non-clocked latch  
+The latch MOVIMENTO/dataRAM_reg[1] cannot be properly analyzed as its control pin MOVIMENTO/dataRAM_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#16 Warning
+Non-clocked latch  
+The latch MOVIMENTO/dataRAM_reg[2]/L7 (in MOVIMENTO/dataRAM_reg[2] macro) cannot be properly analyzed as its control pin MOVIMENTO/dataRAM_reg[2]/L7/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#17 Warning
+Non-clocked latch  
+The latch MOVIMENTO/gameOver_reg cannot be properly analyzed as its control pin MOVIMENTO/gameOver_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#18 Warning
+Non-clocked latch  
+The latch MOVIMENTO/testaH_reg[0] cannot be properly analyzed as its control pin MOVIMENTO/testaH_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#19 Warning
+Non-clocked latch  
+The latch MOVIMENTO/testaH_reg[1] cannot be properly analyzed as its control pin MOVIMENTO/testaH_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#20 Warning
+Non-clocked latch  
+The latch MOVIMENTO/testaH_reg[2] cannot be properly analyzed as its control pin MOVIMENTO/testaH_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#21 Warning
+Non-clocked latch  
+The latch MOVIMENTO/testaH_reg[3] cannot be properly analyzed as its control pin MOVIMENTO/testaH_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#22 Warning
+Non-clocked latch  
+The latch MOVIMENTO/testaH_reg[4] cannot be properly analyzed as its control pin MOVIMENTO/testaH_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#23 Warning
+Non-clocked latch  
+The latch MOVIMENTO/testaH_reg[5] cannot be properly analyzed as its control pin MOVIMENTO/testaH_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#24 Warning
+Non-clocked latch  
+The latch MOVIMENTO/testaH_reg[6] cannot be properly analyzed as its control pin MOVIMENTO/testaH_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#25 Warning
+Non-clocked latch  
+The latch MOVIMENTO/testaV_reg[0] cannot be properly analyzed as its control pin MOVIMENTO/testaV_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#26 Warning
+Non-clocked latch  
+The latch MOVIMENTO/testaV_reg[1] cannot be properly analyzed as its control pin MOVIMENTO/testaV_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#27 Warning
+Non-clocked latch  
+The latch MOVIMENTO/testaV_reg[2] cannot be properly analyzed as its control pin MOVIMENTO/testaV_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#28 Warning
+Non-clocked latch  
+The latch MOVIMENTO/testaV_reg[3] cannot be properly analyzed as its control pin MOVIMENTO/testaV_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#29 Warning
+Non-clocked latch  
+The latch MOVIMENTO/testaV_reg[4] cannot be properly analyzed as its control pin MOVIMENTO/testaV_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#30 Warning
+Non-clocked latch  
+The latch MOVIMENTO/testaV_reg[5] cannot be properly analyzed as its control pin MOVIMENTO/testaV_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#31 Warning
+Non-clocked latch  
+The latch VGA/addRAM_A_reg[0] cannot be properly analyzed as its control pin VGA/addRAM_A_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#32 Warning
+Non-clocked latch  
+The latch VGA/addRAM_A_reg[10] cannot be properly analyzed as its control pin VGA/addRAM_A_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#33 Warning
+Non-clocked latch  
+The latch VGA/addRAM_A_reg[11] cannot be properly analyzed as its control pin VGA/addRAM_A_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#34 Warning
+Non-clocked latch  
+The latch VGA/addRAM_A_reg[12] cannot be properly analyzed as its control pin VGA/addRAM_A_reg[12]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#35 Warning
+Non-clocked latch  
+The latch VGA/addRAM_A_reg[1] cannot be properly analyzed as its control pin VGA/addRAM_A_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#36 Warning
+Non-clocked latch  
+The latch VGA/addRAM_A_reg[2] cannot be properly analyzed as its control pin VGA/addRAM_A_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#37 Warning
+Non-clocked latch  
+The latch VGA/addRAM_A_reg[3] cannot be properly analyzed as its control pin VGA/addRAM_A_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#38 Warning
+Non-clocked latch  
+The latch VGA/addRAM_A_reg[4] cannot be properly analyzed as its control pin VGA/addRAM_A_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#39 Warning
+Non-clocked latch  
+The latch VGA/addRAM_A_reg[5] cannot be properly analyzed as its control pin VGA/addRAM_A_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#40 Warning
+Non-clocked latch  
+The latch VGA/addRAM_A_reg[6] cannot be properly analyzed as its control pin VGA/addRAM_A_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#41 Warning
+Non-clocked latch  
+The latch VGA/addRAM_A_reg[7] cannot be properly analyzed as its control pin VGA/addRAM_A_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#42 Warning
+Non-clocked latch  
+The latch VGA/addRAM_A_reg[8] cannot be properly analyzed as its control pin VGA/addRAM_A_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#43 Warning
+Non-clocked latch  
+The latch VGA/addRAM_A_reg[9] cannot be properly analyzed as its control pin VGA/addRAM_A_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#44 Warning
+Non-clocked latch  
+The latch VGA/enROM_reg cannot be properly analyzed as its control pin VGA/enROM_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-27#1 Warning
+Invalid primary clock on hierarchical pin  
+A primary clock VGA/vgaclock/inst/clk_in1 is created on an inappropriate internal pin VGA/vgaclock/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
+

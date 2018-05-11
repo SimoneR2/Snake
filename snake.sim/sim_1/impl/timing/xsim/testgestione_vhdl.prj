@@ -1,6 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../../snake.srcs/sim_1/new/testgestione.vhd" \
-
-# Do not sort compile order
-nosort

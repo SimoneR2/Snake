@@ -1,0 +1,91 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
+| Date         : Fri May 11 17:24:06 2018
+| Host         : PCSTUDIO running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file logicagenerale_control_sets_placed.rpt
+| Design       : logicagenerale
+| Device       : xc7a100t
+-------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    19 |
+| Unused register locations in slices containing registers |    91 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      1 |            6 |
+|      2 |            1 |
+|      6 |            2 |
+|      7 |            2 |
+|      9 |            1 |
+|     10 |            2 |
+|     11 |            1 |
+|     13 |            2 |
+|    16+ |            2 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              42 |           20 |
+| No           | No                    | Yes                    |              12 |            6 |
+| No           | Yes                   | No                     |              41 |           14 |
+| Yes          | No                    | No                     |              16 |            3 |
+| Yes          | No                    | Yes                    |              30 |           13 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------------+--------------------------------+----------------------------------+------------------+----------------+
+|            Clock Signal           |          Enable Signal         |         Set/Reset Signal         | Slice Load Count | Bel Load Count |
++-----------------------------------+--------------------------------+----------------------------------+------------------+----------------+
+|  MOVIMENTO/dataRAM_reg[2]/G0      |                                |                                  |                1 |              1 |
+|  VGA/enROM_reg_i_1_n_0            |                                | VGA/enROM_reg_i_2_n_0            |                1 |              1 |
+|  PRESCALER/CLK                    |                                | VGA/vgacmd/addressV_reg[2]_0     |                1 |              1 |
+|  MOVIMENTO/gameOver_reg_i_1_n_0   |                                |                                  |                1 |              1 |
+|  VGA/vgaclock/inst/clk_out1       |                                |                                  |                1 |              1 |
+|  VGA/vgaclock/inst/clk_out1       | VGA/vgacmd/sincH7_out          | VGA/vgacmd/addressV_reg[2]_0     |                1 |              1 |
+|  MOVIMENTO/dataRAM_reg[2]_i_1_n_0 |                                | MOVIMENTO/dataRAM_reg[1]_i_1_n_0 |                1 |              2 |
+|  PRESCALER/CLK                    |                                |                                  |                2 |              6 |
+|  MOVIMENTO/testaV_reg[5]_i_2_n_0  |                                | VGA/vgacmd/addressV_reg[2]_0     |                2 |              6 |
+|  MOVIMENTO/testaH_reg[6]_i_1_n_0  |                                | VGA/vgacmd/addressV_reg[2]_0     |                3 |              7 |
+|  ck_IBUF_BUFG                     |                                |                                  |                5 |              7 |
+|  VGA/vgaclock/inst/clk_out1       | VGA/vgacmd/addressV[8]_i_1_n_0 | VGA/vgacmd/addressV_reg[2]_0     |                5 |              9 |
+|  VGA/vgaclock/inst/clk_out1       | VGA/vgacmd/addressH[9]_i_1_n_0 | VGA/vgacmd/addressV_reg[2]_0     |                4 |             10 |
+|  VGA/vgaclock/inst/clk_out1       | VGA/vgacmd/vcount              | VGA/vgacmd/addressV_reg[2]_0     |                3 |             10 |
+|  VGA/vgaclock/inst/clk_out1       |                                | VGA/vgacmd/addressV_reg[2]_0     |                5 |             11 |
+|  VGA/enROM_reg_i_1_n_0            |                                |                                  |                5 |             13 |
+|  MOVIMENTO/E[0]                   |                                |                                  |                5 |             13 |
+|  ck_IBUF_BUFG                     | MOVIMENTO/E[0]                 |                                  |                3 |             16 |
+|  ck_IBUF_BUFG                     |                                | PRESCALER/clock                  |                7 |             25 |
++-----------------------------------+--------------------------------+----------------------------------+------------------+----------------+
+
+
