@@ -39,14 +39,15 @@ entity prescaler1hz is
 end prescaler1hz;
 
 architecture Behavioral of prescaler1hz is
-signal count: std_logic_vector(24 downto 0);
+signal count: std_logic_vector(24 downto 0):="0000000000000000000000000";
 signal clock: std_logic:='0';
 begin
 ck1<=clock;
 process (ck)
 begin
 if (rising_edge(ck)) then
-if (count="1111111111111111111111111") then
+--if (count="1111111111111111111111111") then
+if (count="0000000000000000001111111") then --solo per simulare
     count<= (others=>'0');
     clock <= not(clock);
 else

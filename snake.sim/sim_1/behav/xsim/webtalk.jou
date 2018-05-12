@@ -2,11 +2,11 @@
 # Webtalk v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Fri May 11 14:30:28 2018
-# Process ID: 4312
-# Current directory: D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.sim/sim_1/behav/xsim/xsim.dir/testgestione_behav/webtalk/xsim_webtalk.tcl -notrace
-# Log file: D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.sim/sim_1/behav/xsim/webtalk.log
-# Journal file: D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.sim/sim_1/behav/xsim\webtalk.jou
+# Start of session at: Sat May 12 10:51:26 2018
+# Process ID: 12124
+# Current directory: D:/Documenti/GitHub/Snake/snake.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source D:/Documenti/GitHub/Snake/snake.sim/sim_1/behav/xsim/xsim.dir/testgenerale_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: D:/Documenti/GitHub/Snake/snake.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: D:/Documenti/GitHub/Snake/snake.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source D:/DOCUMENTI -notrace
+source D:/Documenti/GitHub/Snake/snake.sim/sim_1/behav/xsim/xsim.dir/testgenerale_behav/webtalk/xsim_webtalk.tcl -notrace

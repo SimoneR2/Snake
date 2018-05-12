@@ -1,0 +1,15 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../snake.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_sim_netlist.vhdl" \
+"../../../../snake.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1_sim_netlist.vhdl" \
+"../../../../snake.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.vhdl" \
+"../../../../snake.srcs/sources_1/new/edgebutton.vhd" \
+"../../../../snake.srcs/sources_1/new/gestione.vhd" \
+"../../../../snake.srcs/sources_1/new/logicagenerale.vhd" \
+"../../../../snake.srcs/sources_1/new/prescaler1hz.vhd" \
+"../../../../snake.srcs/sources_1/new/snakemov.vhd" \
+"../../../../snake.srcs/sources_1/new/vga.vhd" \
+"../../../../snake.srcs/sim_1/new/testgenerale.vhd" \
+
+# Do not sort compile order
+nosort

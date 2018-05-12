@@ -89,8 +89,8 @@ type fsm_ram_logic is (attesa, scritturaTESTA, attesa1, scritturaCODA, attesa2, 
 signal RAMpresent_state, RAMnext_state: fsm_ram_logic;                  
 
 begin
-sxbut:edgebutton port map(ck1,btnc,sx);
-dxbut:edgebutton port map(ck1,btnu,dx);
+sxbut:edgebutton port map(ck,btnc,sx);
+dxbut:edgebutton port map(ck,btnu,dx);
 
 process(ck1)
 begin
@@ -99,7 +99,7 @@ if rising_edge(ck1) then
 end if;
 end process;
 
-process (present_state)
+process (present_state,sx,dx)
 begin
 --next_state<=present_state;
     case present_state is
@@ -122,7 +122,7 @@ begin
 end case;
 end process;
 
-process(present_state,rst)
+process(present_state,rst,ck1)
 begin
     if(rst='0') then 
         gameOver <= '0'; 

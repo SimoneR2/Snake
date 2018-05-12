@@ -39,7 +39,7 @@ entity edgebutton is
 end edgebutton;
 
 architecture Behavioral of edgebutton is
-type std_logic is (uno,due,tre); --non premuto, fronte, premuto
+type std_logic is (zero,edge,one); --non premuto, fronte, premuto
 signal present_state, next_state: std_logic;
 begin
 
@@ -51,15 +51,15 @@ end process;
 
 process (present_state, button) begin
 case present_state is
-when uno => if button = '0' then next_state<=uno; else next_state<=due; end if;
-when due => if button = '0' then next_state<=uno; else next_state<=tre; end if;
-when tre => if button = '0' then next_state<=uno; else next_state<=tre; end if;
+when zero => if button = '0' then next_state<=zero; else next_state<=edge; end if;
+when edge => if button = '0' then next_state<=zero; else next_state<=one; end if;
+when one => if button = '0' then next_state<=zero; else next_state<=one; end if;
 end case;
 end process;
 
 process (present_state) begin
-buttonout <= '0';
-if present_state = due then buttonout<='1';
+if present_state = edge then buttonout<='1';
+else buttonout<='0';
 end if;
 end process;
 

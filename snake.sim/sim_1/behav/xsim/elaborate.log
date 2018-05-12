@@ -1,6 +1,6 @@
 Vivado Simulator 2018.1
 Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto a72e3c3731a54cbc9562f032f7dc352d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testgestione_behav xil_defaultlib.testgestione xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto a72e3c3731a54cbc9562f032f7dc352d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testgenerale_behav xil_defaultlib.testgenerale xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -19,6 +19,7 @@ Compiling package ieee.vital_primitives
 Compiling package unisim.vpkg
 Compiling package ieee.std_logic_textio
 Compiling module xil_defaultlib.glbl
+Compiling architecture behavioral of entity xil_defaultlib.prescaler1hz [prescaler1hz_default]
 Compiling architecture bufg_v of entity unisim.BUFG [bufg_default]
 Compiling architecture ibuf_v of entity unisim.IBUF [\IBUF(1,9)(1,1)(1,4)(1,7)\]
 Compiling architecture mmcme2_adv_v of entity unisim.MMCME2_ADV [\MMCME2_ADV(clkfbout_mult_f=9.12...]
@@ -45,5 +46,8 @@ Compiling architecture structure of entity xil_defaultlib.blk_mem_gen_0_blk_mem_
 Compiling architecture structure of entity xil_defaultlib.blk_mem_gen_0_blk_mem_gen_v8_4_1 [blk_mem_gen_0_blk_mem_gen_v8_4_1...]
 Compiling architecture structure of entity xil_defaultlib.blk_mem_gen_0 [blk_mem_gen_0_default]
 Compiling architecture behavioral of entity xil_defaultlib.gestione [gestione_default]
-Compiling architecture behavioral of entity xil_defaultlib.testgestione
-Built simulation snapshot testgestione_behav
+Compiling architecture behavioral of entity xil_defaultlib.edgebutton [edgebutton_default]
+Compiling architecture behavioral of entity xil_defaultlib.snakemov [snakemov_default]
+Compiling architecture behavioral of entity xil_defaultlib.logicagenerale [logicagenerale_default]
+Compiling architecture behavioral of entity xil_defaultlib.testgenerale
+Built simulation snapshot testgenerale_behav
