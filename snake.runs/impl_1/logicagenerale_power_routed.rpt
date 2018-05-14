@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Fri May 11 17:24:50 2018
+| Date             : Mon May 14 17:13:10 2018
 | Host             : PCSTUDIO running 64-bit major release  (build 9200)
 | Command          : report_power -file logicagenerale_power_routed.rpt -pb logicagenerale_power_summary_routed.pb -rpx logicagenerale_power_routed.rpx
 | Design           : logicagenerale
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.225        |
+| Total On-Chip Power (W)  | 0.223        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.128        |
+| Dynamic (W)              | 0.125        |
 | Device Static (W)        | 0.098        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.0         |
@@ -53,18 +53,19 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        5 |       --- |             --- |
-| Slice Logic    |    <0.001 |      368 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      136 |     63400 |            0.21 |
-|   CARRY4       |    <0.001 |       18 |     15850 |            0.11 |
-|   Register     |    <0.001 |      141 |    126800 |            0.11 |
-|   F7/F8 Muxes  |    <0.001 |       10 |     63400 |            0.02 |
+| Slice Logic    |    <0.001 |      710 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      216 |     63400 |            0.34 |
+|   Register     |    <0.001 |      367 |    126800 |            0.29 |
+|   CARRY4       |    <0.001 |       16 |     15850 |            0.10 |
+|   F7/F8 Muxes  |    <0.001 |       47 |     63400 |            0.07 |
 |   Others       |     0.000 |       26 |       --- |             --- |
-| Signals        |    <0.001 |      334 |       --- |             --- |
+|   BUFG         |     0.000 |        1 |        32 |            3.13 |
+| Signals        |    <0.001 |      594 |       --- |             --- |
 | Block RAM      |     0.004 |        2 |       135 |            1.48 |
 | MMCM           |     0.116 |        1 |         6 |           16.67 |
-| I/O            |     0.004 |       18 |       210 |            8.57 |
+| I/O            |     0.002 |       19 |       210 |            9.05 |
 | Static Power   |     0.098 |          |           |                 |
-| Total          |     0.225 |          |           |                 |
+| Total          |     0.223 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +77,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Vccint    |       1.000 |     0.023 |       0.008 |      0.015 |
 | Vccaux    |       1.800 |     0.083 |       0.064 |      0.018 |
-| Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
+| Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -145,7 +146,7 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| logicagenerale                                 |     0.128 |
+| logicagenerale                                 |     0.125 |
 |   MOVIMENTO                                    |     0.001 |
 |     dataRAM_reg[2]                             |    <0.001 |
 |     dxbut                                      |    <0.001 |

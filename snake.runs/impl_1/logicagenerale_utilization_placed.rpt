@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Fri May 11 17:24:06 2018
+| Date         : Mon May 14 17:12:28 2018
 | Host         : PCSTUDIO running 64-bit major release  (build 9200)
 | Command      : report_utilization -file logicagenerale_utilization_placed.rpt -pb logicagenerale_utilization_placed.pb
 | Design       : logicagenerale
@@ -31,14 +31,14 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs              |  136 |     0 |     63400 |  0.21 |
-|   LUT as Logic          |  136 |     0 |     63400 |  0.21 |
+| Slice LUTs              |  216 |     0 |     63400 |  0.34 |
+|   LUT as Logic          |  216 |     0 |     63400 |  0.34 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         |  141 |     0 |    126800 |  0.11 |
-|   Register as Flip Flop |   97 |     0 |    126800 |  0.08 |
+| Slice Registers         |  367 |     0 |    126800 |  0.29 |
+|   Register as Flip Flop |  323 |     0 |    126800 |  0.25 |
 |   Register as Latch     |   44 |     0 |    126800 |  0.03 |
-| F7 Muxes                |    8 |     0 |     31700 |  0.03 |
-| F8 Muxes                |    2 |     0 |     15850 |  0.01 |
+| F7 Muxes                |   34 |     0 |     31700 |  0.11 |
+| F8 Muxes                |   13 |     0 |     15850 |  0.08 |
 +-------------------------+------+-------+-----------+-------+
 
 
@@ -55,9 +55,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 9     |          Yes |           - |          Set |
-| 76    |          Yes |           - |        Reset |
+| 82    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 55    |          Yes |       Reset |            - |
+| 275   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -67,21 +67,21 @@ Table of Contents
 +-------------------------------------------+------+-------+-----------+-------+
 |                 Site Type                 | Used | Fixed | Available | Util% |
 +-------------------------------------------+------+-------+-----------+-------+
-| Slice                                     |   69 |     0 |     15850 |  0.44 |
-|   SLICEL                                  |   43 |     0 |           |       |
-|   SLICEM                                  |   26 |     0 |           |       |
-| LUT as Logic                              |  136 |     0 |     63400 |  0.21 |
+| Slice                                     |  164 |     0 |     15850 |  1.03 |
+|   SLICEL                                  |  106 |     0 |           |       |
+|   SLICEM                                  |   58 |     0 |           |       |
+| LUT as Logic                              |  216 |     0 |     63400 |  0.34 |
 |   using O5 output only                    |    0 |       |           |       |
-|   using O6 output only                    |   99 |       |           |       |
+|   using O6 output only                    |  179 |       |           |       |
 |   using O5 and O6                         |   37 |       |           |       |
 | LUT as Memory                             |    0 |     0 |     19000 |  0.00 |
 |   LUT as Distributed RAM                  |    0 |     0 |           |       |
 |   LUT as Shift Register                   |    0 |     0 |           |       |
-| LUT Flip Flop Pairs                       |   60 |     0 |     63400 |  0.09 |
-|   fully used LUT-FF pairs                 |    9 |       |           |       |
-|   LUT-FF pairs with one unused LUT output |   38 |       |           |       |
-|   LUT-FF pairs with one unused Flip Flop  |   50 |       |           |       |
-| Unique Control Sets                       |   19 |       |           |       |
+| LUT Flip Flop Pairs                       |   73 |     0 |     63400 |  0.12 |
+|   fully used LUT-FF pairs                 |   12 |       |           |       |
+|   LUT-FF pairs with one unused LUT output |   49 |       |           |       |
+|   LUT-FF pairs with one unused Flip Flop  |   58 |       |           |       |
+| Unique Control Sets                       |   36 |       |           |       |
 +-------------------------------------------+------+-------+-----------+-------+
 * Note: Review the Control Sets Report for more information regarding control sets.
 
@@ -116,8 +116,8 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   18 |    18 |       210 |  8.57 |
-|   IOB Master Pads           |    8 |       |           |       |
+| Bonded IOB                  |   19 |    19 |       210 |  9.05 |
+|   IOB Master Pads           |    9 |       |           |       |
 |   IOB Slave Pads            |   10 |       |           |       |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
@@ -140,7 +140,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    3 |     0 |        32 |  9.38 |
+| BUFGCTRL   |    4 |     0 |        32 | 12.50 |
 | BUFIO      |    0 |     0 |        24 |  0.00 |
 | MMCME2_ADV |    1 |     0 |         6 | 16.67 |
 | PLLE2_ADV  |    0 |     0 |         6 |  0.00 |
@@ -174,24 +174,24 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       |   55 |        Flop & Latch |
-| LUT6       |   48 |                 LUT |
-| FDCE       |   39 |        Flop & Latch |
+| FDRE       |  275 |        Flop & Latch |
+| LUT6       |  123 |                 LUT |
+| FDCE       |   45 |        Flop & Latch |
+| LUT5       |   41 |                 LUT |
 | LDCE       |   38 |        Flop & Latch |
-| LUT2       |   35 |                 LUT |
-| LUT5       |   32 |                 LUT |
-| LUT4       |   27 |                 LUT |
-| LUT3       |   25 |                 LUT |
-| CARRY4     |   18 |          CarryLogic |
-| OBUF       |   14 |                  IO |
-| MUXF7      |    8 |               MuxFx |
-| LUT1       |    6 |                 LUT |
+| MUXF7      |   34 |               MuxFx |
+| LUT3       |   30 |                 LUT |
+| LUT2       |   28 |                 LUT |
+| LUT4       |   24 |                 LUT |
+| CARRY4     |   16 |          CarryLogic |
+| OBUF       |   15 |                  IO |
+| MUXF8      |   13 |               MuxFx |
+| LUT1       |    7 |                 LUT |
 | LDPE       |    6 |        Flop & Latch |
 | IBUF       |    4 |                  IO |
+| BUFG       |    4 |               Clock |
 | FDPE       |    3 |        Flop & Latch |
-| BUFG       |    3 |               Clock |
 | RAMB36E1   |    2 |        Block Memory |
-| MUXF8      |    2 |               MuxFx |
 | MMCME2_ADV |    1 |               Clock |
 +------------+------+---------------------+
 

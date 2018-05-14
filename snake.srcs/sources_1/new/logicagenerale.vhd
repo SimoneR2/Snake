@@ -36,7 +36,8 @@ entity logicagenerale is
     ck, rst: in std_logic;
     BTN1, BTN2: in std_logic;
     sincH, sincV: out std_logic;
-    r,g,b: out std_logic_vector(3 downto 0)
+    r,g,b: out std_logic_vector(3 downto 0);
+    gameOver: out std_logic
    );
 end logicagenerale;
 
@@ -65,6 +66,7 @@ component snakemov
              writeinterval: in std_logic;
              addRAM: out std_logic_vector(12 downto 0);
              writeRAM: out std_logic;
+             gameO: out std_logic;
              dataRAM: out std_logic_vector(3 downto 0)
              );--button di ingresso a caso...da verificare
   end component;
@@ -74,10 +76,11 @@ signal addRAM: std_logic_vector (12 downto 0);
 signal writeREQUEST: std_logic;
 signal dinRAM: std_logic_vector (3 downto 0);
 signal sincVert: std_logic;
+signal gameo: std_logic;
 begin
 PRESCALER: prescaler1hz port map (ck, ck1);
 VGA: gestione port map (ck,rst, addRAM, dinRAM, writeREQUEST,  sinch,sincvert,r,g,b);
-MOVIMENTO: snakemov port map (ck, ck1, rst, BTN1, BTN2,sincVert, addRAM, writeREQUEST, dinRAM);
+MOVIMENTO: snakemov port map (ck, ck1, rst, BTN1, BTN2,sincVert, addRAM, writeREQUEST,gameo, dinRAM);
 sincv<=sincvert;
-
+gameOver<=gameo;
 end Behavioral;

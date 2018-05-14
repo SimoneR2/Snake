@@ -37,6 +37,7 @@ entity snakemov is
            writeinterval: in std_logic;
            addRAM: out std_logic_vector(12 downto 0);
            writeRAM: out std_logic;
+           gameO: out std_logic;
            dataRAM: out std_logic_vector(3 downto 0)
            );--button di ingresso a caso...da verificare
 end snakemov;
@@ -77,12 +78,11 @@ signal flag: std_logic; --tiene conto della vecchia pos della vitamina
 signal lunghezza: integer range 0 to 15:=0;
 signal eaten: std_logic:='0';
 signal gameOver: std_logic := '0';
-
 --FSM snake
 type fsm_snake_logic is (up,dxx,down,sxx);
 type posizioni is array (0 to 15) of std_logic_vector(12 downto 0);
 signal serpente: posizioni;
-signal present_state, next_state: fsm_snake_logic;    
+signal present_state, next_state: fsm_snake_logic:=up;    
     
 --FSM RAM
 type fsm_ram_logic is (attesa, scritturaTESTA, attesa1, scritturaCODA, attesa2, scritturaVITAMINA);
@@ -91,10 +91,11 @@ signal RAMpresent_state, RAMnext_state: fsm_ram_logic;
 begin
 sxbut:edgebutton port map(ck,btnc,sx);
 dxbut:edgebutton port map(ck,btnu,dx);
-
-process(ck1)
+gameo<=gameover;
+process(ck1,rst)
 begin
-if rising_edge(ck1) then
+if rst = '0' then present_state<=up;
+elsif rising_edge(ck1) then
     present_state<=next_state;
 end if;
 end process;
@@ -128,50 +129,51 @@ begin
         gameOver <= '0'; 
         testaH<="0001100";
         testaV<="001100";
+        
     elsif(gameOver ='0') then
         case present_state is
-            when up => if (signed(testaV)-to_signed(1,6))>0 then 
-                testaV<=std_logic_vector(unsigned(testaV)-to_unsigned(1,6));
-            else gameOver <= '1';
+            when up => if ((unsigned(testaV)-to_unsigned(1,6))=to_unsigned(0,6)) then 
+                gameOver <= '1';
+            else testaV<=std_logic_vector(unsigned(testaV)-to_unsigned(1,6)); gameOver<='0';
             end if;
             
-            when down => if (signed(testaV)+to_signed(1,6))<60 then 
-                            testaV<=std_logic_vector(unsigned(testaV)+to_unsigned(1,6));
-                        else gameOver <= '1';
+            when down => if ((unsigned(testaV)+to_unsigned(1,6))=to_unsigned(60,6)) then 
+                            gameOver <= '1';
+                        else testaV<=std_logic_vector(unsigned(testaV)+to_unsigned(1,6)); gameOver<='0';
             end if;
             
-            when sxx => if (signed(testaH)-to_signed(1,7))>0 then 
-                            testaH<=std_logic_vector(unsigned(testaH)-to_unsigned(1,7));
-                        else gameOver <= '1';
+            when sxx => if ((unsigned(testaH)-to_unsigned(1,7))=to_unsigned(0,7)) then 
+                             gameOver <= '1';
+                        else testaH<=std_logic_vector(unsigned(testaH)-to_unsigned(1,7)); gameOver<='0';
             end if;
-            when dxx => if (signed(testaH)+to_signed(1,7))<80 then 
-                            testaH<=std_logic_vector(unsigned(testaH)+to_unsigned(1,7));
-                        else gameOver <= '1';
+            when dxx => if ((unsigned(testaH)+to_unsigned(1,7))=to_unsigned(80,7)) then 
+                           gameOver <= '1';
+                        else  testaH<=std_logic_vector(unsigned(testaH)+to_unsigned(1,7)); gameOver<='0';
             end if;
      end case;
      end if;
 end process;
 
---process (ck1,rst) --posizione serpente
---begin
---if(rst='0') then lunghezza<=1;
---elsif(rising_edge(ck1)) then
---    if(eaten = '0') then
---        coda<=serpente(lunghezza);
---        for i in 1 to 15 loop
---            serpente(15-i+1)<=serpente(15-i);
---        end loop;
---        serpente(lunghezza+1)<=(others=>'0');
---   serpente(0)<=std_logic_vector(unsigned(testaH)+unsigned(testaV)*to_unsigned(80,7));
---    elsif (eaten = '1') then
---        lunghezza<=lunghezza+1; 
---        for i in 1 to 15 loop
---             serpente(15-i+1)<=serpente(15-i);
---        end loop;
---   serpente(0)<=std_logic_vector(unsigned(testaH)+unsigned(testaV)*to_unsigned(80,7));
---end if;
---end if;
---end process;
+process (ck1,rst) --posizione serpente
+begin
+if(rst='0') then lunghezza<=0;
+elsif(rising_edge(ck1)) then
+    if(eaten = '0') then
+        coda<=serpente(lunghezza);
+        for i in 1 to 15 loop
+            serpente(15-i+1)<=serpente(15-i);
+        end loop;
+        serpente(lunghezza+1)<=(others=>'0');
+   serpente(0)<=std_logic_vector(unsigned(testaH)+unsigned(testaV)*to_unsigned(80,7));
+    elsif (eaten = '1') then
+        lunghezza<=lunghezza+1; 
+        for i in 1 to 15 loop
+             serpente(15-i+1)<=serpente(15-i);
+        end loop;
+   serpente(0)<=std_logic_vector(unsigned(testaH)+unsigned(testaV)*to_unsigned(80,7));
+end if;
+end if;
+end process;
 
 --SCRITTURA RAM VIDEO
 process (ck)
@@ -184,7 +186,7 @@ end process;
 process(RAMpresent_state) 
 begin
     case (RAMpresent_state) is
-       when attesa => if(writeinterval<='0') then RAMnext_state<=scritturaTESTA;
+       when attesa => if(writeinterval='0') then RAMnext_state<=scritturaTESTA;
                         else RAMnext_state<=attesa2;
                         end if;
        when scritturaTESTA => RAMnext_state<=attesa1;
@@ -199,7 +201,8 @@ process (RAMpresent_state)
 begin
     if (RAMpresent_state=scritturaTESTA) then addRAM<= std_logic_vector(unsigned(testaV)*to_unsigned(80,7) + unsigned(testaH)); writeRAM<='1'; dataRAM<="0010";
     elsif (RAMpresent_state=scritturaCODA) then addRAM<= coda; writeRAM<='1'; dataRAM<="0110";
-    elsif (RAMpresent_state=scritturaVITAMINA) then addRAM<= std_logic_vector(unsigned(vitaminaV)*to_unsigned(80,7) + unsigned(vitaminaH)); writeRAM<='1'; dataRAM<="0101";
+    elsif (RAMpresent_state=scritturaVITAMINA) then if gameover='0' then addRAM<= std_logic_vector(unsigned(vitaminaV)*to_unsigned(80,7) + unsigned(vitaminaH)); writeRAM<='1'; dataRAM<="0101";
+                                               else addRAM<= std_logic_vector(unsigned(vitaminaV)*to_unsigned(80,7) + unsigned(vitaminaH)); writeRAM<='1'; dataRAM<="0110"; end if;
     else writeRAM<='0';
     end if;
 end process;
@@ -215,11 +218,11 @@ if (rst='0') then
 elsif(rising_edge(ck1))then
     if((vitaminaH=testaH)and(vitaminaV=testaV)) then
     eaten<='1';
-        if(flag<='0') then
+        if(flag='0') then
             vitaminaH<="0101000";
             vitaminaV<="101000";
             flag<='1';
-        elsif(flag<='1') then
+        elsif(flag='1') then
             vitaminaH<="0001000";
             vitaminaV<="001000";
             flag<='0';

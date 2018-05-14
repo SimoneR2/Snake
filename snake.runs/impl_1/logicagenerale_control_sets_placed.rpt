@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Fri May 11 17:24:06 2018
+| Date         : Mon May 14 17:12:28 2018
 | Host         : PCSTUDIO running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file logicagenerale_control_sets_placed.rpt
 | Design       : logicagenerale
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    19 |
-| Unused register locations in slices containing registers |    91 |
+| Number of unique control sets                            |    36 |
+| Unused register locations in slices containing registers |   145 |
 +----------------------------------------------------------+-------+
 
 
@@ -34,14 +34,17 @@ Table of Contents
 +--------+--------------+
 | Fanout | Control Sets |
 +--------+--------------+
-|      1 |            6 |
+|      1 |            5 |
 |      2 |            1 |
-|      6 |            2 |
-|      7 |            2 |
+|      3 |            1 |
+|      4 |            1 |
+|      6 |            1 |
+|      7 |            1 |
 |      9 |            1 |
 |     10 |            2 |
-|     11 |            1 |
-|     13 |            2 |
+|     11 |            2 |
+|     13 |           18 |
+|     14 |            1 |
 |    16+ |            2 |
 +--------+--------------+
 
@@ -52,40 +55,57 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              42 |           20 |
-| No           | No                    | Yes                    |              12 |            6 |
-| No           | Yes                   | No                     |              41 |           14 |
-| Yes          | No                    | No                     |              16 |            3 |
-| Yes          | No                    | Yes                    |              30 |           13 |
-| Yes          | Yes                   | No                     |               0 |            0 |
+| No           | No                    | No                     |              40 |           21 |
+| No           | No                    | Yes                    |              14 |            6 |
+| No           | Yes                   | No                     |              41 |           15 |
+| Yes          | No                    | No                     |              43 |           24 |
+| Yes          | No                    | Yes                    |              34 |           11 |
+| Yes          | Yes                   | No                     |             195 |           76 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+-----------------------------------+--------------------------------+----------------------------------+------------------+----------------+
-|            Clock Signal           |          Enable Signal         |         Set/Reset Signal         | Slice Load Count | Bel Load Count |
-+-----------------------------------+--------------------------------+----------------------------------+------------------+----------------+
-|  MOVIMENTO/dataRAM_reg[2]/G0      |                                |                                  |                1 |              1 |
-|  VGA/enROM_reg_i_1_n_0            |                                | VGA/enROM_reg_i_2_n_0            |                1 |              1 |
-|  PRESCALER/CLK                    |                                | VGA/vgacmd/addressV_reg[2]_0     |                1 |              1 |
-|  MOVIMENTO/gameOver_reg_i_1_n_0   |                                |                                  |                1 |              1 |
-|  VGA/vgaclock/inst/clk_out1       |                                |                                  |                1 |              1 |
-|  VGA/vgaclock/inst/clk_out1       | VGA/vgacmd/sincH7_out          | VGA/vgacmd/addressV_reg[2]_0     |                1 |              1 |
-|  MOVIMENTO/dataRAM_reg[2]_i_1_n_0 |                                | MOVIMENTO/dataRAM_reg[1]_i_1_n_0 |                1 |              2 |
-|  PRESCALER/CLK                    |                                |                                  |                2 |              6 |
-|  MOVIMENTO/testaV_reg[5]_i_2_n_0  |                                | VGA/vgacmd/addressV_reg[2]_0     |                2 |              6 |
-|  MOVIMENTO/testaH_reg[6]_i_1_n_0  |                                | VGA/vgacmd/addressV_reg[2]_0     |                3 |              7 |
-|  ck_IBUF_BUFG                     |                                |                                  |                5 |              7 |
-|  VGA/vgaclock/inst/clk_out1       | VGA/vgacmd/addressV[8]_i_1_n_0 | VGA/vgacmd/addressV_reg[2]_0     |                5 |              9 |
-|  VGA/vgaclock/inst/clk_out1       | VGA/vgacmd/addressH[9]_i_1_n_0 | VGA/vgacmd/addressV_reg[2]_0     |                4 |             10 |
-|  VGA/vgaclock/inst/clk_out1       | VGA/vgacmd/vcount              | VGA/vgacmd/addressV_reg[2]_0     |                3 |             10 |
-|  VGA/vgaclock/inst/clk_out1       |                                | VGA/vgacmd/addressV_reg[2]_0     |                5 |             11 |
-|  VGA/enROM_reg_i_1_n_0            |                                |                                  |                5 |             13 |
-|  MOVIMENTO/E[0]                   |                                |                                  |                5 |             13 |
-|  ck_IBUF_BUFG                     | MOVIMENTO/E[0]                 |                                  |                3 |             16 |
-|  ck_IBUF_BUFG                     |                                | PRESCALER/clock                  |                7 |             25 |
-+-----------------------------------+--------------------------------+----------------------------------+------------------+----------------+
++-----------------------------------+--------------------------------+-----------------------------------+------------------+----------------+
+|            Clock Signal           |          Enable Signal         |          Set/Reset Signal         | Slice Load Count | Bel Load Count |
++-----------------------------------+--------------------------------+-----------------------------------+------------------+----------------+
+|  VGA/vgaclock/inst/clk_out1       |                                |                                   |                1 |              1 |
+|  MOVIMENTO/dataRAM_reg[2]/G0      |                                |                                   |                1 |              1 |
+|  MOVIMENTO/gameOver_reg_i_2_n_0   |                                |                                   |                1 |              1 |
+|  VGA/enROM_reg_i_1_n_0            |                                | VGA/enROM_reg_i_2_n_0             |                1 |              1 |
+|  VGA/vgaclock/inst/clk_out1       | VGA/vgacmd/sincH7_out          | VGA/vgacmd/addressV_reg[2]_0      |                1 |              1 |
+|  MOVIMENTO/dataRAM_reg[2]_i_1_n_0 |                                | MOVIMENTO/dataRAM_reg[1]_i_1_n_0  |                1 |              2 |
+|  clock_BUFG                       |                                | VGA/vgacmd/addressV_reg[2]_0      |                2 |              3 |
+|  clock_BUFG                       | MOVIMENTO/eaten                | VGA/vgacmd/addressV_reg[2]_0      |                1 |              4 |
+|  MOVIMENTO/testaV_reg[5]_i_2_n_0  |                                | VGA/vgacmd/addressV_reg[2]_0      |                4 |              6 |
+|  MOVIMENTO/testaH_reg[6]_i_2_n_0  |                                | VGA/vgacmd/addressV_reg[2]_0      |                2 |              7 |
+|  VGA/vgaclock/inst/clk_out1       | VGA/vgacmd/addressV[8]_i_1_n_0 | VGA/vgacmd/addressV_reg[2]_0      |                3 |              9 |
+|  VGA/vgaclock/inst/clk_out1       | VGA/vgacmd/addressH[9]_i_1_n_0 | VGA/vgacmd/addressV_reg[2]_0      |                3 |             10 |
+|  VGA/vgaclock/inst/clk_out1       | VGA/vgacmd/vcount              | VGA/vgacmd/addressV_reg[2]_0      |                3 |             10 |
+|  VGA/vgaclock/inst/clk_out1       |                                | VGA/vgacmd/addressV_reg[2]_0      |                4 |             11 |
+|  ck_IBUF_BUFG                     |                                |                                   |                6 |             11 |
+|  VGA/enROM_reg_i_1_n_0            |                                |                                   |                7 |             13 |
+|  MOVIMENTO/E[0]                   |                                |                                   |                5 |             13 |
+|  clock_BUFG                       | MOVIMENTO/coda0                |                                   |               13 |             13 |
+|  clock_BUFG                       | rst_IBUF                       | MOVIMENTO/serpente[6][12]_i_1_n_0 |                5 |             13 |
+|  clock_BUFG                       | rst_IBUF                       | MOVIMENTO/serpente[3][12]_i_1_n_0 |                6 |             13 |
+|  clock_BUFG                       | rst_IBUF                       | MOVIMENTO/serpente_reg[13]0       |                5 |             13 |
+|  clock_BUFG                       | rst_IBUF                       | MOVIMENTO/serpente_reg[9]0        |                5 |             13 |
+|  clock_BUFG                       | rst_IBUF                       | MOVIMENTO/serpente_reg[11]0       |                4 |             13 |
+|  clock_BUFG                       | rst_IBUF                       | MOVIMENTO/serpente[2][12]_i_1_n_0 |                4 |             13 |
+|  clock_BUFG                       | rst_IBUF                       | MOVIMENTO/serpente_reg[15]0       |                3 |             13 |
+|  clock_BUFG                       | rst_IBUF                       | MOVIMENTO/serpente[1][12]_i_1_n_0 |                4 |             13 |
+|  clock_BUFG                       | rst_IBUF                       | MOVIMENTO/serpente_reg[12]0       |                4 |             13 |
+|  clock_BUFG                       | rst_IBUF                       | MOVIMENTO/serpente_reg[14]0       |                4 |             13 |
+|  clock_BUFG                       | rst_IBUF                       | MOVIMENTO/serpente[5][12]_i_1_n_0 |                4 |             13 |
+|  clock_BUFG                       | rst_IBUF                       | MOVIMENTO/serpente[4][12]_i_1_n_0 |                6 |             13 |
+|  clock_BUFG                       | rst_IBUF                       | MOVIMENTO/serpente[7][12]_i_1_n_0 |                8 |             13 |
+|  clock_BUFG                       | rst_IBUF                       | MOVIMENTO/serpente[8][12]_i_1_n_0 |                9 |             13 |
+|  clock_BUFG                       | rst_IBUF                       | MOVIMENTO/serpente_reg[10]0       |                5 |             13 |
+|  clock_BUFG                       | rst_IBUF                       |                                   |                6 |             14 |
+|  ck_IBUF_BUFG                     | MOVIMENTO/E[0]                 |                                   |                5 |             16 |
+|  ck_IBUF_BUFG                     |                                | PRESCALER/clock_0                 |                7 |             25 |
++-----------------------------------+--------------------------------+-----------------------------------+------------------+----------------+
 
 
