@@ -176,18 +176,19 @@ end if;
 end process;
 
 --SCRITTURA RAM VIDEO
-process (ck)
+process (ck,rst)
 begin
-if (rising_edge(ck)) then
+if (rst='0') then RAMpresent_state<=attesa;
+elsif (rising_edge(ck)) then
     RAMpresent_state<=RAMnext_state;
 end if;
 end process;
 
-process(RAMpresent_state) 
+process(RAMpresent_state, writeinterval) 
 begin
     case (RAMpresent_state) is
        when attesa => if(writeinterval='0') then RAMnext_state<=scritturaTESTA;
-                        else RAMnext_state<=attesa2;
+                        else RAMnext_state<=attesa;
                         end if;
        when scritturaTESTA => RAMnext_state<=attesa1;
        when attesa1 => RAMnext_state<=scritturaCODA;
@@ -197,13 +198,16 @@ begin
     end case;
 end process;
 
-process (RAMpresent_state)
+process (RAMpresent_state, ck)
 begin
-    if (RAMpresent_state=scritturaTESTA) then addRAM<= std_logic_vector(unsigned(testaV)*to_unsigned(80,7) + unsigned(testaH)); writeRAM<='1'; dataRAM<="0010";
-    elsif (RAMpresent_state=scritturaCODA) then addRAM<= coda; writeRAM<='1'; dataRAM<="0110";
-    elsif (RAMpresent_state=scritturaVITAMINA) then if gameover='0' then addRAM<= std_logic_vector(unsigned(vitaminaV)*to_unsigned(80,7) + unsigned(vitaminaH)); writeRAM<='1'; dataRAM<="0101";
-                                               else addRAM<= std_logic_vector(unsigned(vitaminaV)*to_unsigned(80,7) + unsigned(vitaminaH)); writeRAM<='1'; dataRAM<="0110"; end if;
-    else writeRAM<='0';
+    if (RAMpresent_state=attesa) then addRAM<= std_logic_vector(unsigned(testaV)*to_unsigned(80,7) + unsigned(testaH)); dataRAM<="0010";
+    elsif (RAMpresent_state=scritturaTESTA) then  writeRAM<='1'; 
+    elsif (RAMpresent_state=attesa1) then addRAM<= coda; dataRAM<="0110";  writeRAM<='0';
+    elsif (RAMpresent_state=scritturaCODA) then  writeRAM<='1'; 
+    elsif (RAMpresent_state=attesa2) then if gameover='0' then addRAM<= std_logic_vector(unsigned(vitaminaV)*to_unsigned(80,7) + unsigned(vitaminaH)); dataRAM<="0101";
+                                                   else addRAM<= std_logic_vector(unsigned(vitaminaV)*to_unsigned(80,7) + unsigned(vitaminaH)); dataRAM<="0110"; end if;
+    elsif (RAMpresent_state=scritturaVITAMINA) then  writeRAM<='1';
+    else writeRAM<='0'; addram<= (others=>'0');
     end if;
 end process;
 

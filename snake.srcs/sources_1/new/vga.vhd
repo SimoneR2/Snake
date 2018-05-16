@@ -46,7 +46,7 @@ architecture Behavioral of vga is
 
 --SEGNALI PER GESTIRE SCAN VERTICALE ED ORIZZONTALE MONITOR
 signal hcount: natural range 0 to 801;
-signal vcount: natural range 0 to 526;
+signal vcount: natural range 0 to 526; --attenzione cambiare
 signal addressH: natural range 0 to 1024;
 signal addressV: natural range 0 to 512;
 signal blank: std_logic:='0';

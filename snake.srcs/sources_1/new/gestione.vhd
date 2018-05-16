@@ -194,7 +194,7 @@ if (writerequest='1') then
         addRAM_B<=addram;
         dinRAM_B<=dinRAM;
         enableRAM_B<='1';
-    else enableRAM_B<='0';
+    else wrRAM_B<="0";
     end if;
     end if;
     end process;   
