@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Mon May 14 17:13:07 2018
+| Date         : Wed May 16 22:05:35 2018
 | Host         : PCSTUDIO running 64-bit major release  (build 9200)
 | Command      : report_drc -file logicagenerale_drc_routed.rpt -pb logicagenerale_drc_routed.pb -rpx logicagenerale_drc_routed.rpx
 | Design       : logicagenerale
@@ -49,32 +49,32 @@ Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net MOVIMENTO/E[0] is a gated clock net sourced by a combinational pin MOVIMENTO/addRAM_reg[12]_i_2/O, cell MOVIMENTO/addRAM_reg[12]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net MOVIMENTO/addRAM_reg[12]_i_2_n_0 is a gated clock net sourced by a combinational pin MOVIMENTO/addRAM_reg[12]_i_2/O, cell MOVIMENTO/addRAM_reg[12]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net MOVIMENTO/dataRAM_reg[2]/G0 is a gated clock net sourced by a combinational pin MOVIMENTO/dataRAM_reg[2]/L3_2/O, cell MOVIMENTO/dataRAM_reg[2]/L3_2 (in MOVIMENTO/dataRAM_reg[2] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net MOVIMENTO/dataRAM_reg[2]_i_1_n_0 is a gated clock net sourced by a combinational pin MOVIMENTO/dataRAM_reg[2]_i_1/O, cell MOVIMENTO/dataRAM_reg[2]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
 Gated clock check  
-Net MOVIMENTO/dataRAM_reg[2]_i_1_n_0 is a gated clock net sourced by a combinational pin MOVIMENTO/dataRAM_reg[2]_i_1/O, cell MOVIMENTO/dataRAM_reg[2]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net MOVIMENTO/gameOver_reg_i_2_n_0 is a gated clock net sourced by a combinational pin MOVIMENTO/gameOver_reg_i_2/O, cell MOVIMENTO/gameOver_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#4 Warning
 Gated clock check  
-Net MOVIMENTO/gameOver_reg_i_2_n_0 is a gated clock net sourced by a combinational pin MOVIMENTO/gameOver_reg_i_2/O, cell MOVIMENTO/gameOver_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net MOVIMENTO/testaH_reg[6]_i_2_n_0 is a gated clock net sourced by a combinational pin MOVIMENTO/testaH_reg[6]_i_2/O, cell MOVIMENTO/testaH_reg[6]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#5 Warning
 Gated clock check  
-Net MOVIMENTO/testaH_reg[6]_i_2_n_0 is a gated clock net sourced by a combinational pin MOVIMENTO/testaH_reg[6]_i_2/O, cell MOVIMENTO/testaH_reg[6]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net MOVIMENTO/testaV_reg[5]_i_2_n_0 is a gated clock net sourced by a combinational pin MOVIMENTO/testaV_reg[5]_i_2/O, cell MOVIMENTO/testaV_reg[5]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#6 Warning
 Gated clock check  
-Net MOVIMENTO/testaV_reg[5]_i_2_n_0 is a gated clock net sourced by a combinational pin MOVIMENTO/testaV_reg[5]_i_2/O, cell MOVIMENTO/testaV_reg[5]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net MOVIMENTO/writeRAM_reg_i_2_n_0 is a gated clock net sourced by a combinational pin MOVIMENTO/writeRAM_reg_i_2/O, cell MOVIMENTO/writeRAM_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#7 Warning

@@ -46,7 +46,7 @@ ck1<=clock;
 process (ck)
 begin
 if (rising_edge(ck)) then
-if (count="1111111111111111111111111") then
+if (count="1111111111111111111111110") then
 --if (count="0000000000000000001111111") then --solo per simulare
     count<= (others=>'0');
     clock <= not(clock);

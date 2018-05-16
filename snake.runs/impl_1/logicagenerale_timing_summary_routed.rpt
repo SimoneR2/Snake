@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Mon May 14 17:13:10 2018
+| Date         : Wed May 16 22:05:38 2018
 | Host         : PCSTUDIO running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file logicagenerale_timing_summary_routed.rpt -pb logicagenerale_timing_summary_routed.pb -rpx logicagenerale_timing_summary_routed.rpx -warn_on_violation
 | Design       : logicagenerale
@@ -52,23 +52,21 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 56 register/latch pins with no clock driven by root clock pin: ck (HIGH)
+ There are 72 register/latch pins with no clock driven by root clock pin: ck (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: rst (HIGH)
 
- There are 16 register/latch pins with no clock driven by root clock pin: MOVIMENTO/RAMpresent_state_reg[0]/Q (HIGH)
+ There are 17 register/latch pins with no clock driven by root clock pin: MOVIMENTO/FSM_sequential_RAMpresent_state_reg[0]/Q (HIGH)
 
- There are 16 register/latch pins with no clock driven by root clock pin: MOVIMENTO/RAMpresent_state_reg[1]/Q (HIGH)
+ There are 17 register/latch pins with no clock driven by root clock pin: MOVIMENTO/FSM_sequential_RAMpresent_state_reg[1]/Q (HIGH)
 
- There are 16 register/latch pins with no clock driven by root clock pin: MOVIMENTO/RAMpresent_state_reg[2]/Q (HIGH)
+ There are 16 register/latch pins with no clock driven by root clock pin: MOVIMENTO/FSM_sequential_RAMpresent_state_reg[2]/Q (HIGH)
 
  There are 13 register/latch pins with no clock driven by root clock pin: MOVIMENTO/gameOver_reg/Q (HIGH)
 
  There are 13 register/latch pins with no clock driven by root clock pin: MOVIMENTO/present_state_reg[0]/Q (HIGH)
 
- There are 13 register/latch pins with no clock driven by root clock pin: MOVIMENTO/present_state_reg[1]/Q (HIGH)
-
- There are 229 register/latch pins with no clock driven by root clock pin: PRESCALER/clock_reg/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: PRESCALER/clock_reg/Q (HIGH)
 
  There are 14 register/latch pins with no clock driven by root clock pin: VGA/present_state_reg[0]/Q (HIGH)
 
@@ -87,21 +85,21 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 851 pins that are not constrained for maximum delay. (HIGH)
+ There are 236 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
 
 5. checking no_input_delay
 --------------------------
- There are 3 input ports with no input delay specified. (HIGH)
+ There is 1 input port with no input delay specified. (HIGH)
 
  There are 0 input ports with no input delay but user has a false path constraint.
 
 
 6. checking no_output_delay
 ---------------------------
- There are 11 ports with no output delay specified. (HIGH)
+ There are 27 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 
@@ -135,7 +133,7 @@ Table of Contents
 
 12. checking latch_loops
 ------------------------
- There are 7 combinational latch loops in the design through latch input (HIGH)
+ There is 1 combinational latch loop in the design through latch input (HIGH)
 
 
 
@@ -146,7 +144,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-     35.340        0.000                      0                   72        0.187        0.000                      0                   72        3.000        0.000                       0                    48  
+     36.004        0.000                      0                   72        0.215        0.000                      0                   72        3.000        0.000                       0                    48  
 
 
 All user specified timing constraints are met.
@@ -172,7 +170,7 @@ VGA/vgaclock/inst/clk_in1  {0.000 5.000}      10.000          100.000
 Clock                          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----                          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
 VGA/vgaclock/inst/clk_in1                                                                                                                                                    3.000        0.000                       0                     1  
-  clk_out1_clk_wiz_0            35.340        0.000                      0                   72        0.187        0.000                      0                   72       19.500        0.000                       0                    44  
+  clk_out1_clk_wiz_0            36.004        0.000                      0                   72        0.215        0.000                      0                   72       19.500        0.000                       0                    44  
   clkfbout_clk_wiz_0                                                                                                                                                         7.845        0.000                       0                     3  
 
 
@@ -231,524 +229,28 @@ High Pulse Width  Slow    MMCME2_ADV/CLKIN1  n/a            2.000         5.000 
 From Clock:  clk_out1_clk_wiz_0
   To Clock:  clk_out1_clk_wiz_0
 
-Setup :            0  Failing Endpoints,  Worst Slack       35.340ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.187ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack       36.004ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.215ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack       19.500ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             35.340ns  (required time - arrival time)
-  Source:                 VGA/vgacmd/hcount_reg[3]/C
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            VGA/vgacmd/addressV_reg[1]/CE
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Path Group:             clk_out1_clk_wiz_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            40.000ns  (clk_out1_clk_wiz_0 rise@40.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        4.238ns  (logic 1.061ns (25.037%)  route 3.177ns (74.963%))
-  Logic Levels:           3  (LUT3=1 LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.120ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.503ns = ( 41.503 - 40.000 ) 
-    Source Clock Delay      (SCD):    1.700ns
-    Clock Pessimism Removal (CPR):    0.077ns
-  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.182ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          1.809     1.809    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.922    -2.112 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           2.018    -0.094    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          1.698     1.700    VGA/vgacmd/clk_out1
-    SLICE_X7Y130         FDCE                                         r  VGA/vgacmd/hcount_reg[3]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X7Y130         FDCE (Prop_fdce_C_Q)         0.456     2.156 r  VGA/vgacmd/hcount_reg[3]/Q
-                         net (fo=4, routed)           0.866     3.022    VGA/vgacmd/hcount_reg_n_0_[3]
-    SLICE_X7Y130         LUT5 (Prop_lut5_I1_O)        0.154     3.176 r  VGA/vgacmd/hcount[9]_i_3/O
-                         net (fo=4, routed)           0.834     4.010    VGA/vgacmd/hcount[9]_i_3_n_0
-    SLICE_X8Y131         LUT6 (Prop_lut6_I5_O)        0.327     4.337 r  VGA/vgacmd/vcount[9]_i_1/O
-                         net (fo=12, routed)          0.763     5.100    VGA/vgacmd/vcount
-    SLICE_X7Y131         LUT3 (Prop_lut3_I2_O)        0.124     5.224 r  VGA/vgacmd/addressV[8]_i_1/O
-                         net (fo=9, routed)           0.713     5.938    VGA/vgacmd/addressV[8]_i_1_n_0
-    SLICE_X9Y130         FDCE                                         r  VGA/vgacmd/addressV_reg[1]/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                     40.000    40.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000    40.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          1.683    41.683    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.694    37.989 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.923    39.912    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    40.003 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          1.500    41.503    VGA/vgacmd/clk_out1
-    SLICE_X9Y130         FDCE                                         r  VGA/vgacmd/addressV_reg[1]/C
-                         clock pessimism              0.077    41.580    
-                         clock uncertainty           -0.098    41.482    
-    SLICE_X9Y130         FDCE (Setup_fdce_C_CE)      -0.205    41.277    VGA/vgacmd/addressV_reg[1]
-  -------------------------------------------------------------------
-                         required time                         41.277    
-                         arrival time                          -5.938    
-  -------------------------------------------------------------------
-                         slack                                 35.340    
-
-Slack (MET) :             35.340ns  (required time - arrival time)
-  Source:                 VGA/vgacmd/hcount_reg[3]/C
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            VGA/vgacmd/addressV_reg[5]/CE
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Path Group:             clk_out1_clk_wiz_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            40.000ns  (clk_out1_clk_wiz_0 rise@40.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        4.238ns  (logic 1.061ns (25.037%)  route 3.177ns (74.963%))
-  Logic Levels:           3  (LUT3=1 LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.120ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.503ns = ( 41.503 - 40.000 ) 
-    Source Clock Delay      (SCD):    1.700ns
-    Clock Pessimism Removal (CPR):    0.077ns
-  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.182ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          1.809     1.809    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.922    -2.112 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           2.018    -0.094    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          1.698     1.700    VGA/vgacmd/clk_out1
-    SLICE_X7Y130         FDCE                                         r  VGA/vgacmd/hcount_reg[3]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X7Y130         FDCE (Prop_fdce_C_Q)         0.456     2.156 r  VGA/vgacmd/hcount_reg[3]/Q
-                         net (fo=4, routed)           0.866     3.022    VGA/vgacmd/hcount_reg_n_0_[3]
-    SLICE_X7Y130         LUT5 (Prop_lut5_I1_O)        0.154     3.176 r  VGA/vgacmd/hcount[9]_i_3/O
-                         net (fo=4, routed)           0.834     4.010    VGA/vgacmd/hcount[9]_i_3_n_0
-    SLICE_X8Y131         LUT6 (Prop_lut6_I5_O)        0.327     4.337 r  VGA/vgacmd/vcount[9]_i_1/O
-                         net (fo=12, routed)          0.763     5.100    VGA/vgacmd/vcount
-    SLICE_X7Y131         LUT3 (Prop_lut3_I2_O)        0.124     5.224 r  VGA/vgacmd/addressV[8]_i_1/O
-                         net (fo=9, routed)           0.713     5.938    VGA/vgacmd/addressV[8]_i_1_n_0
-    SLICE_X9Y130         FDCE                                         r  VGA/vgacmd/addressV_reg[5]/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                     40.000    40.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000    40.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          1.683    41.683    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.694    37.989 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.923    39.912    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    40.003 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          1.500    41.503    VGA/vgacmd/clk_out1
-    SLICE_X9Y130         FDCE                                         r  VGA/vgacmd/addressV_reg[5]/C
-                         clock pessimism              0.077    41.580    
-                         clock uncertainty           -0.098    41.482    
-    SLICE_X9Y130         FDCE (Setup_fdce_C_CE)      -0.205    41.277    VGA/vgacmd/addressV_reg[5]
-  -------------------------------------------------------------------
-                         required time                         41.277    
-                         arrival time                          -5.938    
-  -------------------------------------------------------------------
-                         slack                                 35.340    
-
-Slack (MET) :             35.340ns  (required time - arrival time)
-  Source:                 VGA/vgacmd/hcount_reg[3]/C
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            VGA/vgacmd/addressV_reg[6]/CE
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Path Group:             clk_out1_clk_wiz_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            40.000ns  (clk_out1_clk_wiz_0 rise@40.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        4.238ns  (logic 1.061ns (25.037%)  route 3.177ns (74.963%))
-  Logic Levels:           3  (LUT3=1 LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.120ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.503ns = ( 41.503 - 40.000 ) 
-    Source Clock Delay      (SCD):    1.700ns
-    Clock Pessimism Removal (CPR):    0.077ns
-  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.182ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          1.809     1.809    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.922    -2.112 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           2.018    -0.094    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          1.698     1.700    VGA/vgacmd/clk_out1
-    SLICE_X7Y130         FDCE                                         r  VGA/vgacmd/hcount_reg[3]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X7Y130         FDCE (Prop_fdce_C_Q)         0.456     2.156 r  VGA/vgacmd/hcount_reg[3]/Q
-                         net (fo=4, routed)           0.866     3.022    VGA/vgacmd/hcount_reg_n_0_[3]
-    SLICE_X7Y130         LUT5 (Prop_lut5_I1_O)        0.154     3.176 r  VGA/vgacmd/hcount[9]_i_3/O
-                         net (fo=4, routed)           0.834     4.010    VGA/vgacmd/hcount[9]_i_3_n_0
-    SLICE_X8Y131         LUT6 (Prop_lut6_I5_O)        0.327     4.337 r  VGA/vgacmd/vcount[9]_i_1/O
-                         net (fo=12, routed)          0.763     5.100    VGA/vgacmd/vcount
-    SLICE_X7Y131         LUT3 (Prop_lut3_I2_O)        0.124     5.224 r  VGA/vgacmd/addressV[8]_i_1/O
-                         net (fo=9, routed)           0.713     5.938    VGA/vgacmd/addressV[8]_i_1_n_0
-    SLICE_X9Y130         FDCE                                         r  VGA/vgacmd/addressV_reg[6]/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                     40.000    40.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000    40.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          1.683    41.683    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.694    37.989 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.923    39.912    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    40.003 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          1.500    41.503    VGA/vgacmd/clk_out1
-    SLICE_X9Y130         FDCE                                         r  VGA/vgacmd/addressV_reg[6]/C
-                         clock pessimism              0.077    41.580    
-                         clock uncertainty           -0.098    41.482    
-    SLICE_X9Y130         FDCE (Setup_fdce_C_CE)      -0.205    41.277    VGA/vgacmd/addressV_reg[6]
-  -------------------------------------------------------------------
-                         required time                         41.277    
-                         arrival time                          -5.938    
-  -------------------------------------------------------------------
-                         slack                                 35.340    
-
-Slack (MET) :             35.340ns  (required time - arrival time)
-  Source:                 VGA/vgacmd/hcount_reg[3]/C
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            VGA/vgacmd/addressV_reg[7]/CE
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Path Group:             clk_out1_clk_wiz_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            40.000ns  (clk_out1_clk_wiz_0 rise@40.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        4.238ns  (logic 1.061ns (25.037%)  route 3.177ns (74.963%))
-  Logic Levels:           3  (LUT3=1 LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.120ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.503ns = ( 41.503 - 40.000 ) 
-    Source Clock Delay      (SCD):    1.700ns
-    Clock Pessimism Removal (CPR):    0.077ns
-  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.182ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          1.809     1.809    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.922    -2.112 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           2.018    -0.094    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          1.698     1.700    VGA/vgacmd/clk_out1
-    SLICE_X7Y130         FDCE                                         r  VGA/vgacmd/hcount_reg[3]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X7Y130         FDCE (Prop_fdce_C_Q)         0.456     2.156 r  VGA/vgacmd/hcount_reg[3]/Q
-                         net (fo=4, routed)           0.866     3.022    VGA/vgacmd/hcount_reg_n_0_[3]
-    SLICE_X7Y130         LUT5 (Prop_lut5_I1_O)        0.154     3.176 r  VGA/vgacmd/hcount[9]_i_3/O
-                         net (fo=4, routed)           0.834     4.010    VGA/vgacmd/hcount[9]_i_3_n_0
-    SLICE_X8Y131         LUT6 (Prop_lut6_I5_O)        0.327     4.337 r  VGA/vgacmd/vcount[9]_i_1/O
-                         net (fo=12, routed)          0.763     5.100    VGA/vgacmd/vcount
-    SLICE_X7Y131         LUT3 (Prop_lut3_I2_O)        0.124     5.224 r  VGA/vgacmd/addressV[8]_i_1/O
-                         net (fo=9, routed)           0.713     5.938    VGA/vgacmd/addressV[8]_i_1_n_0
-    SLICE_X9Y130         FDCE                                         r  VGA/vgacmd/addressV_reg[7]/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                     40.000    40.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000    40.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          1.683    41.683    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.694    37.989 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.923    39.912    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    40.003 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          1.500    41.503    VGA/vgacmd/clk_out1
-    SLICE_X9Y130         FDCE                                         r  VGA/vgacmd/addressV_reg[7]/C
-                         clock pessimism              0.077    41.580    
-                         clock uncertainty           -0.098    41.482    
-    SLICE_X9Y130         FDCE (Setup_fdce_C_CE)      -0.205    41.277    VGA/vgacmd/addressV_reg[7]
-  -------------------------------------------------------------------
-                         required time                         41.277    
-                         arrival time                          -5.938    
-  -------------------------------------------------------------------
-                         slack                                 35.340    
-
-Slack (MET) :             35.340ns  (required time - arrival time)
-  Source:                 VGA/vgacmd/hcount_reg[3]/C
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            VGA/vgacmd/addressV_reg[8]/CE
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Path Group:             clk_out1_clk_wiz_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            40.000ns  (clk_out1_clk_wiz_0 rise@40.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        4.238ns  (logic 1.061ns (25.037%)  route 3.177ns (74.963%))
-  Logic Levels:           3  (LUT3=1 LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.120ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.503ns = ( 41.503 - 40.000 ) 
-    Source Clock Delay      (SCD):    1.700ns
-    Clock Pessimism Removal (CPR):    0.077ns
-  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.182ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          1.809     1.809    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.922    -2.112 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           2.018    -0.094    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          1.698     1.700    VGA/vgacmd/clk_out1
-    SLICE_X7Y130         FDCE                                         r  VGA/vgacmd/hcount_reg[3]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X7Y130         FDCE (Prop_fdce_C_Q)         0.456     2.156 r  VGA/vgacmd/hcount_reg[3]/Q
-                         net (fo=4, routed)           0.866     3.022    VGA/vgacmd/hcount_reg_n_0_[3]
-    SLICE_X7Y130         LUT5 (Prop_lut5_I1_O)        0.154     3.176 r  VGA/vgacmd/hcount[9]_i_3/O
-                         net (fo=4, routed)           0.834     4.010    VGA/vgacmd/hcount[9]_i_3_n_0
-    SLICE_X8Y131         LUT6 (Prop_lut6_I5_O)        0.327     4.337 r  VGA/vgacmd/vcount[9]_i_1/O
-                         net (fo=12, routed)          0.763     5.100    VGA/vgacmd/vcount
-    SLICE_X7Y131         LUT3 (Prop_lut3_I2_O)        0.124     5.224 r  VGA/vgacmd/addressV[8]_i_1/O
-                         net (fo=9, routed)           0.713     5.938    VGA/vgacmd/addressV[8]_i_1_n_0
-    SLICE_X9Y130         FDCE                                         r  VGA/vgacmd/addressV_reg[8]/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                     40.000    40.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000    40.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          1.683    41.683    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.694    37.989 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.923    39.912    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    40.003 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          1.500    41.503    VGA/vgacmd/clk_out1
-    SLICE_X9Y130         FDCE                                         r  VGA/vgacmd/addressV_reg[8]/C
-                         clock pessimism              0.077    41.580    
-                         clock uncertainty           -0.098    41.482    
-    SLICE_X9Y130         FDCE (Setup_fdce_C_CE)      -0.205    41.277    VGA/vgacmd/addressV_reg[8]
-  -------------------------------------------------------------------
-                         required time                         41.277    
-                         arrival time                          -5.938    
-  -------------------------------------------------------------------
-                         slack                                 35.340    
-
-Slack (MET) :             35.373ns  (required time - arrival time)
-  Source:                 VGA/vgacmd/hcount_reg[3]/C
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            VGA/vgacmd/addressV_reg[2]/CE
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Path Group:             clk_out1_clk_wiz_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            40.000ns  (clk_out1_clk_wiz_0 rise@40.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        4.241ns  (logic 1.061ns (25.018%)  route 3.180ns (74.982%))
-  Logic Levels:           3  (LUT3=1 LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.120ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.503ns = ( 41.503 - 40.000 ) 
-    Source Clock Delay      (SCD):    1.700ns
-    Clock Pessimism Removal (CPR):    0.077ns
-  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.182ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          1.809     1.809    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.922    -2.112 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           2.018    -0.094    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          1.698     1.700    VGA/vgacmd/clk_out1
-    SLICE_X7Y130         FDCE                                         r  VGA/vgacmd/hcount_reg[3]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X7Y130         FDCE (Prop_fdce_C_Q)         0.456     2.156 r  VGA/vgacmd/hcount_reg[3]/Q
-                         net (fo=4, routed)           0.866     3.022    VGA/vgacmd/hcount_reg_n_0_[3]
-    SLICE_X7Y130         LUT5 (Prop_lut5_I1_O)        0.154     3.176 r  VGA/vgacmd/hcount[9]_i_3/O
-                         net (fo=4, routed)           0.834     4.010    VGA/vgacmd/hcount[9]_i_3_n_0
-    SLICE_X8Y131         LUT6 (Prop_lut6_I5_O)        0.327     4.337 r  VGA/vgacmd/vcount[9]_i_1/O
-                         net (fo=12, routed)          0.763     5.100    VGA/vgacmd/vcount
-    SLICE_X7Y131         LUT3 (Prop_lut3_I2_O)        0.124     5.224 r  VGA/vgacmd/addressV[8]_i_1/O
-                         net (fo=9, routed)           0.717     5.941    VGA/vgacmd/addressV[8]_i_1_n_0
-    SLICE_X8Y129         FDCE                                         r  VGA/vgacmd/addressV_reg[2]/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                     40.000    40.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000    40.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          1.683    41.683    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.694    37.989 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.923    39.912    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    40.003 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          1.500    41.503    VGA/vgacmd/clk_out1
-    SLICE_X8Y129         FDCE                                         r  VGA/vgacmd/addressV_reg[2]/C
-                         clock pessimism              0.077    41.580    
-                         clock uncertainty           -0.098    41.482    
-    SLICE_X8Y129         FDCE (Setup_fdce_C_CE)      -0.169    41.313    VGA/vgacmd/addressV_reg[2]
-  -------------------------------------------------------------------
-                         required time                         41.313    
-                         arrival time                          -5.941    
-  -------------------------------------------------------------------
-                         slack                                 35.373    
-
-Slack (MET) :             35.373ns  (required time - arrival time)
-  Source:                 VGA/vgacmd/hcount_reg[3]/C
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            VGA/vgacmd/addressV_reg[3]/CE
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Path Group:             clk_out1_clk_wiz_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            40.000ns  (clk_out1_clk_wiz_0 rise@40.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        4.241ns  (logic 1.061ns (25.018%)  route 3.180ns (74.982%))
-  Logic Levels:           3  (LUT3=1 LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.120ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.503ns = ( 41.503 - 40.000 ) 
-    Source Clock Delay      (SCD):    1.700ns
-    Clock Pessimism Removal (CPR):    0.077ns
-  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.182ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          1.809     1.809    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.922    -2.112 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           2.018    -0.094    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          1.698     1.700    VGA/vgacmd/clk_out1
-    SLICE_X7Y130         FDCE                                         r  VGA/vgacmd/hcount_reg[3]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X7Y130         FDCE (Prop_fdce_C_Q)         0.456     2.156 r  VGA/vgacmd/hcount_reg[3]/Q
-                         net (fo=4, routed)           0.866     3.022    VGA/vgacmd/hcount_reg_n_0_[3]
-    SLICE_X7Y130         LUT5 (Prop_lut5_I1_O)        0.154     3.176 r  VGA/vgacmd/hcount[9]_i_3/O
-                         net (fo=4, routed)           0.834     4.010    VGA/vgacmd/hcount[9]_i_3_n_0
-    SLICE_X8Y131         LUT6 (Prop_lut6_I5_O)        0.327     4.337 r  VGA/vgacmd/vcount[9]_i_1/O
-                         net (fo=12, routed)          0.763     5.100    VGA/vgacmd/vcount
-    SLICE_X7Y131         LUT3 (Prop_lut3_I2_O)        0.124     5.224 r  VGA/vgacmd/addressV[8]_i_1/O
-                         net (fo=9, routed)           0.717     5.941    VGA/vgacmd/addressV[8]_i_1_n_0
-    SLICE_X8Y129         FDCE                                         r  VGA/vgacmd/addressV_reg[3]/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                     40.000    40.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000    40.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          1.683    41.683    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.694    37.989 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.923    39.912    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    40.003 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          1.500    41.503    VGA/vgacmd/clk_out1
-    SLICE_X8Y129         FDCE                                         r  VGA/vgacmd/addressV_reg[3]/C
-                         clock pessimism              0.077    41.580    
-                         clock uncertainty           -0.098    41.482    
-    SLICE_X8Y129         FDCE (Setup_fdce_C_CE)      -0.169    41.313    VGA/vgacmd/addressV_reg[3]
-  -------------------------------------------------------------------
-                         required time                         41.313    
-                         arrival time                          -5.941    
-  -------------------------------------------------------------------
-                         slack                                 35.373    
-
-Slack (MET) :             35.373ns  (required time - arrival time)
-  Source:                 VGA/vgacmd/hcount_reg[3]/C
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            VGA/vgacmd/addressV_reg[4]/CE
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Path Group:             clk_out1_clk_wiz_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            40.000ns  (clk_out1_clk_wiz_0 rise@40.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        4.241ns  (logic 1.061ns (25.018%)  route 3.180ns (74.982%))
-  Logic Levels:           3  (LUT3=1 LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.120ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.503ns = ( 41.503 - 40.000 ) 
-    Source Clock Delay      (SCD):    1.700ns
-    Clock Pessimism Removal (CPR):    0.077ns
-  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.182ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          1.809     1.809    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.922    -2.112 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           2.018    -0.094    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          1.698     1.700    VGA/vgacmd/clk_out1
-    SLICE_X7Y130         FDCE                                         r  VGA/vgacmd/hcount_reg[3]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X7Y130         FDCE (Prop_fdce_C_Q)         0.456     2.156 r  VGA/vgacmd/hcount_reg[3]/Q
-                         net (fo=4, routed)           0.866     3.022    VGA/vgacmd/hcount_reg_n_0_[3]
-    SLICE_X7Y130         LUT5 (Prop_lut5_I1_O)        0.154     3.176 r  VGA/vgacmd/hcount[9]_i_3/O
-                         net (fo=4, routed)           0.834     4.010    VGA/vgacmd/hcount[9]_i_3_n_0
-    SLICE_X8Y131         LUT6 (Prop_lut6_I5_O)        0.327     4.337 r  VGA/vgacmd/vcount[9]_i_1/O
-                         net (fo=12, routed)          0.763     5.100    VGA/vgacmd/vcount
-    SLICE_X7Y131         LUT3 (Prop_lut3_I2_O)        0.124     5.224 r  VGA/vgacmd/addressV[8]_i_1/O
-                         net (fo=9, routed)           0.717     5.941    VGA/vgacmd/addressV[8]_i_1_n_0
-    SLICE_X8Y129         FDCE                                         r  VGA/vgacmd/addressV_reg[4]/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                     40.000    40.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000    40.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          1.683    41.683    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.694    37.989 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.923    39.912    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    40.003 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          1.500    41.503    VGA/vgacmd/clk_out1
-    SLICE_X8Y129         FDCE                                         r  VGA/vgacmd/addressV_reg[4]/C
-                         clock pessimism              0.077    41.580    
-                         clock uncertainty           -0.098    41.482    
-    SLICE_X8Y129         FDCE (Setup_fdce_C_CE)      -0.169    41.313    VGA/vgacmd/addressV_reg[4]
-  -------------------------------------------------------------------
-                         required time                         41.313    
-                         arrival time                          -5.941    
-  -------------------------------------------------------------------
-                         slack                                 35.373    
-
-Slack (MET) :             35.759ns  (required time - arrival time)
-  Source:                 VGA/vgacmd/hcount_reg[3]/C
+Slack (MET) :             36.004ns  (required time - arrival time)
+  Source:                 VGA/vgacmd/vcount_reg[7]/C
                             (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
   Destination:            VGA/vgacmd/addressV_reg[0]/CE
                             (rising edge-triggered cell FDPE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            40.000ns  (clk_out1_clk_wiz_0 rise@40.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        3.915ns  (logic 1.061ns (27.099%)  route 2.854ns (72.901%))
-  Logic Levels:           3  (LUT3=1 LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.023ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.583ns = ( 41.583 - 40.000 ) 
-    Source Clock Delay      (SCD):    1.700ns
-    Clock Pessimism Removal (CPR):    0.094ns
+  Data Path Delay:        3.668ns  (logic 1.022ns (27.862%)  route 2.646ns (72.138%))
+  Logic Levels:           3  (LUT3=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.593ns = ( 41.593 - 40.000 ) 
+    Source Clock Delay      (SCD):    1.711ns
+    Clock Pessimism Removal (CPR):    0.093ns
   Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.182ns
@@ -759,58 +261,58 @@ Slack (MET) :             35.759ns  (required time - arrival time)
                          (clock clk_out1_clk_wiz_0 rise edge)
                                                       0.000     0.000 r  
     BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          1.809     1.809    VGA/vgaclock/inst/clk_in1
+                         net (fo=73, routed)          1.809     1.809    VGA/vgaclock/inst/clk_in1
     MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                      -3.922    -2.112 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           2.018    -0.094    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          1.698     1.700    VGA/vgacmd/clk_out1
-    SLICE_X7Y130         FDCE                                         r  VGA/vgacmd/hcount_reg[3]/C
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          1.709     1.711    VGA/vgacmd/clk_out1
+    SLICE_X2Y139         FDCE                                         r  VGA/vgacmd/vcount_reg[7]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X7Y130         FDCE (Prop_fdce_C_Q)         0.456     2.156 r  VGA/vgacmd/hcount_reg[3]/Q
-                         net (fo=4, routed)           0.866     3.022    VGA/vgacmd/hcount_reg_n_0_[3]
-    SLICE_X7Y130         LUT5 (Prop_lut5_I1_O)        0.154     3.176 r  VGA/vgacmd/hcount[9]_i_3/O
-                         net (fo=4, routed)           0.834     4.010    VGA/vgacmd/hcount[9]_i_3_n_0
-    SLICE_X8Y131         LUT6 (Prop_lut6_I5_O)        0.327     4.337 r  VGA/vgacmd/vcount[9]_i_1/O
-                         net (fo=12, routed)          0.763     5.100    VGA/vgacmd/vcount
-    SLICE_X7Y131         LUT3 (Prop_lut3_I2_O)        0.124     5.224 r  VGA/vgacmd/addressV[8]_i_1/O
-                         net (fo=9, routed)           0.391     5.615    VGA/vgacmd/addressV[8]_i_1_n_0
-    SLICE_X7Y131         FDPE                                         r  VGA/vgacmd/addressV_reg[0]/CE
+    SLICE_X2Y139         FDCE (Prop_fdce_C_Q)         0.478     2.189 r  VGA/vgacmd/vcount_reg[7]/Q
+                         net (fo=6, routed)           0.817     3.006    VGA/vgacmd/vcount_reg__0[7]
+    SLICE_X1Y139         LUT4 (Prop_lut4_I0_O)        0.296     3.302 r  VGA/vgacmd/vcount[9]_i_4/O
+                         net (fo=3, routed)           0.681     3.984    VGA/vgacmd/vcount[9]_i_4_n_0
+    SLICE_X0Y139         LUT6 (Prop_lut6_I3_O)        0.124     4.108 r  VGA/vgacmd/addressV[8]_i_3/O
+                         net (fo=1, routed)           0.597     4.705    VGA/vgacmd/addressV[8]_i_3_n_0
+    SLICE_X2Y138         LUT3 (Prop_lut3_I0_O)        0.124     4.829 r  VGA/vgacmd/addressV[8]_i_1/O
+                         net (fo=9, routed)           0.550     5.379    VGA/vgacmd/addressV[8]_i_1_n_0
+    SLICE_X1Y139         FDPE                                         r  VGA/vgacmd/addressV_reg[0]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
                                                      40.000    40.000 r  
     BUFGCTRL_X0Y16       BUFG                         0.000    40.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          1.683    41.683    VGA/vgaclock/inst/clk_in1
+                         net (fo=73, routed)          1.683    41.683    VGA/vgaclock/inst/clk_in1
     MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                      -3.694    37.989 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.923    39.912    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    40.003 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          1.580    41.583    VGA/vgacmd/clk_out1
-    SLICE_X7Y131         FDPE                                         r  VGA/vgacmd/addressV_reg[0]/C
-                         clock pessimism              0.094    41.677    
-                         clock uncertainty           -0.098    41.579    
-    SLICE_X7Y131         FDPE (Setup_fdpe_C_CE)      -0.205    41.374    VGA/vgacmd/addressV_reg[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    40.003 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          1.590    41.593    VGA/vgacmd/clk_out1
+    SLICE_X1Y139         FDPE                                         r  VGA/vgacmd/addressV_reg[0]/C
+                         clock pessimism              0.093    41.686    
+                         clock uncertainty           -0.098    41.588    
+    SLICE_X1Y139         FDPE (Setup_fdpe_C_CE)      -0.205    41.383    VGA/vgacmd/addressV_reg[0]
   -------------------------------------------------------------------
-                         required time                         41.374    
-                         arrival time                          -5.615    
+                         required time                         41.383    
+                         arrival time                          -5.379    
   -------------------------------------------------------------------
-                         slack                                 35.759    
+                         slack                                 36.004    
 
-Slack (MET) :             35.956ns  (required time - arrival time)
-  Source:                 VGA/vgacmd/vcount_reg[1]/C
+Slack (MET) :             36.011ns  (required time - arrival time)
+  Source:                 VGA/vgacmd/vcount_reg[7]/C
                             (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            VGA/vgacmd/vcount_reg[9]/D
+  Destination:            VGA/vgacmd/addressH_reg[3]/CE
                             (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            40.000ns  (clk_out1_clk_wiz_0 rise@40.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        3.659ns  (logic 1.054ns (28.809%)  route 2.605ns (71.191%))
-  Logic Levels:           3  (LUT3=1 LUT5=2)
-  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.583ns = ( 41.583 - 40.000 ) 
-    Source Clock Delay      (SCD):    1.703ns
-    Clock Pessimism Removal (CPR):    0.094ns
+  Data Path Delay:        3.598ns  (logic 0.898ns (24.960%)  route 2.700ns (75.040%))
+  Logic Levels:           2  (LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.125ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.509ns = ( 41.509 - 40.000 ) 
+    Source Clock Delay      (SCD):    1.711ns
+    Clock Pessimism Removal (CPR):    0.077ns
   Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.182ns
@@ -821,43 +323,535 @@ Slack (MET) :             35.956ns  (required time - arrival time)
                          (clock clk_out1_clk_wiz_0 rise edge)
                                                       0.000     0.000 r  
     BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          1.809     1.809    VGA/vgaclock/inst/clk_in1
+                         net (fo=73, routed)          1.809     1.809    VGA/vgaclock/inst/clk_in1
     MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                      -3.922    -2.112 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           2.018    -0.094    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          1.701     1.703    VGA/vgacmd/clk_out1
-    SLICE_X6Y132         FDCE                                         r  VGA/vgacmd/vcount_reg[1]/C
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          1.709     1.711    VGA/vgacmd/clk_out1
+    SLICE_X2Y139         FDCE                                         r  VGA/vgacmd/vcount_reg[7]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X6Y132         FDCE (Prop_fdce_C_Q)         0.478     2.181 r  VGA/vgacmd/vcount_reg[1]/Q
-                         net (fo=9, routed)           1.011     3.192    VGA/vgacmd/vcount_reg__0[1]
-    SLICE_X6Y130         LUT5 (Prop_lut5_I3_O)        0.295     3.487 f  VGA/vgacmd/vcount[8]_i_2/O
-                         net (fo=4, routed)           0.309     3.796    VGA/vgacmd/vcount[8]_i_2_n_0
-    SLICE_X7Y131         LUT5 (Prop_lut5_I4_O)        0.124     3.920 r  VGA/vgacmd/vcount[9]_i_4/O
-                         net (fo=1, routed)           0.669     4.589    VGA/vgacmd/vcount[9]_i_4_n_0
-    SLICE_X6Y131         LUT3 (Prop_lut3_I2_O)        0.157     4.746 r  VGA/vgacmd/vcount[9]_i_2/O
-                         net (fo=1, routed)           0.616     5.362    VGA/vgacmd/p_0_in[9]
-    SLICE_X6Y131         FDCE                                         r  VGA/vgacmd/vcount_reg[9]/D
+    SLICE_X2Y139         FDCE (Prop_fdce_C_Q)         0.478     2.189 f  VGA/vgacmd/vcount_reg[7]/Q
+                         net (fo=6, routed)           0.843     3.032    VGA/vgacmd/vcount_reg__0[7]
+    SLICE_X3Y139         LUT5 (Prop_lut5_I4_O)        0.296     3.328 r  VGA/vgacmd/addressH[9]_i_3/O
+                         net (fo=11, routed)          1.002     4.330    VGA/vgacmd/addressH[9]_i_3_n_0
+    SLICE_X5Y137         LUT6 (Prop_lut6_I0_O)        0.124     4.454 r  VGA/vgacmd/addressH[9]_i_1/O
+                         net (fo=10, routed)          0.854     5.309    VGA/vgacmd/addressH[9]_i_1_n_0
+    SLICE_X8Y136         FDCE                                         r  VGA/vgacmd/addressH_reg[3]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
                                                      40.000    40.000 r  
     BUFGCTRL_X0Y16       BUFG                         0.000    40.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          1.683    41.683    VGA/vgaclock/inst/clk_in1
+                         net (fo=73, routed)          1.683    41.683    VGA/vgaclock/inst/clk_in1
     MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                      -3.694    37.989 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.923    39.912    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    40.003 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          1.580    41.583    VGA/vgacmd/clk_out1
-    SLICE_X6Y131         FDCE                                         r  VGA/vgacmd/vcount_reg[9]/C
-                         clock pessimism              0.094    41.677    
-                         clock uncertainty           -0.098    41.579    
-    SLICE_X6Y131         FDCE (Setup_fdce_C_D)       -0.262    41.317    VGA/vgacmd/vcount_reg[9]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    40.003 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          1.506    41.509    VGA/vgacmd/clk_out1
+    SLICE_X8Y136         FDCE                                         r  VGA/vgacmd/addressH_reg[3]/C
+                         clock pessimism              0.077    41.586    
+                         clock uncertainty           -0.098    41.488    
+    SLICE_X8Y136         FDCE (Setup_fdce_C_CE)      -0.169    41.319    VGA/vgacmd/addressH_reg[3]
   -------------------------------------------------------------------
-                         required time                         41.317    
-                         arrival time                          -5.362    
+                         required time                         41.319    
+                         arrival time                          -5.309    
   -------------------------------------------------------------------
-                         slack                                 35.956    
+                         slack                                 36.011    
+
+Slack (MET) :             36.011ns  (required time - arrival time)
+  Source:                 VGA/vgacmd/vcount_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            VGA/vgacmd/addressH_reg[4]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            40.000ns  (clk_out1_clk_wiz_0 rise@40.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        3.598ns  (logic 0.898ns (24.960%)  route 2.700ns (75.040%))
+  Logic Levels:           2  (LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.125ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.509ns = ( 41.509 - 40.000 ) 
+    Source Clock Delay      (SCD):    1.711ns
+    Clock Pessimism Removal (CPR):    0.077ns
+  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.182ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          1.809     1.809    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.922    -2.112 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.018    -0.094    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          1.709     1.711    VGA/vgacmd/clk_out1
+    SLICE_X2Y139         FDCE                                         r  VGA/vgacmd/vcount_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X2Y139         FDCE (Prop_fdce_C_Q)         0.478     2.189 f  VGA/vgacmd/vcount_reg[7]/Q
+                         net (fo=6, routed)           0.843     3.032    VGA/vgacmd/vcount_reg__0[7]
+    SLICE_X3Y139         LUT5 (Prop_lut5_I4_O)        0.296     3.328 r  VGA/vgacmd/addressH[9]_i_3/O
+                         net (fo=11, routed)          1.002     4.330    VGA/vgacmd/addressH[9]_i_3_n_0
+    SLICE_X5Y137         LUT6 (Prop_lut6_I0_O)        0.124     4.454 r  VGA/vgacmd/addressH[9]_i_1/O
+                         net (fo=10, routed)          0.854     5.309    VGA/vgacmd/addressH[9]_i_1_n_0
+    SLICE_X8Y136         FDCE                                         r  VGA/vgacmd/addressH_reg[4]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     40.000    40.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000    40.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          1.683    41.683    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.694    37.989 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.923    39.912    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    40.003 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          1.506    41.509    VGA/vgacmd/clk_out1
+    SLICE_X8Y136         FDCE                                         r  VGA/vgacmd/addressH_reg[4]/C
+                         clock pessimism              0.077    41.586    
+                         clock uncertainty           -0.098    41.488    
+    SLICE_X8Y136         FDCE (Setup_fdce_C_CE)      -0.169    41.319    VGA/vgacmd/addressH_reg[4]
+  -------------------------------------------------------------------
+                         required time                         41.319    
+                         arrival time                          -5.309    
+  -------------------------------------------------------------------
+                         slack                                 36.011    
+
+Slack (MET) :             36.022ns  (required time - arrival time)
+  Source:                 VGA/vgacmd/vcount_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            VGA/vgacmd/addressV_reg[5]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            40.000ns  (clk_out1_clk_wiz_0 rise@40.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        3.632ns  (logic 1.022ns (28.141%)  route 2.610ns (71.859%))
+  Logic Levels:           3  (LUT3=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.044ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.590ns = ( 41.590 - 40.000 ) 
+    Source Clock Delay      (SCD):    1.711ns
+    Clock Pessimism Removal (CPR):    0.077ns
+  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.182ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          1.809     1.809    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.922    -2.112 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.018    -0.094    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          1.709     1.711    VGA/vgacmd/clk_out1
+    SLICE_X2Y139         FDCE                                         r  VGA/vgacmd/vcount_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X2Y139         FDCE (Prop_fdce_C_Q)         0.478     2.189 r  VGA/vgacmd/vcount_reg[7]/Q
+                         net (fo=6, routed)           0.817     3.006    VGA/vgacmd/vcount_reg__0[7]
+    SLICE_X1Y139         LUT4 (Prop_lut4_I0_O)        0.296     3.302 r  VGA/vgacmd/vcount[9]_i_4/O
+                         net (fo=3, routed)           0.681     3.984    VGA/vgacmd/vcount[9]_i_4_n_0
+    SLICE_X0Y139         LUT6 (Prop_lut6_I3_O)        0.124     4.108 r  VGA/vgacmd/addressV[8]_i_3/O
+                         net (fo=1, routed)           0.597     4.705    VGA/vgacmd/addressV[8]_i_3_n_0
+    SLICE_X2Y138         LUT3 (Prop_lut3_I0_O)        0.124     4.829 r  VGA/vgacmd/addressV[8]_i_1/O
+                         net (fo=9, routed)           0.514     5.343    VGA/vgacmd/addressV[8]_i_1_n_0
+    SLICE_X5Y138         FDCE                                         r  VGA/vgacmd/addressV_reg[5]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     40.000    40.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000    40.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          1.683    41.683    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.694    37.989 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.923    39.912    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    40.003 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          1.587    41.590    VGA/vgacmd/clk_out1
+    SLICE_X5Y138         FDCE                                         r  VGA/vgacmd/addressV_reg[5]/C
+                         clock pessimism              0.077    41.667    
+                         clock uncertainty           -0.098    41.569    
+    SLICE_X5Y138         FDCE (Setup_fdce_C_CE)      -0.205    41.364    VGA/vgacmd/addressV_reg[5]
+  -------------------------------------------------------------------
+                         required time                         41.364    
+                         arrival time                          -5.343    
+  -------------------------------------------------------------------
+                         slack                                 36.022    
+
+Slack (MET) :             36.022ns  (required time - arrival time)
+  Source:                 VGA/vgacmd/vcount_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            VGA/vgacmd/addressV_reg[6]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            40.000ns  (clk_out1_clk_wiz_0 rise@40.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        3.632ns  (logic 1.022ns (28.141%)  route 2.610ns (71.859%))
+  Logic Levels:           3  (LUT3=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.044ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.590ns = ( 41.590 - 40.000 ) 
+    Source Clock Delay      (SCD):    1.711ns
+    Clock Pessimism Removal (CPR):    0.077ns
+  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.182ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          1.809     1.809    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.922    -2.112 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.018    -0.094    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          1.709     1.711    VGA/vgacmd/clk_out1
+    SLICE_X2Y139         FDCE                                         r  VGA/vgacmd/vcount_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X2Y139         FDCE (Prop_fdce_C_Q)         0.478     2.189 r  VGA/vgacmd/vcount_reg[7]/Q
+                         net (fo=6, routed)           0.817     3.006    VGA/vgacmd/vcount_reg__0[7]
+    SLICE_X1Y139         LUT4 (Prop_lut4_I0_O)        0.296     3.302 r  VGA/vgacmd/vcount[9]_i_4/O
+                         net (fo=3, routed)           0.681     3.984    VGA/vgacmd/vcount[9]_i_4_n_0
+    SLICE_X0Y139         LUT6 (Prop_lut6_I3_O)        0.124     4.108 r  VGA/vgacmd/addressV[8]_i_3/O
+                         net (fo=1, routed)           0.597     4.705    VGA/vgacmd/addressV[8]_i_3_n_0
+    SLICE_X2Y138         LUT3 (Prop_lut3_I0_O)        0.124     4.829 r  VGA/vgacmd/addressV[8]_i_1/O
+                         net (fo=9, routed)           0.514     5.343    VGA/vgacmd/addressV[8]_i_1_n_0
+    SLICE_X5Y138         FDCE                                         r  VGA/vgacmd/addressV_reg[6]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     40.000    40.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000    40.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          1.683    41.683    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.694    37.989 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.923    39.912    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    40.003 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          1.587    41.590    VGA/vgacmd/clk_out1
+    SLICE_X5Y138         FDCE                                         r  VGA/vgacmd/addressV_reg[6]/C
+                         clock pessimism              0.077    41.667    
+                         clock uncertainty           -0.098    41.569    
+    SLICE_X5Y138         FDCE (Setup_fdce_C_CE)      -0.205    41.364    VGA/vgacmd/addressV_reg[6]
+  -------------------------------------------------------------------
+                         required time                         41.364    
+                         arrival time                          -5.343    
+  -------------------------------------------------------------------
+                         slack                                 36.022    
+
+Slack (MET) :             36.022ns  (required time - arrival time)
+  Source:                 VGA/vgacmd/vcount_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            VGA/vgacmd/addressV_reg[7]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            40.000ns  (clk_out1_clk_wiz_0 rise@40.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        3.632ns  (logic 1.022ns (28.141%)  route 2.610ns (71.859%))
+  Logic Levels:           3  (LUT3=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.044ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.590ns = ( 41.590 - 40.000 ) 
+    Source Clock Delay      (SCD):    1.711ns
+    Clock Pessimism Removal (CPR):    0.077ns
+  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.182ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          1.809     1.809    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.922    -2.112 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.018    -0.094    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          1.709     1.711    VGA/vgacmd/clk_out1
+    SLICE_X2Y139         FDCE                                         r  VGA/vgacmd/vcount_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X2Y139         FDCE (Prop_fdce_C_Q)         0.478     2.189 r  VGA/vgacmd/vcount_reg[7]/Q
+                         net (fo=6, routed)           0.817     3.006    VGA/vgacmd/vcount_reg__0[7]
+    SLICE_X1Y139         LUT4 (Prop_lut4_I0_O)        0.296     3.302 r  VGA/vgacmd/vcount[9]_i_4/O
+                         net (fo=3, routed)           0.681     3.984    VGA/vgacmd/vcount[9]_i_4_n_0
+    SLICE_X0Y139         LUT6 (Prop_lut6_I3_O)        0.124     4.108 r  VGA/vgacmd/addressV[8]_i_3/O
+                         net (fo=1, routed)           0.597     4.705    VGA/vgacmd/addressV[8]_i_3_n_0
+    SLICE_X2Y138         LUT3 (Prop_lut3_I0_O)        0.124     4.829 r  VGA/vgacmd/addressV[8]_i_1/O
+                         net (fo=9, routed)           0.514     5.343    VGA/vgacmd/addressV[8]_i_1_n_0
+    SLICE_X5Y138         FDCE                                         r  VGA/vgacmd/addressV_reg[7]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     40.000    40.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000    40.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          1.683    41.683    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.694    37.989 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.923    39.912    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    40.003 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          1.587    41.590    VGA/vgacmd/clk_out1
+    SLICE_X5Y138         FDCE                                         r  VGA/vgacmd/addressV_reg[7]/C
+                         clock pessimism              0.077    41.667    
+                         clock uncertainty           -0.098    41.569    
+    SLICE_X5Y138         FDCE (Setup_fdce_C_CE)      -0.205    41.364    VGA/vgacmd/addressV_reg[7]
+  -------------------------------------------------------------------
+                         required time                         41.364    
+                         arrival time                          -5.343    
+  -------------------------------------------------------------------
+                         slack                                 36.022    
+
+Slack (MET) :             36.022ns  (required time - arrival time)
+  Source:                 VGA/vgacmd/vcount_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            VGA/vgacmd/addressV_reg[8]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            40.000ns  (clk_out1_clk_wiz_0 rise@40.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        3.632ns  (logic 1.022ns (28.141%)  route 2.610ns (71.859%))
+  Logic Levels:           3  (LUT3=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.044ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.590ns = ( 41.590 - 40.000 ) 
+    Source Clock Delay      (SCD):    1.711ns
+    Clock Pessimism Removal (CPR):    0.077ns
+  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.182ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          1.809     1.809    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.922    -2.112 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.018    -0.094    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          1.709     1.711    VGA/vgacmd/clk_out1
+    SLICE_X2Y139         FDCE                                         r  VGA/vgacmd/vcount_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X2Y139         FDCE (Prop_fdce_C_Q)         0.478     2.189 r  VGA/vgacmd/vcount_reg[7]/Q
+                         net (fo=6, routed)           0.817     3.006    VGA/vgacmd/vcount_reg__0[7]
+    SLICE_X1Y139         LUT4 (Prop_lut4_I0_O)        0.296     3.302 r  VGA/vgacmd/vcount[9]_i_4/O
+                         net (fo=3, routed)           0.681     3.984    VGA/vgacmd/vcount[9]_i_4_n_0
+    SLICE_X0Y139         LUT6 (Prop_lut6_I3_O)        0.124     4.108 r  VGA/vgacmd/addressV[8]_i_3/O
+                         net (fo=1, routed)           0.597     4.705    VGA/vgacmd/addressV[8]_i_3_n_0
+    SLICE_X2Y138         LUT3 (Prop_lut3_I0_O)        0.124     4.829 r  VGA/vgacmd/addressV[8]_i_1/O
+                         net (fo=9, routed)           0.514     5.343    VGA/vgacmd/addressV[8]_i_1_n_0
+    SLICE_X5Y138         FDCE                                         r  VGA/vgacmd/addressV_reg[8]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     40.000    40.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000    40.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          1.683    41.683    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.694    37.989 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.923    39.912    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    40.003 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          1.587    41.590    VGA/vgacmd/clk_out1
+    SLICE_X5Y138         FDCE                                         r  VGA/vgacmd/addressV_reg[8]/C
+                         clock pessimism              0.077    41.667    
+                         clock uncertainty           -0.098    41.569    
+    SLICE_X5Y138         FDCE (Setup_fdce_C_CE)      -0.205    41.364    VGA/vgacmd/addressV_reg[8]
+  -------------------------------------------------------------------
+                         required time                         41.364    
+                         arrival time                          -5.343    
+  -------------------------------------------------------------------
+                         slack                                 36.022    
+
+Slack (MET) :             36.062ns  (required time - arrival time)
+  Source:                 VGA/vgacmd/vcount_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            VGA/vgacmd/addressV_reg[1]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            40.000ns  (clk_out1_clk_wiz_0 rise@40.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        3.627ns  (logic 1.022ns (28.181%)  route 2.605ns (71.819%))
+  Logic Levels:           3  (LUT3=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.045ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.589ns = ( 41.589 - 40.000 ) 
+    Source Clock Delay      (SCD):    1.711ns
+    Clock Pessimism Removal (CPR):    0.077ns
+  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.182ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          1.809     1.809    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.922    -2.112 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.018    -0.094    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          1.709     1.711    VGA/vgacmd/clk_out1
+    SLICE_X2Y139         FDCE                                         r  VGA/vgacmd/vcount_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X2Y139         FDCE (Prop_fdce_C_Q)         0.478     2.189 r  VGA/vgacmd/vcount_reg[7]/Q
+                         net (fo=6, routed)           0.817     3.006    VGA/vgacmd/vcount_reg__0[7]
+    SLICE_X1Y139         LUT4 (Prop_lut4_I0_O)        0.296     3.302 r  VGA/vgacmd/vcount[9]_i_4/O
+                         net (fo=3, routed)           0.681     3.984    VGA/vgacmd/vcount[9]_i_4_n_0
+    SLICE_X0Y139         LUT6 (Prop_lut6_I3_O)        0.124     4.108 r  VGA/vgacmd/addressV[8]_i_3/O
+                         net (fo=1, routed)           0.597     4.705    VGA/vgacmd/addressV[8]_i_3_n_0
+    SLICE_X2Y138         LUT3 (Prop_lut3_I0_O)        0.124     4.829 r  VGA/vgacmd/addressV[8]_i_1/O
+                         net (fo=9, routed)           0.509     5.338    VGA/vgacmd/addressV[8]_i_1_n_0
+    SLICE_X6Y137         FDCE                                         r  VGA/vgacmd/addressV_reg[1]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     40.000    40.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000    40.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          1.683    41.683    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.694    37.989 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.923    39.912    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    40.003 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          1.586    41.589    VGA/vgacmd/clk_out1
+    SLICE_X6Y137         FDCE                                         r  VGA/vgacmd/addressV_reg[1]/C
+                         clock pessimism              0.077    41.666    
+                         clock uncertainty           -0.098    41.568    
+    SLICE_X6Y137         FDCE (Setup_fdce_C_CE)      -0.169    41.399    VGA/vgacmd/addressV_reg[1]
+  -------------------------------------------------------------------
+                         required time                         41.399    
+                         arrival time                          -5.338    
+  -------------------------------------------------------------------
+                         slack                                 36.062    
+
+Slack (MET) :             36.062ns  (required time - arrival time)
+  Source:                 VGA/vgacmd/vcount_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            VGA/vgacmd/addressV_reg[2]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            40.000ns  (clk_out1_clk_wiz_0 rise@40.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        3.627ns  (logic 1.022ns (28.181%)  route 2.605ns (71.819%))
+  Logic Levels:           3  (LUT3=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.045ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.589ns = ( 41.589 - 40.000 ) 
+    Source Clock Delay      (SCD):    1.711ns
+    Clock Pessimism Removal (CPR):    0.077ns
+  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.182ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          1.809     1.809    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.922    -2.112 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.018    -0.094    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          1.709     1.711    VGA/vgacmd/clk_out1
+    SLICE_X2Y139         FDCE                                         r  VGA/vgacmd/vcount_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X2Y139         FDCE (Prop_fdce_C_Q)         0.478     2.189 r  VGA/vgacmd/vcount_reg[7]/Q
+                         net (fo=6, routed)           0.817     3.006    VGA/vgacmd/vcount_reg__0[7]
+    SLICE_X1Y139         LUT4 (Prop_lut4_I0_O)        0.296     3.302 r  VGA/vgacmd/vcount[9]_i_4/O
+                         net (fo=3, routed)           0.681     3.984    VGA/vgacmd/vcount[9]_i_4_n_0
+    SLICE_X0Y139         LUT6 (Prop_lut6_I3_O)        0.124     4.108 r  VGA/vgacmd/addressV[8]_i_3/O
+                         net (fo=1, routed)           0.597     4.705    VGA/vgacmd/addressV[8]_i_3_n_0
+    SLICE_X2Y138         LUT3 (Prop_lut3_I0_O)        0.124     4.829 r  VGA/vgacmd/addressV[8]_i_1/O
+                         net (fo=9, routed)           0.509     5.338    VGA/vgacmd/addressV[8]_i_1_n_0
+    SLICE_X6Y137         FDCE                                         r  VGA/vgacmd/addressV_reg[2]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     40.000    40.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000    40.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          1.683    41.683    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.694    37.989 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.923    39.912    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    40.003 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          1.586    41.589    VGA/vgacmd/clk_out1
+    SLICE_X6Y137         FDCE                                         r  VGA/vgacmd/addressV_reg[2]/C
+                         clock pessimism              0.077    41.666    
+                         clock uncertainty           -0.098    41.568    
+    SLICE_X6Y137         FDCE (Setup_fdce_C_CE)      -0.169    41.399    VGA/vgacmd/addressV_reg[2]
+  -------------------------------------------------------------------
+                         required time                         41.399    
+                         arrival time                          -5.338    
+  -------------------------------------------------------------------
+                         slack                                 36.062    
+
+Slack (MET) :             36.062ns  (required time - arrival time)
+  Source:                 VGA/vgacmd/vcount_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            VGA/vgacmd/addressV_reg[3]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            40.000ns  (clk_out1_clk_wiz_0 rise@40.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        3.627ns  (logic 1.022ns (28.181%)  route 2.605ns (71.819%))
+  Logic Levels:           3  (LUT3=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.045ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.589ns = ( 41.589 - 40.000 ) 
+    Source Clock Delay      (SCD):    1.711ns
+    Clock Pessimism Removal (CPR):    0.077ns
+  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.182ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          1.809     1.809    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.922    -2.112 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.018    -0.094    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          1.709     1.711    VGA/vgacmd/clk_out1
+    SLICE_X2Y139         FDCE                                         r  VGA/vgacmd/vcount_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X2Y139         FDCE (Prop_fdce_C_Q)         0.478     2.189 r  VGA/vgacmd/vcount_reg[7]/Q
+                         net (fo=6, routed)           0.817     3.006    VGA/vgacmd/vcount_reg__0[7]
+    SLICE_X1Y139         LUT4 (Prop_lut4_I0_O)        0.296     3.302 r  VGA/vgacmd/vcount[9]_i_4/O
+                         net (fo=3, routed)           0.681     3.984    VGA/vgacmd/vcount[9]_i_4_n_0
+    SLICE_X0Y139         LUT6 (Prop_lut6_I3_O)        0.124     4.108 r  VGA/vgacmd/addressV[8]_i_3/O
+                         net (fo=1, routed)           0.597     4.705    VGA/vgacmd/addressV[8]_i_3_n_0
+    SLICE_X2Y138         LUT3 (Prop_lut3_I0_O)        0.124     4.829 r  VGA/vgacmd/addressV[8]_i_1/O
+                         net (fo=9, routed)           0.509     5.338    VGA/vgacmd/addressV[8]_i_1_n_0
+    SLICE_X6Y137         FDCE                                         r  VGA/vgacmd/addressV_reg[3]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     40.000    40.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000    40.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          1.683    41.683    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.694    37.989 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.923    39.912    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    40.003 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          1.586    41.589    VGA/vgacmd/clk_out1
+    SLICE_X6Y137         FDCE                                         r  VGA/vgacmd/addressV_reg[3]/C
+                         clock pessimism              0.077    41.666    
+                         clock uncertainty           -0.098    41.568    
+    SLICE_X6Y137         FDCE (Setup_fdce_C_CE)      -0.169    41.399    VGA/vgacmd/addressV_reg[3]
+  -------------------------------------------------------------------
+                         required time                         41.399    
+                         arrival time                          -5.338    
+  -------------------------------------------------------------------
+                         slack                                 36.062    
 
 
 
@@ -865,125 +859,72 @@ Slack (MET) :             35.956ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.187ns  (arrival time - required time)
-  Source:                 VGA/vgacmd/addressH_reg[0]/C
+Slack (MET) :             0.215ns  (arrival time - required time)
+  Source:                 VGA/vgacmd/addressH_reg[3]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            VGA/vgacmd/addressH_reg[4]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.335ns  (logic 0.246ns (73.470%)  route 0.089ns (26.530%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.838ns
+    Source Clock Delay      (SCD):    0.569ns
+    Clock Pessimism Removal (CPR):    0.270ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          0.624     0.624    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.296    -0.672 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.648    -0.024    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          0.567     0.569    VGA/vgacmd/clk_out1
+    SLICE_X8Y136         FDCE                                         r  VGA/vgacmd/addressH_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X8Y136         FDCE (Prop_fdce_C_Q)         0.148     0.717 r  VGA/vgacmd/addressH_reg[3]/Q
+                         net (fo=5, routed)           0.089     0.806    VGA/vgacmd/Q[0]
+    SLICE_X8Y136         LUT6 (Prop_lut6_I4_O)        0.098     0.904 r  VGA/vgacmd/addressH[4]_i_1/O
+                         net (fo=1, routed)           0.000     0.904    VGA/vgacmd/p_0_in[4]
+    SLICE_X8Y136         FDCE                                         r  VGA/vgacmd/addressH_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          0.898     0.898    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.625    -0.727 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.700    -0.027    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          0.836     0.838    VGA/vgacmd/clk_out1
+    SLICE_X8Y136         FDCE                                         r  VGA/vgacmd/addressH_reg[4]/C
+                         clock pessimism             -0.270     0.569    
+    SLICE_X8Y136         FDCE (Hold_fdce_C_D)         0.120     0.689    VGA/vgacmd/addressH_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -0.689    
+                         arrival time                           0.904    
+  -------------------------------------------------------------------
+                         slack                                  0.215    
+
+Slack (MET) :             0.221ns  (arrival time - required time)
+  Source:                 VGA/vgacmd/hcount_reg[7]/C
                             (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
   Destination:            VGA/vgacmd/addressH_reg[2]/D
                             (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        0.320ns  (logic 0.186ns (58.201%)  route 0.134ns (41.799%))
+  Data Path Delay:        0.357ns  (logic 0.186ns (52.094%)  route 0.171ns (47.906%))
   Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.836ns
-    Source Clock Delay      (SCD):    0.567ns
-    Clock Pessimism Removal (CPR):    0.256ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          0.624     0.624    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -1.296    -0.672 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.648    -0.024    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          0.565     0.567    VGA/vgacmd/clk_out1
-    SLICE_X11Y132        FDCE                                         r  VGA/vgacmd/addressH_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X11Y132        FDCE (Prop_fdce_C_Q)         0.141     0.708 r  VGA/vgacmd/addressH_reg[0]/Q
-                         net (fo=25, routed)          0.134     0.841    VGA/vgacmd/debug[0]
-    SLICE_X10Y132        LUT6 (Prop_lut6_I3_O)        0.045     0.886 r  VGA/vgacmd/addressH[2]_i_1/O
-                         net (fo=1, routed)           0.000     0.886    VGA/vgacmd/p_0_in__0[2]
-    SLICE_X10Y132        FDCE                                         r  VGA/vgacmd/addressH_reg[2]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          0.898     0.898    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -1.625    -0.727 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.700    -0.027    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          0.833     0.835    VGA/vgacmd/clk_out1
-    SLICE_X10Y132        FDCE                                         r  VGA/vgacmd/addressH_reg[2]/C
-                         clock pessimism             -0.256     0.580    
-    SLICE_X10Y132        FDCE (Hold_fdce_C_D)         0.120     0.700    VGA/vgacmd/addressH_reg[2]
-  -------------------------------------------------------------------
-                         required time                         -0.700    
-                         arrival time                           0.886    
-  -------------------------------------------------------------------
-                         slack                                  0.187    
-
-Slack (MET) :             0.200ns  (arrival time - required time)
-  Source:                 VGA/vgacmd/vcount_reg[8]/C
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            VGA/vgacmd/addressV_reg[0]/D
-                            (rising edge-triggered cell FDPE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Path Group:             clk_out1_clk_wiz_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        0.304ns  (logic 0.209ns (68.679%)  route 0.095ns (31.321%))
-  Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.862ns
-    Source Clock Delay      (SCD):    0.594ns
-    Clock Pessimism Removal (CPR):    0.256ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          0.624     0.624    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -1.296    -0.672 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.648    -0.024    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          0.592     0.594    VGA/vgacmd/clk_out1
-    SLICE_X6Y131         FDCE                                         r  VGA/vgacmd/vcount_reg[8]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X6Y131         FDCE (Prop_fdce_C_Q)         0.164     0.758 r  VGA/vgacmd/vcount_reg[8]/Q
-                         net (fo=6, routed)           0.095     0.853    VGA/vgacmd/vcount_reg__0[8]
-    SLICE_X7Y131         LUT6 (Prop_lut6_I3_O)        0.045     0.898 r  VGA/vgacmd/addressV[0]_i_1/O
-                         net (fo=1, routed)           0.000     0.898    VGA/vgacmd/p_0_in__1[0]
-    SLICE_X7Y131         FDPE                                         r  VGA/vgacmd/addressV_reg[0]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          0.898     0.898    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -1.625    -0.727 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.700    -0.027    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          0.860     0.862    VGA/vgacmd/clk_out1
-    SLICE_X7Y131         FDPE                                         r  VGA/vgacmd/addressV_reg[0]/C
-                         clock pessimism             -0.256     0.607    
-    SLICE_X7Y131         FDPE (Hold_fdpe_C_D)         0.091     0.698    VGA/vgacmd/addressV_reg[0]
-  -------------------------------------------------------------------
-                         required time                         -0.698    
-                         arrival time                           0.898    
-  -------------------------------------------------------------------
-                         slack                                  0.200    
-
-Slack (MET) :             0.208ns  (arrival time - required time)
-  Source:                 VGA/vgacmd/addressV_reg[1]/C
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            VGA/vgacmd/addressV_reg[4]/D
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Path Group:             clk_out1_clk_wiz_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        0.342ns  (logic 0.186ns (54.377%)  route 0.156ns (45.623%))
-  Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.833ns
-    Source Clock Delay      (SCD):    0.565ns
+  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.866ns
+    Source Clock Delay      (SCD):    0.597ns
     Clock Pessimism Removal (CPR):    0.255ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -991,93 +932,40 @@ Slack (MET) :             0.208ns  (arrival time - required time)
                          (clock clk_out1_clk_wiz_0 rise edge)
                                                       0.000     0.000 r  
     BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          0.624     0.624    VGA/vgaclock/inst/clk_in1
+                         net (fo=73, routed)          0.624     0.624    VGA/vgaclock/inst/clk_in1
     MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                      -1.296    -0.672 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.648    -0.024    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          0.563     0.565    VGA/vgacmd/clk_out1
-    SLICE_X9Y130         FDCE                                         r  VGA/vgacmd/addressV_reg[1]/C
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          0.595     0.597    VGA/vgacmd/clk_out1
+    SLICE_X5Y136         FDCE                                         r  VGA/vgacmd/hcount_reg[7]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X9Y130         FDCE (Prop_fdce_C_Q)         0.141     0.706 r  VGA/vgacmd/addressV_reg[1]/Q
-                         net (fo=8, routed)           0.156     0.862    VGA/vgacmd/debug[4]
-    SLICE_X8Y129         LUT6 (Prop_lut6_I3_O)        0.045     0.907 r  VGA/vgacmd/addressV[4]_i_1/O
-                         net (fo=1, routed)           0.000     0.907    VGA/vgacmd/p_0_in__1[4]
-    SLICE_X8Y129         FDCE                                         r  VGA/vgacmd/addressV_reg[4]/D
+    SLICE_X5Y136         FDCE (Prop_fdce_C_Q)         0.141     0.738 f  VGA/vgacmd/hcount_reg[7]/Q
+                         net (fo=15, routed)          0.171     0.909    VGA/vgacmd/hcount_reg_n_0_[7]
+    SLICE_X6Y136         LUT6 (Prop_lut6_I1_O)        0.045     0.954 r  VGA/vgacmd/addressH[2]_i_1/O
+                         net (fo=1, routed)           0.000     0.954    VGA/vgacmd/p_0_in[2]
+    SLICE_X6Y136         FDCE                                         r  VGA/vgacmd/addressH_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
                                                       0.000     0.000 r  
     BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          0.898     0.898    VGA/vgaclock/inst/clk_in1
+                         net (fo=73, routed)          0.898     0.898    VGA/vgaclock/inst/clk_in1
     MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                      -1.625    -0.727 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.700    -0.027    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          0.831     0.832    VGA/vgacmd/clk_out1
-    SLICE_X8Y129         FDCE                                         r  VGA/vgacmd/addressV_reg[4]/C
-                         clock pessimism             -0.255     0.578    
-    SLICE_X8Y129         FDCE (Hold_fdce_C_D)         0.121     0.699    VGA/vgacmd/addressV_reg[4]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          0.864     0.866    VGA/vgacmd/clk_out1
+    SLICE_X6Y136         FDCE                                         r  VGA/vgacmd/addressH_reg[2]/C
+                         clock pessimism             -0.255     0.612    
+    SLICE_X6Y136         FDCE (Hold_fdce_C_D)         0.121     0.733    VGA/vgacmd/addressH_reg[2]
   -------------------------------------------------------------------
-                         required time                         -0.699    
-                         arrival time                           0.907    
+                         required time                         -0.733    
+                         arrival time                           0.954    
   -------------------------------------------------------------------
-                         slack                                  0.208    
+                         slack                                  0.221    
 
-Slack (MET) :             0.234ns  (arrival time - required time)
-  Source:                 VGA/vgacmd/addressH_reg[2]/C
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            VGA/vgacmd/addressH_reg[4]/D
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Path Group:             clk_out1_clk_wiz_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        0.339ns  (logic 0.209ns (61.717%)  route 0.130ns (38.283%))
-  Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.836ns
-    Source Clock Delay      (SCD):    0.567ns
-    Clock Pessimism Removal (CPR):    0.256ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          0.624     0.624    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -1.296    -0.672 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.648    -0.024    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          0.565     0.567    VGA/vgacmd/clk_out1
-    SLICE_X10Y132        FDCE                                         r  VGA/vgacmd/addressH_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X10Y132        FDCE (Prop_fdce_C_Q)         0.164     0.731 r  VGA/vgacmd/addressH_reg[2]/Q
-                         net (fo=15, routed)          0.130     0.860    VGA/vgacmd/debug[2]
-    SLICE_X11Y132        LUT6 (Prop_lut6_I3_O)        0.045     0.905 r  VGA/vgacmd/addressH[4]_i_1/O
-                         net (fo=1, routed)           0.000     0.905    VGA/vgacmd/p_0_in__0[4]
-    SLICE_X11Y132        FDCE                                         r  VGA/vgacmd/addressH_reg[4]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          0.898     0.898    VGA/vgaclock/inst/clk_in1
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -1.625    -0.727 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.700    -0.027    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          0.833     0.835    VGA/vgacmd/clk_out1
-    SLICE_X11Y132        FDCE                                         r  VGA/vgacmd/addressH_reg[4]/C
-                         clock pessimism             -0.256     0.580    
-    SLICE_X11Y132        FDCE (Hold_fdce_C_D)         0.092     0.672    VGA/vgacmd/addressH_reg[4]
-  -------------------------------------------------------------------
-                         required time                         -0.672    
-                         arrival time                           0.905    
-  -------------------------------------------------------------------
-                         slack                                  0.234    
-
-Slack (MET) :             0.234ns  (arrival time - required time)
+Slack (MET) :             0.228ns  (arrival time - required time)
   Source:                 VGA/vgacmd/addressH_reg[6]/C
                             (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
   Destination:            VGA/vgacmd/addressH_reg[9]/D
@@ -1085,52 +973,158 @@ Slack (MET) :             0.234ns  (arrival time - required time)
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        0.326ns  (logic 0.227ns (69.565%)  route 0.099ns (30.435%))
+  Data Path Delay:        0.349ns  (logic 0.246ns (70.537%)  route 0.103ns (29.463%))
   Logic Levels:           1  (LUT6=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.835ns
-    Source Clock Delay      (SCD):    0.566ns
-    Clock Pessimism Removal (CPR):    0.269ns
+    Destination Clock Delay (DCD):    0.866ns
+    Source Clock Delay      (SCD):    0.597ns
+    Clock Pessimism Removal (CPR):    0.270ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
                          (clock clk_out1_clk_wiz_0 rise edge)
                                                       0.000     0.000 r  
     BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          0.624     0.624    VGA/vgaclock/inst/clk_in1
+                         net (fo=73, routed)          0.624     0.624    VGA/vgaclock/inst/clk_in1
     MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                      -1.296    -0.672 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.648    -0.024    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          0.564     0.566    VGA/vgacmd/clk_out1
-    SLICE_X11Y131        FDCE                                         r  VGA/vgacmd/addressH_reg[6]/C
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          0.595     0.597    VGA/vgacmd/clk_out1
+    SLICE_X6Y136         FDCE                                         r  VGA/vgacmd/addressH_reg[6]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X11Y131        FDCE (Prop_fdce_C_Q)         0.128     0.694 r  VGA/vgacmd/addressH_reg[6]/Q
-                         net (fo=5, routed)           0.099     0.793    VGA/vgacmd/Q[3]
-    SLICE_X11Y131        LUT6 (Prop_lut6_I1_O)        0.099     0.892 r  VGA/vgacmd/addressH[9]_i_2/O
-                         net (fo=1, routed)           0.000     0.892    VGA/vgacmd/addressH[9]_i_2_n_0
-    SLICE_X11Y131        FDCE                                         r  VGA/vgacmd/addressH_reg[9]/D
+    SLICE_X6Y136         FDCE (Prop_fdce_C_Q)         0.148     0.745 r  VGA/vgacmd/addressH_reg[6]/Q
+                         net (fo=5, routed)           0.103     0.847    VGA/vgacmd/Q[3]
+    SLICE_X6Y136         LUT6 (Prop_lut6_I1_O)        0.098     0.945 r  VGA/vgacmd/addressH[9]_i_2/O
+                         net (fo=1, routed)           0.000     0.945    VGA/vgacmd/addressH[9]_i_2_n_0
+    SLICE_X6Y136         FDCE                                         r  VGA/vgacmd/addressH_reg[9]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
                                                       0.000     0.000 r  
     BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          0.898     0.898    VGA/vgaclock/inst/clk_in1
+                         net (fo=73, routed)          0.898     0.898    VGA/vgaclock/inst/clk_in1
     MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                      -1.625    -0.727 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.700    -0.027    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          0.833     0.835    VGA/vgacmd/clk_out1
-    SLICE_X11Y131        FDCE                                         r  VGA/vgacmd/addressH_reg[9]/C
-                         clock pessimism             -0.269     0.566    
-    SLICE_X11Y131        FDCE (Hold_fdce_C_D)         0.092     0.658    VGA/vgacmd/addressH_reg[9]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          0.864     0.866    VGA/vgacmd/clk_out1
+    SLICE_X6Y136         FDCE                                         r  VGA/vgacmd/addressH_reg[9]/C
+                         clock pessimism             -0.270     0.597    
+    SLICE_X6Y136         FDCE (Hold_fdce_C_D)         0.121     0.718    VGA/vgacmd/addressH_reg[9]
   -------------------------------------------------------------------
-                         required time                         -0.658    
-                         arrival time                           0.892    
+                         required time                         -0.718    
+                         arrival time                           0.945    
   -------------------------------------------------------------------
-                         slack                                  0.234    
+                         slack                                  0.228    
 
-Slack (MET) :             0.241ns  (arrival time - required time)
+Slack (MET) :             0.229ns  (arrival time - required time)
+  Source:                 VGA/vgacmd/vcount_reg[8]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            VGA/vgacmd/addressV_reg[0]/D
+                            (rising edge-triggered cell FDPE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.336ns  (logic 0.209ns (62.119%)  route 0.127ns (37.881%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.873ns
+    Source Clock Delay      (SCD):    0.600ns
+    Clock Pessimism Removal (CPR):    0.257ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          0.624     0.624    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.296    -0.672 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.648    -0.024    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          0.598     0.600    VGA/vgacmd/clk_out1
+    SLICE_X2Y139         FDCE                                         r  VGA/vgacmd/vcount_reg[8]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X2Y139         FDCE (Prop_fdce_C_Q)         0.164     0.764 r  VGA/vgacmd/vcount_reg[8]/Q
+                         net (fo=5, routed)           0.127     0.891    VGA/vgacmd/vcount_reg__0[8]
+    SLICE_X1Y139         LUT6 (Prop_lut6_I3_O)        0.045     0.936 r  VGA/vgacmd/addressV[0]_i_1/O
+                         net (fo=1, routed)           0.000     0.936    VGA/vgacmd/p_0_in__1[0]
+    SLICE_X1Y139         FDPE                                         r  VGA/vgacmd/addressV_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          0.898     0.898    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.625    -0.727 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.700    -0.027    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          0.871     0.873    VGA/vgacmd/clk_out1
+    SLICE_X1Y139         FDPE                                         r  VGA/vgacmd/addressV_reg[0]/C
+                         clock pessimism             -0.257     0.616    
+    SLICE_X1Y139         FDPE (Hold_fdpe_C_D)         0.091     0.707    VGA/vgacmd/addressV_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -0.707    
+                         arrival time                           0.936    
+  -------------------------------------------------------------------
+                         slack                                  0.229    
+
+Slack (MET) :             0.231ns  (arrival time - required time)
+  Source:                 VGA/vgacmd/addressH_reg[6]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            VGA/vgacmd/addressH_reg[7]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.351ns  (logic 0.246ns (70.135%)  route 0.105ns (29.865%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.866ns
+    Source Clock Delay      (SCD):    0.597ns
+    Clock Pessimism Removal (CPR):    0.270ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          0.624     0.624    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.296    -0.672 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.648    -0.024    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          0.595     0.597    VGA/vgacmd/clk_out1
+    SLICE_X6Y136         FDCE                                         r  VGA/vgacmd/addressH_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X6Y136         FDCE (Prop_fdce_C_Q)         0.148     0.745 r  VGA/vgacmd/addressH_reg[6]/Q
+                         net (fo=5, routed)           0.105     0.849    VGA/vgacmd/Q[3]
+    SLICE_X6Y136         LUT6 (Prop_lut6_I4_O)        0.098     0.947 r  VGA/vgacmd/addressH[7]_i_1/O
+                         net (fo=1, routed)           0.000     0.947    VGA/vgacmd/p_0_in[7]
+    SLICE_X6Y136         FDCE                                         r  VGA/vgacmd/addressH_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
+                         net (fo=73, routed)          0.898     0.898    VGA/vgaclock/inst/clk_in1
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.625    -0.727 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.700    -0.027    VGA/vgaclock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          0.864     0.866    VGA/vgacmd/clk_out1
+    SLICE_X6Y136         FDCE                                         r  VGA/vgacmd/addressH_reg[7]/C
+                         clock pessimism             -0.270     0.597    
+    SLICE_X6Y136         FDCE (Hold_fdce_C_D)         0.120     0.717    VGA/vgacmd/addressH_reg[7]
+  -------------------------------------------------------------------
+                         required time                         -0.717    
+                         arrival time                           0.947    
+  -------------------------------------------------------------------
+                         slack                                  0.231    
+
+Slack (MET) :             0.238ns  (arrival time - required time)
   Source:                 VGA/vgacmd/vcount_reg[2]/C
                             (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
   Destination:            VGA/vgacmd/vcount_reg[4]/D
@@ -1138,262 +1132,262 @@ Slack (MET) :             0.241ns  (arrival time - required time)
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        0.374ns  (logic 0.209ns (55.828%)  route 0.165ns (44.172%))
+  Data Path Delay:        0.359ns  (logic 0.209ns (58.196%)  route 0.150ns (41.804%))
   Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.012ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.861ns
-    Source Clock Delay      (SCD):    0.595ns
-    Clock Pessimism Removal (CPR):    0.255ns
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.873ns
+    Source Clock Delay      (SCD):    0.601ns
+    Clock Pessimism Removal (CPR):    0.273ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
                          (clock clk_out1_clk_wiz_0 rise edge)
                                                       0.000     0.000 r  
     BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          0.624     0.624    VGA/vgaclock/inst/clk_in1
+                         net (fo=73, routed)          0.624     0.624    VGA/vgaclock/inst/clk_in1
     MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                      -1.296    -0.672 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.648    -0.024    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          0.593     0.595    VGA/vgacmd/clk_out1
-    SLICE_X6Y132         FDCE                                         r  VGA/vgacmd/vcount_reg[2]/C
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          0.599     0.601    VGA/vgacmd/clk_out1
+    SLICE_X2Y140         FDCE                                         r  VGA/vgacmd/vcount_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X6Y132         FDCE (Prop_fdce_C_Q)         0.164     0.759 r  VGA/vgacmd/vcount_reg[2]/Q
-                         net (fo=8, routed)           0.165     0.924    VGA/vgacmd/vcount_reg__0[2]
-    SLICE_X6Y130         LUT6 (Prop_lut6_I4_O)        0.045     0.969 r  VGA/vgacmd/vcount[4]_i_1/O
-                         net (fo=1, routed)           0.000     0.969    VGA/vgacmd/p_0_in[4]
-    SLICE_X6Y130         FDCE                                         r  VGA/vgacmd/vcount_reg[4]/D
+    SLICE_X2Y140         FDCE (Prop_fdce_C_Q)         0.164     0.765 r  VGA/vgacmd/vcount_reg[2]/Q
+                         net (fo=8, routed)           0.150     0.915    VGA/vgacmd/vcount_reg__0[2]
+    SLICE_X2Y140         LUT6 (Prop_lut6_I4_O)        0.045     0.960 r  VGA/vgacmd/vcount[4]_i_1/O
+                         net (fo=1, routed)           0.000     0.960    VGA/vgacmd/p_0_in__0[4]
+    SLICE_X2Y140         FDCE                                         r  VGA/vgacmd/vcount_reg[4]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
                                                       0.000     0.000 r  
     BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          0.898     0.898    VGA/vgaclock/inst/clk_in1
+                         net (fo=73, routed)          0.898     0.898    VGA/vgaclock/inst/clk_in1
     MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                      -1.625    -0.727 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.700    -0.027    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          0.859     0.861    VGA/vgacmd/clk_out1
-    SLICE_X6Y130         FDCE                                         r  VGA/vgacmd/vcount_reg[4]/C
-                         clock pessimism             -0.255     0.607    
-    SLICE_X6Y130         FDCE (Hold_fdce_C_D)         0.121     0.728    VGA/vgacmd/vcount_reg[4]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          0.871     0.873    VGA/vgacmd/clk_out1
+    SLICE_X2Y140         FDCE                                         r  VGA/vgacmd/vcount_reg[4]/C
+                         clock pessimism             -0.273     0.601    
+    SLICE_X2Y140         FDCE (Hold_fdce_C_D)         0.121     0.722    VGA/vgacmd/vcount_reg[4]
   -------------------------------------------------------------------
-                         required time                         -0.728    
-                         arrival time                           0.969    
+                         required time                         -0.722    
+                         arrival time                           0.960    
   -------------------------------------------------------------------
-                         slack                                  0.241    
+                         slack                                  0.238    
 
-Slack (MET) :             0.244ns  (arrival time - required time)
-  Source:                 VGA/vgacmd/vcount_reg[2]/C
+Slack (MET) :             0.242ns  (arrival time - required time)
+  Source:                 VGA/vgacmd/addressV_reg[3]/C
                             (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            VGA/vgacmd/vcount_reg[5]/D
+  Destination:            VGA/vgacmd/addressV_reg[4]/D
                             (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        0.376ns  (logic 0.209ns (55.531%)  route 0.167ns (44.469%))
+  Data Path Delay:        0.363ns  (logic 0.247ns (68.037%)  route 0.116ns (31.963%))
   Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.012ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.861ns
-    Source Clock Delay      (SCD):    0.595ns
-    Clock Pessimism Removal (CPR):    0.255ns
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.867ns
+    Source Clock Delay      (SCD):    0.598ns
+    Clock Pessimism Removal (CPR):    0.270ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
                          (clock clk_out1_clk_wiz_0 rise edge)
                                                       0.000     0.000 r  
     BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          0.624     0.624    VGA/vgaclock/inst/clk_in1
+                         net (fo=73, routed)          0.624     0.624    VGA/vgaclock/inst/clk_in1
     MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                      -1.296    -0.672 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.648    -0.024    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          0.593     0.595    VGA/vgacmd/clk_out1
-    SLICE_X6Y132         FDCE                                         r  VGA/vgacmd/vcount_reg[2]/C
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          0.596     0.598    VGA/vgacmd/clk_out1
+    SLICE_X6Y137         FDCE                                         r  VGA/vgacmd/addressV_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X6Y132         FDCE (Prop_fdce_C_Q)         0.164     0.759 r  VGA/vgacmd/vcount_reg[2]/Q
-                         net (fo=8, routed)           0.167     0.926    VGA/vgacmd/vcount_reg__0[2]
-    SLICE_X6Y130         LUT6 (Prop_lut6_I1_O)        0.045     0.971 r  VGA/vgacmd/vcount[5]_i_1/O
-                         net (fo=1, routed)           0.000     0.971    VGA/vgacmd/p_0_in[5]
-    SLICE_X6Y130         FDCE                                         r  VGA/vgacmd/vcount_reg[5]/D
+    SLICE_X6Y137         FDCE (Prop_fdce_C_Q)         0.148     0.746 r  VGA/vgacmd/addressV_reg[3]/Q
+                         net (fo=9, routed)           0.116     0.862    VGA/vgacmd/addressV_reg[8]_0[0]
+    SLICE_X6Y137         LUT6 (Prop_lut6_I4_O)        0.099     0.961 r  VGA/vgacmd/addressV[4]_i_1/O
+                         net (fo=1, routed)           0.000     0.961    VGA/vgacmd/p_0_in__1[4]
+    SLICE_X6Y137         FDCE                                         r  VGA/vgacmd/addressV_reg[4]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
                                                       0.000     0.000 r  
     BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          0.898     0.898    VGA/vgaclock/inst/clk_in1
+                         net (fo=73, routed)          0.898     0.898    VGA/vgaclock/inst/clk_in1
     MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                      -1.625    -0.727 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.700    -0.027    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          0.859     0.861    VGA/vgacmd/clk_out1
-    SLICE_X6Y130         FDCE                                         r  VGA/vgacmd/vcount_reg[5]/C
-                         clock pessimism             -0.255     0.607    
-    SLICE_X6Y130         FDCE (Hold_fdce_C_D)         0.120     0.727    VGA/vgacmd/vcount_reg[5]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          0.865     0.867    VGA/vgacmd/clk_out1
+    SLICE_X6Y137         FDCE                                         r  VGA/vgacmd/addressV_reg[4]/C
+                         clock pessimism             -0.270     0.598    
+    SLICE_X6Y137         FDCE (Hold_fdce_C_D)         0.121     0.719    VGA/vgacmd/addressV_reg[4]
   -------------------------------------------------------------------
-                         required time                         -0.727    
-                         arrival time                           0.971    
+                         required time                         -0.719    
+                         arrival time                           0.961    
   -------------------------------------------------------------------
-                         slack                                  0.244    
+                         slack                                  0.242    
 
 Slack (MET) :             0.248ns  (arrival time - required time)
-  Source:                 VGA/vgacmd/hcount_reg[1]/C
+  Source:                 VGA/vgacmd/addressH_reg[8]/C
                             (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            VGA/vgacmd/hcount_reg[4]/D
+  Destination:            VGA/vgacmd/addressH_reg[8]/D
                             (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        0.340ns  (logic 0.186ns (54.666%)  route 0.154ns (45.334%))
+  Data Path Delay:        0.369ns  (logic 0.209ns (56.609%)  route 0.160ns (43.391%))
   Logic Levels:           1  (LUT5=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.861ns
-    Source Clock Delay      (SCD):    0.593ns
-    Clock Pessimism Removal (CPR):    0.269ns
+    Destination Clock Delay (DCD):    0.866ns
+    Source Clock Delay      (SCD):    0.597ns
+    Clock Pessimism Removal (CPR):    0.270ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
                          (clock clk_out1_clk_wiz_0 rise edge)
                                                       0.000     0.000 r  
     BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          0.624     0.624    VGA/vgaclock/inst/clk_in1
+                         net (fo=73, routed)          0.624     0.624    VGA/vgaclock/inst/clk_in1
     MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                      -1.296    -0.672 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.648    -0.024    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          0.591     0.593    VGA/vgacmd/clk_out1
-    SLICE_X7Y130         FDCE                                         r  VGA/vgacmd/hcount_reg[1]/C
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          0.595     0.597    VGA/vgacmd/clk_out1
+    SLICE_X6Y136         FDCE                                         r  VGA/vgacmd/addressH_reg[8]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X7Y130         FDCE (Prop_fdce_C_Q)         0.141     0.734 r  VGA/vgacmd/hcount_reg[1]/Q
-                         net (fo=6, routed)           0.154     0.888    VGA/vgacmd/hcount_reg_n_0_[1]
-    SLICE_X7Y130         LUT5 (Prop_lut5_I2_O)        0.045     0.933 r  VGA/vgacmd/hcount[4]_i_1/O
-                         net (fo=1, routed)           0.000     0.933    VGA/vgacmd/hcount[4]_i_1_n_0
-    SLICE_X7Y130         FDCE                                         r  VGA/vgacmd/hcount_reg[4]/D
+    SLICE_X6Y136         FDCE (Prop_fdce_C_Q)         0.164     0.761 r  VGA/vgacmd/addressH_reg[8]/Q
+                         net (fo=3, routed)           0.160     0.921    VGA/vgacmd/Q[5]
+    SLICE_X6Y136         LUT5 (Prop_lut5_I4_O)        0.045     0.966 r  VGA/vgacmd/addressH[8]_i_1/O
+                         net (fo=1, routed)           0.000     0.966    VGA/vgacmd/p_0_in[8]
+    SLICE_X6Y136         FDCE                                         r  VGA/vgacmd/addressH_reg[8]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
                                                       0.000     0.000 r  
     BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          0.898     0.898    VGA/vgaclock/inst/clk_in1
+                         net (fo=73, routed)          0.898     0.898    VGA/vgaclock/inst/clk_in1
     MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                      -1.625    -0.727 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.700    -0.027    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          0.859     0.861    VGA/vgacmd/clk_out1
-    SLICE_X7Y130         FDCE                                         r  VGA/vgacmd/hcount_reg[4]/C
-                         clock pessimism             -0.269     0.593    
-    SLICE_X7Y130         FDCE (Hold_fdce_C_D)         0.092     0.685    VGA/vgacmd/hcount_reg[4]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          0.864     0.866    VGA/vgacmd/clk_out1
+    SLICE_X6Y136         FDCE                                         r  VGA/vgacmd/addressH_reg[8]/C
+                         clock pessimism             -0.270     0.597    
+    SLICE_X6Y136         FDCE (Hold_fdce_C_D)         0.121     0.718    VGA/vgacmd/addressH_reg[8]
   -------------------------------------------------------------------
-                         required time                         -0.685    
-                         arrival time                           0.933    
+                         required time                         -0.718    
+                         arrival time                           0.966    
   -------------------------------------------------------------------
                          slack                                  0.248    
 
-Slack (MET) :             0.263ns  (arrival time - required time)
-  Source:                 VGA/vgacmd/blank_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+Slack (MET) :             0.248ns  (arrival time - required time)
+  Source:                 VGA/vgacmd/hcount_reg[9]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
   Destination:            VGA/vgacmd/blank_reg/D
                             (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        0.354ns  (logic 0.186ns (52.498%)  route 0.168ns (47.502%))
+  Data Path Delay:        0.352ns  (logic 0.186ns (52.775%)  route 0.166ns (47.225%))
   Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.836ns
-    Source Clock Delay      (SCD):    0.567ns
-    Clock Pessimism Removal (CPR):    0.269ns
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.867ns
+    Source Clock Delay      (SCD):    0.598ns
+    Clock Pessimism Removal (CPR):    0.257ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
                          (clock clk_out1_clk_wiz_0 rise edge)
                                                       0.000     0.000 r  
     BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          0.624     0.624    VGA/vgaclock/inst/clk_in1
+                         net (fo=73, routed)          0.624     0.624    VGA/vgaclock/inst/clk_in1
     MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                      -1.296    -0.672 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.648    -0.024    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          0.565     0.567    VGA/vgacmd/clk_out1
-    SLICE_X9Y132         FDRE                                         r  VGA/vgacmd/blank_reg/C
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          0.596     0.598    VGA/vgacmd/clk_out1
+    SLICE_X5Y137         FDCE                                         r  VGA/vgacmd/hcount_reg[9]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X9Y132         FDRE (Prop_fdre_C_Q)         0.141     0.708 r  VGA/vgacmd/blank_reg/Q
-                         net (fo=3, routed)           0.168     0.876    VGA/vgacmd/blank
-    SLICE_X9Y132         LUT6 (Prop_lut6_I5_O)        0.045     0.921 r  VGA/vgacmd/blank_i_1/O
-                         net (fo=1, routed)           0.000     0.921    VGA/vgacmd/blank_i_1_n_0
-    SLICE_X9Y132         FDRE                                         r  VGA/vgacmd/blank_reg/D
+    SLICE_X5Y137         FDCE (Prop_fdce_C_Q)         0.141     0.739 r  VGA/vgacmd/hcount_reg[9]/Q
+                         net (fo=12, routed)          0.166     0.905    VGA/vgacmd/hcount_reg_n_0_[9]
+    SLICE_X4Y137         LUT6 (Prop_lut6_I0_O)        0.045     0.950 r  VGA/vgacmd/blank_i_1/O
+                         net (fo=1, routed)           0.000     0.950    VGA/vgacmd/blank_i_1_n_0
+    SLICE_X4Y137         FDRE                                         r  VGA/vgacmd/blank_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
                                                       0.000     0.000 r  
     BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          0.898     0.898    VGA/vgaclock/inst/clk_in1
+                         net (fo=73, routed)          0.898     0.898    VGA/vgaclock/inst/clk_in1
     MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                      -1.625    -0.727 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.700    -0.027    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          0.833     0.835    VGA/vgacmd/clk_out1
-    SLICE_X9Y132         FDRE                                         r  VGA/vgacmd/blank_reg/C
-                         clock pessimism             -0.269     0.567    
-    SLICE_X9Y132         FDRE (Hold_fdre_C_D)         0.091     0.658    VGA/vgacmd/blank_reg
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          0.865     0.867    VGA/vgacmd/clk_out1
+    SLICE_X4Y137         FDRE                                         r  VGA/vgacmd/blank_reg/C
+                         clock pessimism             -0.257     0.611    
+    SLICE_X4Y137         FDRE (Hold_fdre_C_D)         0.091     0.702    VGA/vgacmd/blank_reg
   -------------------------------------------------------------------
-                         required time                         -0.658    
-                         arrival time                           0.921    
+                         required time                         -0.702    
+                         arrival time                           0.950    
   -------------------------------------------------------------------
-                         slack                                  0.263    
+                         slack                                  0.248    
 
-Slack (MET) :             0.263ns  (arrival time - required time)
-  Source:                 VGA/vgacmd/sincV_reg/C
-                            (rising edge-triggered cell FDPE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            VGA/vgacmd/sincV_reg/D
-                            (rising edge-triggered cell FDPE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+Slack (MET) :             0.249ns  (arrival time - required time)
+  Source:                 VGA/vgacmd/hcount_reg[3]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            VGA/vgacmd/hcount_reg[3]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@20.000ns period=40.000ns})
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        0.354ns  (logic 0.186ns (52.498%)  route 0.168ns (47.502%))
-  Logic Levels:           1  (LUT5=1)
+  Data Path Delay:        0.341ns  (logic 0.186ns (54.568%)  route 0.155ns (45.432%))
+  Logic Levels:           1  (LUT4=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.862ns
-    Source Clock Delay      (SCD):    0.594ns
-    Clock Pessimism Removal (CPR):    0.269ns
+    Destination Clock Delay (DCD):    0.866ns
+    Source Clock Delay      (SCD):    0.597ns
+    Clock Pessimism Removal (CPR):    0.270ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
                          (clock clk_out1_clk_wiz_0 rise edge)
                                                       0.000     0.000 r  
     BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          0.624     0.624    VGA/vgaclock/inst/clk_in1
+                         net (fo=73, routed)          0.624     0.624    VGA/vgaclock/inst/clk_in1
     MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                      -1.296    -0.672 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.648    -0.024    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          0.592     0.594    VGA/vgacmd/clk_out1
-    SLICE_X5Y131         FDPE                                         r  VGA/vgacmd/sincV_reg/C
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          0.595     0.597    VGA/vgacmd/clk_out1
+    SLICE_X7Y136         FDCE                                         r  VGA/vgacmd/hcount_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X5Y131         FDPE (Prop_fdpe_C_Q)         0.141     0.735 r  VGA/vgacmd/sincV_reg/Q
-                         net (fo=4, routed)           0.168     0.903    VGA/vgacmd/sincV_OBUF
-    SLICE_X5Y131         LUT5 (Prop_lut5_I4_O)        0.045     0.948 r  VGA/vgacmd/sincV_i_1/O
-                         net (fo=1, routed)           0.000     0.948    VGA/vgacmd/sincV_i_1_n_0
-    SLICE_X5Y131         FDPE                                         r  VGA/vgacmd/sincV_reg/D
+    SLICE_X7Y136         FDCE (Prop_fdce_C_Q)         0.141     0.738 r  VGA/vgacmd/hcount_reg[3]/Q
+                         net (fo=4, routed)           0.155     0.893    VGA/vgacmd/hcount_reg_n_0_[3]
+    SLICE_X7Y136         LUT4 (Prop_lut4_I0_O)        0.045     0.938 r  VGA/vgacmd/hcount[3]_i_1/O
+                         net (fo=1, routed)           0.000     0.938    VGA/vgacmd/hcount[3]
+    SLICE_X7Y136         FDCE                                         r  VGA/vgacmd/hcount_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
                                                       0.000     0.000 r  
     BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  ck_IBUF_BUFG_inst/O
-                         net (fo=57, routed)          0.898     0.898    VGA/vgaclock/inst/clk_in1
+                         net (fo=73, routed)          0.898     0.898    VGA/vgaclock/inst/clk_in1
     MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                      -1.625    -0.727 r  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.700    -0.027    VGA/vgaclock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
-                         net (fo=42, routed)          0.860     0.862    VGA/vgacmd/clk_out1
-    SLICE_X5Y131         FDPE                                         r  VGA/vgacmd/sincV_reg/C
-                         clock pessimism             -0.269     0.594    
-    SLICE_X5Y131         FDPE (Hold_fdpe_C_D)         0.091     0.685    VGA/vgacmd/sincV_reg
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.002 r  VGA/vgaclock/inst/clkout1_buf/O
+                         net (fo=42, routed)          0.864     0.866    VGA/vgacmd/clk_out1
+    SLICE_X7Y136         FDCE                                         r  VGA/vgacmd/hcount_reg[3]/C
+                         clock pessimism             -0.270     0.597    
+    SLICE_X7Y136         FDCE (Hold_fdce_C_D)         0.092     0.689    VGA/vgacmd/hcount_reg[3]
   -------------------------------------------------------------------
-                         required time                         -0.685    
-                         arrival time                           0.948    
+                         required time                         -0.689    
+                         arrival time                           0.938    
   -------------------------------------------------------------------
-                         slack                                  0.263    
+                         slack                                  0.249    
 
 
 
@@ -1407,37 +1401,37 @@ Period(ns):         40.000
 Sources:            { VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0 }
 
 Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
-Min Period        n/a     BUFG/I              n/a            2.155         40.000      37.845     BUFGCTRL_X0Y1    VGA/vgaclock/inst/clkout1_buf/I
+Min Period        n/a     BUFG/I              n/a            2.155         40.000      37.845     BUFGCTRL_X0Y0    VGA/vgaclock/inst/clkout1_buf/I
 Min Period        n/a     MMCME2_ADV/CLKOUT0  n/a            1.249         40.000      38.751     MMCME2_ADV_X0Y0  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-Min Period        n/a     FDPE/C              n/a            1.000         40.000      39.000     SLICE_X7Y131     VGA/vgacmd/addressV_reg[0]/C
-Min Period        n/a     FDCE/C              n/a            1.000         40.000      39.000     SLICE_X9Y130     VGA/vgacmd/addressV_reg[1]/C
-Min Period        n/a     FDCE/C              n/a            1.000         40.000      39.000     SLICE_X8Y129     VGA/vgacmd/addressV_reg[2]/C
-Min Period        n/a     FDCE/C              n/a            1.000         40.000      39.000     SLICE_X8Y129     VGA/vgacmd/addressV_reg[3]/C
-Min Period        n/a     FDCE/C              n/a            1.000         40.000      39.000     SLICE_X8Y129     VGA/vgacmd/addressV_reg[4]/C
-Min Period        n/a     FDCE/C              n/a            1.000         40.000      39.000     SLICE_X9Y130     VGA/vgacmd/addressV_reg[5]/C
-Min Period        n/a     FDCE/C              n/a            1.000         40.000      39.000     SLICE_X9Y130     VGA/vgacmd/addressV_reg[6]/C
-Min Period        n/a     FDCE/C              n/a            1.000         40.000      39.000     SLICE_X9Y130     VGA/vgacmd/addressV_reg[7]/C
+Min Period        n/a     FDCE/C              n/a            1.000         40.000      39.000     SLICE_X8Y136     VGA/vgacmd/addressH_reg[4]/C
+Min Period        n/a     FDCE/C              n/a            1.000         40.000      39.000     SLICE_X8Y137     VGA/vgacmd/addressH_reg[5]/C
+Min Period        n/a     FDCE/C              n/a            1.000         40.000      39.000     SLICE_X6Y136     VGA/vgacmd/addressH_reg[6]/C
+Min Period        n/a     FDCE/C              n/a            1.000         40.000      39.000     SLICE_X6Y136     VGA/vgacmd/addressH_reg[7]/C
+Min Period        n/a     FDCE/C              n/a            1.000         40.000      39.000     SLICE_X6Y136     VGA/vgacmd/addressH_reg[8]/C
+Min Period        n/a     FDCE/C              n/a            1.000         40.000      39.000     SLICE_X6Y136     VGA/vgacmd/addressH_reg[9]/C
+Min Period        n/a     FDCE/C              n/a            1.000         40.000      39.000     SLICE_X2Y139     VGA/vgacmd/vcount_reg[0]/C
+Min Period        n/a     FDCE/C              n/a            1.000         40.000      39.000     SLICE_X2Y140     VGA/vgacmd/vcount_reg[1]/C
 Max Period        n/a     MMCME2_ADV/CLKOUT0  n/a            213.360       40.000      173.360    MMCME2_ADV_X0Y0  VGA/vgaclock/inst/mmcm_adv_inst/CLKOUT0
-Low Pulse Width   Fast    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X8Y129     VGA/vgacmd/addressV_reg[2]/C
-Low Pulse Width   Fast    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X8Y129     VGA/vgacmd/addressV_reg[3]/C
-Low Pulse Width   Fast    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X8Y129     VGA/vgacmd/addressV_reg[4]/C
-Low Pulse Width   Fast    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X9Y131     VGA/vgacmd/hcount_reg[5]/C
-Low Pulse Width   Fast    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X9Y131     VGA/vgacmd/hcount_reg[6]/C
-Low Pulse Width   Fast    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X9Y131     VGA/vgacmd/hcount_reg[9]/C
-Low Pulse Width   Fast    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X11Y131    VGA/vgacmd/addressH_reg[6]/C
-Low Pulse Width   Fast    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X11Y131    VGA/vgacmd/addressH_reg[7]/C
-Low Pulse Width   Fast    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X11Y131    VGA/vgacmd/addressH_reg[8]/C
-Low Pulse Width   Fast    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X11Y131    VGA/vgacmd/addressH_reg[9]/C
-High Pulse Width  Slow    FDPE/C              n/a            0.500         20.000      19.500     SLICE_X7Y131     VGA/vgacmd/addressV_reg[0]/C
-High Pulse Width  Slow    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X9Y130     VGA/vgacmd/addressV_reg[1]/C
-High Pulse Width  Slow    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X8Y129     VGA/vgacmd/addressV_reg[2]/C
-High Pulse Width  Slow    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X8Y129     VGA/vgacmd/addressV_reg[3]/C
-High Pulse Width  Slow    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X8Y129     VGA/vgacmd/addressV_reg[4]/C
-High Pulse Width  Slow    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X9Y130     VGA/vgacmd/addressV_reg[5]/C
-High Pulse Width  Slow    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X9Y130     VGA/vgacmd/addressV_reg[6]/C
-High Pulse Width  Slow    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X9Y130     VGA/vgacmd/addressV_reg[7]/C
-High Pulse Width  Slow    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X9Y130     VGA/vgacmd/addressV_reg[8]/C
-High Pulse Width  Slow    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X9Y132     VGA/vgacmd/blank_reg/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X8Y137     VGA/vgacmd/addressH_reg[5]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X8Y136     VGA/vgacmd/addressH_reg[4]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X6Y136     VGA/vgacmd/addressH_reg[6]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X6Y136     VGA/vgacmd/addressH_reg[7]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X6Y136     VGA/vgacmd/addressH_reg[8]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X6Y136     VGA/vgacmd/addressH_reg[9]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X2Y140     VGA/vgacmd/vcount_reg[1]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X2Y140     VGA/vgacmd/vcount_reg[2]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X2Y140     VGA/vgacmd/vcount_reg[3]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X2Y140     VGA/vgacmd/vcount_reg[4]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X8Y136     VGA/vgacmd/addressH_reg[4]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X8Y137     VGA/vgacmd/addressH_reg[5]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X6Y136     VGA/vgacmd/addressH_reg[6]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X6Y136     VGA/vgacmd/addressH_reg[7]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X6Y136     VGA/vgacmd/addressH_reg[8]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X6Y136     VGA/vgacmd/addressH_reg[9]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X2Y139     VGA/vgacmd/vcount_reg[0]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X2Y140     VGA/vgacmd/vcount_reg[1]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X2Y140     VGA/vgacmd/vcount_reg[2]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         20.000      19.500     SLICE_X2Y140     VGA/vgacmd/vcount_reg[3]/C
 
 
 
@@ -1459,7 +1453,7 @@ Period(ns):         10.000
 Sources:            { VGA/vgaclock/inst/mmcm_adv_inst/CLKFBOUT }
 
 Check Type  Corner  Lib Pin              Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
-Min Period  n/a     BUFG/I               n/a            2.155         10.000      7.845      BUFGCTRL_X0Y2    VGA/vgaclock/inst/clkf_buf/I
+Min Period  n/a     BUFG/I               n/a            2.155         10.000      7.845      BUFGCTRL_X0Y1    VGA/vgaclock/inst/clkf_buf/I
 Min Period  n/a     MMCME2_ADV/CLKFBOUT  n/a            1.249         10.000      8.751      MMCME2_ADV_X0Y0  VGA/vgaclock/inst/mmcm_adv_inst/CLKFBOUT
 Min Period  n/a     MMCME2_ADV/CLKFBIN   n/a            1.249         10.000      8.751      MMCME2_ADV_X0Y0  VGA/vgaclock/inst/mmcm_adv_inst/CLKFBIN
 Max Period  n/a     MMCME2_ADV/CLKFBIN   n/a            100.000       10.000      90.000     MMCME2_ADV_X0Y0  VGA/vgaclock/inst/mmcm_adv_inst/CLKFBIN

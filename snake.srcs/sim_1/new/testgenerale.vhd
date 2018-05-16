@@ -37,17 +37,21 @@ end testgenerale;
 
 architecture Behavioral of testgenerale is
 component logicagenerale is
- Port (
+  Port (
    ck, rst: in std_logic;
    BTN1, BTN2: in std_logic;
    sincH, sincV: out std_logic;
-   r,g,b: out std_logic_vector(3 downto 0)
+   r,g,b: out std_logic_vector(3 downto 0);
+   gameOver: out std_logic;
+   CA, CB, CC, CD, CE, CF, CG, DP : out std_logic;
+   AN : out std_logic_vector( 7 downto 0 )
   );
   end component;
-  signal ck,rst,btn1,btn2,sinch,sincv: std_logic:='0';
+  signal ck,rst,btn1,btn2,sinch,sincv, gameOver,ca,cb,cc,cd,ce,cf,cg,dp: std_logic:='0';
   signal r,g,b: std_logic_vector (3 downto 0);
+  signal an: std_logic_vector(7 downto 0);
 begin
-u1: logicagenerale port map (ck,rst,btn1,btn2,sinch,sincv,r,g,b);
+u1: logicagenerale port map (ck,rst,btn1,btn2,sinch,sincv,r,g,b, gameOver, ca,cb,cc,cd,ce,cf,cg,dp,an);
 
 CLK: process
 begin

@@ -1,6 +1,6 @@
 Vivado Simulator 2018.1
 Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto a72e3c3731a54cbc9562f032f7dc352d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testgenerale_behav xil_defaultlib.testgenerale xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto a72e3c3731a54cbc9562f032f7dc352d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testgenerale_behav xil_defaultlib.testgenerale xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -48,6 +48,7 @@ Compiling architecture structure of entity xil_defaultlib.blk_mem_gen_0 [blk_mem
 Compiling architecture behavioral of entity xil_defaultlib.gestione [gestione_default]
 Compiling architecture behavioral of entity xil_defaultlib.edgebutton [edgebutton_default]
 Compiling architecture behavioral of entity xil_defaultlib.snakemov [snakemov_default]
+Compiling architecture behavioral of entity xil_defaultlib.seven_segment_driver [seven_segment_driver_default]
 Compiling architecture behavioral of entity xil_defaultlib.logicagenerale [logicagenerale_default]
 Compiling architecture behavioral of entity xil_defaultlib.testgenerale
 Built simulation snapshot testgenerale_behav

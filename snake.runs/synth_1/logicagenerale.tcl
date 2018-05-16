@@ -17,6 +17,7 @@ proc create_report { reportName command } {
   }
 }
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -33,6 +34,7 @@ set_property ip_cache_permissions {read write} [current_project]
 add_files {{D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/ip/romvideo.coe}}
 add_files {{D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/ip/blk_mem_gen_0/raminit.coe}}
 read_vhdl -library xil_defaultlib {
+  {D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/7seg.vhd}
   {D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/edgebutton.vhd}
   {D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd}
   {D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/prescaler1hz.vhd}

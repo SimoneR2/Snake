@@ -38,6 +38,7 @@ entity snakemov is
            addRAM: out std_logic_vector(12 downto 0);
            writeRAM: out std_logic;
            gameO: out std_logic;
+           tes: out std_logic_vector(12 downto 0); --just for test
            dataRAM: out std_logic_vector(3 downto 0)
            );--button di ingresso a caso...da verificare
 end snakemov;
@@ -69,8 +70,8 @@ signal addra: std_logic_vector (3 downto 0);
 signal dina: std_logic_vector (12 downto 0);
 signal douta: std_logic_vector (12 downto 0);
 
-signal testaH: std_logic_vector (6 downto 0);
-signal testaV: std_logic_vector (5 downto 0);
+signal testaH: std_logic_vector (6 downto 0):="0000000";
+signal testaV: std_logic_vector (5 downto 0):="000000";
 signal coda: std_logic_vector(12 downto 0);
 signal vitaminaH: std_logic_vector(6 downto 0);
 signal vitaminaV: std_logic_vector(5 downto 0);
@@ -91,12 +92,20 @@ signal RAMpresent_state, RAMnext_state: fsm_ram_logic;
 begin
 sxbut:edgebutton port map(ck,btnc,sx);
 dxbut:edgebutton port map(ck,btnu,dx);
+
+
+process(ck1) --debug
+begin
+tes<=std_logic_vector(unsigned(testaH)+unsigned(testaV)*to_unsigned(80,7));
+end process; --debug
+
 gameo<=gameover;
 process(ck1,rst)
 begin
 if rst = '0' then present_state<=up;
 elsif rising_edge(ck1) then
-    present_state<=next_state;
+   -- present_state<=next_state;
+   present_state<=dxx;
 end if;
 end process;
 
@@ -127,12 +136,12 @@ process(present_state,rst,ck1)
 begin
     if(rst='0') then 
         gameOver <= '0'; 
-        testaH<="0001100";
-        testaV<="001100";
+        testaH<="0101000";
+        testaV<="011110";
         
     elsif(gameOver ='0') then
         case present_state is
-            when up => if ((unsigned(testaV)-to_unsigned(1,6))=to_unsigned(0,6)) then 
+            when up => if ((unsigned(testaV)-to_unsigned(1,6))=to_unsigned(1,6)) then 
                 gameOver <= '1';
             else testaV<=std_logic_vector(unsigned(testaV)-to_unsigned(1,6)); gameOver<='0';
             end if;
@@ -142,7 +151,7 @@ begin
                         else testaV<=std_logic_vector(unsigned(testaV)+to_unsigned(1,6)); gameOver<='0';
             end if;
             
-            when sxx => if ((unsigned(testaH)-to_unsigned(1,7))=to_unsigned(0,7)) then 
+            when sxx => if ((unsigned(testaH)-to_unsigned(1,7))=to_unsigned(1,7)) then 
                              gameOver <= '1';
                         else testaH<=std_logic_vector(unsigned(testaH)-to_unsigned(1,7)); gameOver<='0';
             end if;
@@ -154,26 +163,26 @@ begin
      end if;
 end process;
 
-process (ck1,rst) --posizione serpente
-begin
-if(rst='0') then lunghezza<=0;
-elsif(rising_edge(ck1)) then
-    if(eaten = '0') then
-        coda<=serpente(lunghezza);
-        for i in 1 to 15 loop
-            serpente(15-i+1)<=serpente(15-i);
-        end loop;
-        serpente(lunghezza+1)<=(others=>'0');
-   serpente(0)<=std_logic_vector(unsigned(testaH)+unsigned(testaV)*to_unsigned(80,7));
-    elsif (eaten = '1') then
-        lunghezza<=lunghezza+1; 
-        for i in 1 to 15 loop
-             serpente(15-i+1)<=serpente(15-i);
-        end loop;
-   serpente(0)<=std_logic_vector(unsigned(testaH)+unsigned(testaV)*to_unsigned(80,7));
-end if;
-end if;
-end process;
+--process (ck1,rst) --posizione serpente
+--begin
+--if(rst='0') then lunghezza<=0;
+--elsif(rising_edge(ck1)) then
+--    if(eaten = '0') then
+--        coda<=serpente(lunghezza);
+--        for i in 1 to 15 loop
+--            serpente(15-i+1)<=serpente(15-i);
+--        end loop;
+--        serpente(lunghezza+1)<=(others=>'0');
+--   serpente(0)<=std_logic_vector(unsigned(testaH)+unsigned(testaV)*to_unsigned(80,7));
+--    elsif (eaten = '1') then
+--        lunghezza<=lunghezza+1; 
+--        for i in 1 to 15 loop
+--             serpente(15-i+1)<=serpente(15-i);
+--        end loop;
+--   serpente(0)<=std_logic_vector(unsigned(testaH)+unsigned(testaV)*to_unsigned(80,7));
+--end if;
+--end if;
+--end process;
 
 --SCRITTURA RAM VIDEO
 process (ck,rst)
@@ -201,11 +210,11 @@ end process;
 process (RAMpresent_state, ck)
 begin
     if (RAMpresent_state=attesa) then addRAM<= std_logic_vector(unsigned(testaV)*to_unsigned(80,7) + unsigned(testaH)); dataRAM<="0010";
-    elsif (RAMpresent_state=scritturaTESTA) then  writeRAM<='1'; 
+    elsif (RAMpresent_state=scritturaTESTA) then  writeRAM<='1';
     elsif (RAMpresent_state=attesa1) then addRAM<= coda; dataRAM<="0110";  writeRAM<='0';
     elsif (RAMpresent_state=scritturaCODA) then  writeRAM<='1'; 
     elsif (RAMpresent_state=attesa2) then if gameover='0' then addRAM<= std_logic_vector(unsigned(vitaminaV)*to_unsigned(80,7) + unsigned(vitaminaH)); dataRAM<="0101";
-                                                   else addRAM<= std_logic_vector(unsigned(vitaminaV)*to_unsigned(80,7) + unsigned(vitaminaH)); dataRAM<="0110"; end if;
+                                                 else addRAM<= std_logic_vector(unsigned(vitaminaV)*to_unsigned(80,7) + unsigned(vitaminaH)); dataRAM<="0110"; end if;
     elsif (RAMpresent_state=scritturaVITAMINA) then  writeRAM<='1';
     else writeRAM<='0'; addram<= (others=>'0');
     end if;

@@ -24,7 +24,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -37,7 +37,10 @@ entity logicagenerale is
     BTN1, BTN2: in std_logic;
     sincH, sincV: out std_logic;
     r,g,b: out std_logic_vector(3 downto 0);
-    gameOver: out std_logic
+    gameOver: out std_logic;
+    CA, CB, CC, CD, CE, CF, CG, DP : out std_logic;
+    clock1hz: out std_logic;
+    AN : out std_logic_vector( 7 downto 0 )
    );
 end logicagenerale;
 
@@ -67,20 +70,53 @@ component snakemov
              addRAM: out std_logic_vector(12 downto 0);
              writeRAM: out std_logic;
              gameO: out std_logic;
+             tes: out std_logic_vector(12 downto 0);
              dataRAM: out std_logic_vector(3 downto 0)
              );--button di ingresso a caso...da verificare
   end component;
-
+  
+component seven_segment_driver
+generic (
+    size : integer := 20
+  );
+  Port (
+    clock : in std_logic;
+    reset : in std_logic;
+    digit0 : in std_logic_vector( 3 downto 0 );
+    digit1 : in std_logic_vector( 3 downto 0 );
+    digit2 : in std_logic_vector( 3 downto 0 );
+    digit3 : in std_logic_vector( 3 downto 0 );
+    digit4 : in std_logic_vector( 3 downto 0 );
+    digit5 : in std_logic_vector( 3 downto 0 );
+    digit6 : in std_logic_vector( 3 downto 0 );
+    digit7 : in std_logic_vector( 3 downto 0 );
+    CA, CB, CC, CD, CE, CF, CG, DP : out std_logic;
+    AN : out std_logic_vector( 7 downto 0 )
+  );
+end component;
 signal ck1: std_logic;
 signal addRAM: std_logic_vector (12 downto 0);
 signal writeREQUEST: std_logic;
 signal dinRAM: std_logic_vector (3 downto 0);
 signal sincVert: std_logic;
 signal gameo: std_logic;
+signal d0: std_logic_vector(3 downto 0);
+signal d1: std_logic_vector(3 downto 0);
+signal d2: std_logic_vector(3 downto 0);
+signal d3: std_logic_vector(3 downto 0);
+signal d4: std_logic_vector(3 downto 0);
+signal d5: std_logic_vector(3 downto 0);
+signal d6: std_logic_vector(3 downto 0);
+signal d7: std_logic_vector(3 downto 0);
+signal testa: std_logic_vector(12 downto 0);
 begin
+
+
 PRESCALER: prescaler1hz port map (ck, ck1);
 VGA: gestione port map (ck,rst, addRAM, dinRAM, writeREQUEST,  sinch,sincvert,r,g,b);
-MOVIMENTO: snakemov port map (ck, ck1, rst, BTN1, BTN2,sincVert, addRAM, writeREQUEST,gameo, dinRAM);
+MOVIMENTO: snakemov port map (ck, ck1, rst, BTN1, BTN2,sincVert, addRAM, writeREQUEST,gameo,testa, dinRAM);
+SEG: seven_segment_driver port map (ck, rst, d0,d1,d2,d3,testa(3 downto 0),testa(7 downto 4),testa(11 downto 8),(others=>'0'),ca,cb,cc,cd,ce,cf,cg,dp,AN);
+clock1hz<=ck1;
 sincv<=sincvert;
 gameOver<=gameo;
 end Behavioral;
