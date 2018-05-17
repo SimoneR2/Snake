@@ -44,7 +44,7 @@ signal present_state, next_state: std_logic;
 begin
 
 process (ck) begin
-if rising_edge(ck) then
+if (rising_edge(ck)) then
 present_state<=next_state;
 end if;
 end process;
@@ -58,7 +58,7 @@ end case;
 end process;
 
 process (present_state) begin
-if present_state = edge then buttonout<='1';
+if (present_state = edge) then buttonout<='1';
 else buttonout<='0';
 end if;
 end process;

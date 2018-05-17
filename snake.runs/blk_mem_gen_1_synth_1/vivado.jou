@@ -2,11 +2,11 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Thu May 17 11:19:29 2018
-# Process ID: 9524
-# Current directory: D:/Documenti/GitHub/Snake/snake.runs/blk_mem_gen_1_synth_1
+# Start of session at: Thu May 17 18:34:40 2018
+# Process ID: 11456
+# Current directory: D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/blk_mem_gen_1_synth_1
 # Command line: vivado.exe -log blk_mem_gen_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source blk_mem_gen_1.tcl
-# Log file: D:/Documenti/GitHub/Snake/snake.runs/blk_mem_gen_1_synth_1/blk_mem_gen_1.vds
-# Journal file: D:/Documenti/GitHub/Snake/snake.runs/blk_mem_gen_1_synth_1\vivado.jou
+# Log file: D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/blk_mem_gen_1_synth_1/blk_mem_gen_1.vds
+# Journal file: D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/blk_mem_gen_1_synth_1\vivado.jou
 #-----------------------------------------------------------
 source blk_mem_gen_1.tcl -notrace
