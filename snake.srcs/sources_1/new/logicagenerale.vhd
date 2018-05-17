@@ -40,6 +40,7 @@ entity logicagenerale is
     gameOver: out std_logic;
     CA, CB, CC, CD, CE, CF, CG, DP : out std_logic;
     clock1hz: out std_logic;
+    sinistra,destra,su,giu: out std_logic;
     AN : out std_logic_vector( 7 downto 0 )
    );
 end logicagenerale;
@@ -71,6 +72,7 @@ component snakemov
              writeRAM: out std_logic;
              gameO: out std_logic;
              tes: out std_logic_vector(12 downto 0);
+             s,r,u,d: out std_logic;
              dataRAM: out std_logic_vector(3 downto 0)
              );--button di ingresso a caso...da verificare
   end component;
@@ -114,7 +116,7 @@ begin
 
 PRESCALER: prescaler1hz port map (ck, ck1);
 VGA: gestione port map (ck,rst, addRAM, dinRAM, writeREQUEST,  sinch,sincvert,r,g,b);
-MOVIMENTO: snakemov port map (ck, ck1, rst, BTN1, BTN2,sincVert, addRAM, writeREQUEST,gameo,testa, dinRAM);
+MOVIMENTO: snakemov port map (ck, ck1, rst, BTN1, BTN2,sincVert, addRAM, writeREQUEST,gameo,testa, sinistra,destra,su,giu, dinRAM);
 SEG: seven_segment_driver port map (ck, rst, d0,d1,d2,d3,testa(3 downto 0),testa(7 downto 4),testa(11 downto 8),(others=>'0'),ca,cb,cc,cd,ce,cf,cg,dp,AN);
 clock1hz<=ck1;
 sincv<=sincvert;

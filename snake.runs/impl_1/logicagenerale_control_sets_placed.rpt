@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Wed May 16 22:04:58 2018
-| Host         : PCSTUDIO running 64-bit major release  (build 9200)
+| Date         : Thu May 17 15:14:42 2018
+| Host         : PORTATILE-ASUS running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file logicagenerale_control_sets_placed.rpt
 | Design       : logicagenerale
 | Device       : xc7a100t
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    19 |
-| Unused register locations in slices containing registers |    83 |
+| Number of unique control sets                            |    22 |
+| Unused register locations in slices containing registers |   104 |
 +----------------------------------------------------------+-------+
 
 
@@ -34,13 +34,13 @@ Table of Contents
 +--------+--------------+
 | Fanout | Control Sets |
 +--------+--------------+
-|      1 |            5 |
-|      2 |            1 |
+|      1 |            6 |
+|      2 |            2 |
 |      3 |            1 |
-|      5 |            1 |
+|      4 |            1 |
 |      6 |            1 |
 |      7 |            1 |
-|      9 |            1 |
+|      9 |            2 |
 |     10 |            2 |
 |     11 |            1 |
 |     13 |            2 |
@@ -54,12 +54,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              34 |           16 |
-| No           | No                    | Yes                    |              36 |           14 |
-| No           | Yes                   | No                     |              41 |           14 |
-| Yes          | No                    | No                     |              16 |            3 |
-| Yes          | No                    | Yes                    |              30 |           10 |
-| Yes          | Yes                   | No                     |               0 |            0 |
+| No           | No                    | No                     |              39 |           18 |
+| No           | No                    | Yes                    |              38 |           14 |
+| No           | Yes                   | No                     |              30 |           11 |
+| Yes          | No                    | No                     |              16 |            2 |
+| Yes          | No                    | Yes                    |              43 |           17 |
+| Yes          | Yes                   | No                     |               2 |            1 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -69,24 +69,27 @@ Table of Contents
 +-----------------------------------+--------------------------------+----------------------------------+------------------+----------------+
 |            Clock Signal           |          Enable Signal         |         Set/Reset Signal         | Slice Load Count | Bel Load Count |
 +-----------------------------------+--------------------------------+----------------------------------+------------------+----------------+
+|  VGA/enROM_reg_i_1_n_0            |                                | VGA/enROM_reg_i_2_n_0            |                1 |              1 |
+|  MOVIMENTO/writeRAM_reg_i_2_n_0   |                                |                                  |                1 |              1 |
+|  ck_IBUF_BUFG                     |                                | MOVIMENTO/r_i_1_n_0              |                1 |              1 |
+|  ck_IBUF_BUFG                     |                                | MOVIMENTO/s_i_1_n_0              |                1 |              1 |
 |  VGA/vgaclock/inst/clk_out1       |                                |                                  |                1 |              1 |
 |  VGA/vgaclock/inst/clk_out1       | VGA/vgacmd/sincH7_out          | VGA/vgacmd/vcount_reg[9]_0       |                1 |              1 |
-|  VGA/enROM_reg_i_1_n_0            |                                | VGA/enROM_reg_i_2_n_0            |                1 |              1 |
-|  MOVIMENTO/gameOver_reg_i_2_n_0   |                                |                                  |                1 |              1 |
-|  MOVIMENTO/writeRAM_reg_i_2_n_0   |                                |                                  |                1 |              1 |
-|  PRESCALER/clock1hz_OBUF          |                                | VGA/vgacmd/vcount_reg[9]_0       |                2 |              2 |
-|  MOVIMENTO/dataRAM_reg[2]_i_1_n_0 |                                | MOVIMENTO/dataRAM_reg[2]_i_2_n_0 |                1 |              3 |
-|  ck_IBUF_BUFG                     |                                |                                  |                3 |              5 |
-|  MOVIMENTO/testaV_reg[5]_i_2_n_0  |                                | VGA/vgacmd/vcount_reg[9]_0       |                3 |              6 |
-|  MOVIMENTO/testaH_reg[6]_i_2_n_0  |                                | VGA/vgacmd/vcount_reg[9]_0       |                3 |              7 |
-|  VGA/vgaclock/inst/clk_out1       | VGA/vgacmd/addressV[8]_i_1_n_0 | VGA/vgacmd/vcount_reg[9]_0       |                3 |              9 |
-|  VGA/vgaclock/inst/clk_out1       | VGA/vgacmd/addressH[9]_i_1_n_0 | VGA/vgacmd/vcount_reg[9]_0       |                4 |             10 |
-|  VGA/vgaclock/inst/clk_out1       | VGA/vgacmd/vcount              | VGA/vgacmd/vcount_reg[9]_0       |                2 |             10 |
+|  MOVIMENTO/sxbut/E[0]             |                                |                                  |                1 |              2 |
+|  ck_IBUF_BUFG                     | MOVIMENTO/u_i_2_n_0            | MOVIMENTO/u_i_1_n_0              |                1 |              2 |
+|  MOVIMENTO/dataRAM_reg[2]_i_1_n_0 |                                | MOVIMENTO/dataRAM_reg[2]_i_2_n_0 |                2 |              3 |
+|  PRESCALER/clock1hz_OBUF          |                                | VGA/vgacmd/vcount_reg[9]_0       |                3 |              4 |
+|  PRESCALER/clock1hz_OBUF          | MOVIMENTO/testaV[5]_i_1_n_0    | VGA/vgacmd/vcount_reg[9]_0       |                3 |              6 |
+|  PRESCALER/clock1hz_OBUF          | MOVIMENTO/testaH               | VGA/vgacmd/vcount_reg[9]_0       |                3 |              7 |
+|  ck_IBUF_BUFG                     |                                |                                  |                5 |              9 |
+|  VGA/vgaclock/inst/clk_out1       | VGA/vgacmd/addressV[8]_i_1_n_0 | VGA/vgacmd/vcount_reg[9]_0       |                4 |              9 |
+|  VGA/vgaclock/inst/clk_out1       | VGA/vgacmd/addressH[9]_i_1_n_0 | VGA/vgacmd/vcount_reg[9]_0       |                3 |             10 |
+|  VGA/vgaclock/inst/clk_out1       | VGA/vgacmd/vcount              | VGA/vgacmd/vcount_reg[9]_0       |                3 |             10 |
 |  VGA/vgaclock/inst/clk_out1       |                                | VGA/vgacmd/vcount_reg[9]_0       |                5 |             11 |
 |  VGA/enROM_reg_i_1_n_0            |                                |                                  |                5 |             13 |
 |  MOVIMENTO/addRAM_reg[12]_i_2_n_0 |                                |                                  |                5 |             13 |
-|  ck_IBUF_BUFG                     | MOVIMENTO/E[0]                 |                                  |                3 |             16 |
-|  ck_IBUF_BUFG                     |                                | VGA/vgacmd/vcount_reg[9]_0       |                7 |             23 |
+|  ck_IBUF_BUFG                     | MOVIMENTO/E[0]                 |                                  |                2 |             16 |
+|  ck_IBUF_BUFG                     |                                | VGA/vgacmd/vcount_reg[9]_0       |                6 |             23 |
 |  ck_IBUF_BUFG                     |                                | PRESCALER/clock                  |                6 |             24 |
 +-----------------------------------+--------------------------------+----------------------------------+------------------+----------------+
 

@@ -39,6 +39,7 @@ entity snakemov is
            writeRAM: out std_logic;
            gameO: out std_logic;
            tes: out std_logic_vector(12 downto 0); --just for test
+           s,r,u,d: out std_logic;
            dataRAM: out std_logic_vector(3 downto 0)
            );--button di ingresso a caso...da verificare
 end snakemov;
@@ -70,21 +71,22 @@ signal addra: std_logic_vector (3 downto 0);
 signal dina: std_logic_vector (12 downto 0);
 signal douta: std_logic_vector (12 downto 0);
 
-signal testaH: std_logic_vector (6 downto 0):="0000000";
-signal testaV: std_logic_vector (5 downto 0):="000000";
+signal testaH: std_logic_vector (6 downto 0);
+signal testaV: std_logic_vector (5 downto 0);
 signal coda: std_logic_vector(12 downto 0);
 signal vitaminaH: std_logic_vector(6 downto 0);
 signal vitaminaV: std_logic_vector(5 downto 0);
 signal flag: std_logic; --tiene conto della vecchia pos della vitamina
-signal lunghezza: integer range 0 to 15:=0;
-signal eaten: std_logic:='0';
-signal gameOver: std_logic := '0';
+signal lunghezza: integer range 0 to 15;
+signal eaten: std_logic;
+signal gameOver: std_logic;
 --FSM snake
 type fsm_snake_logic is (up,dxx,down,sxx);
 type posizioni is array (0 to 15) of std_logic_vector(12 downto 0);
 signal serpente: posizioni;
-signal present_state, next_state: fsm_snake_logic:=up;    
+signal present_state, next_state: fsm_snake_logic;    
     
+ 
 --FSM RAM
 type fsm_ram_logic is (attesa, scritturaTESTA, attesa1, scritturaCODA, attesa2, scritturaVITAMINA);
 signal RAMpresent_state, RAMnext_state: fsm_ram_logic;                  
@@ -93,25 +95,24 @@ begin
 sxbut:edgebutton port map(ck,btnc,sx);
 dxbut:edgebutton port map(ck,btnu,dx);
 
-
-process(ck1) --debug
+process (ck1)
 begin
-tes<=std_logic_vector(unsigned(testaH)+unsigned(testaV)*to_unsigned(80,7));
-end process; --debug
+    tes<=std_logic_vector(unsigned(testaH)+unsigned(testaV)*to_unsigned(80,7));
+end process;
 
 gameo<=gameover;
 process(ck1,rst)
 begin
 if rst = '0' then present_state<=up;
 elsif rising_edge(ck1) then
-   -- present_state<=next_state;
-   present_state<=dxx;
+   present_state<=next_state;
 end if;
 end process;
 
 process (present_state,sx,dx)
 begin
 --next_state<=present_state;
+if (rising_edge(sx) or rising_edge(dx)) then
     case present_state is
     when up => if sx='1' then next_state<=sxx;
                 elsif dx='1' then next_state<=dxx;
@@ -130,6 +131,18 @@ begin
                 else next_state<=dxx;
                 end if;
 end case;
+end if;
+end process;
+
+process (ck) 
+begin
+if (rising_edge(ck)) then
+if (next_state=up) then u<='1'; s<='0'; r<='0'; d<='0';
+elsif (next_state=down) then u<='0'; s<='0'; r<='0'; d<='1';
+elsif (next_state=dxx) then u<='0'; s<='0'; r<='1'; d<='0';
+elsif (next_state=sxx) then u<='0'; s<='1'; r<='0'; d<='0';
+end if;
+end if;
 end process;
 
 process(present_state,rst,ck1)
@@ -139,27 +152,33 @@ begin
         testaH<="0101000";
         testaV<="011110";
         
-    elsif(gameOver ='0') then
-        case present_state is
-            when up => if ((unsigned(testaV)-to_unsigned(1,6))=to_unsigned(1,6)) then 
+    elsif(rising_edge(ck1)) then
+    if(gameOver<='0') then
+       case present_state is
+          when up =>if ((unsigned(testaV)-to_unsigned(1,6))=to_unsigned(0,6)) then 
                 gameOver <= '1';
-            else testaV<=std_logic_vector(unsigned(testaV)-to_unsigned(1,6)); gameOver<='0';
+            else 
+                   testaV<=std_logic_vector(unsigned(testaV)-to_unsigned(1,6)); gameOver<='0';
             end if;
             
             when down => if ((unsigned(testaV)+to_unsigned(1,6))=to_unsigned(60,6)) then 
                             gameOver <= '1';
-                        else testaV<=std_logic_vector(unsigned(testaV)+to_unsigned(1,6)); gameOver<='0';
+                        else 
+                        testaV<=std_logic_vector(unsigned(testaV)+to_unsigned(1,6)); gameOver<='0';
             end if;
             
-            when sxx => if ((unsigned(testaH)-to_unsigned(1,7))=to_unsigned(1,7)) then 
+            when sxx => if ((unsigned(testaH)-to_unsigned(1,7))=to_unsigned(0,7)) then 
                              gameOver <= '1';
-                        else testaH<=std_logic_vector(unsigned(testaH)-to_unsigned(1,7)); gameOver<='0';
+                        else 
+                        testaH<=std_logic_vector(unsigned(testaH)-to_unsigned(1,7)); gameOver<='0';
             end if;
             when dxx => if ((unsigned(testaH)+to_unsigned(1,7))=to_unsigned(80,7)) then 
                            gameOver <= '1';
-                        else  testaH<=std_logic_vector(unsigned(testaH)+to_unsigned(1,7)); gameOver<='0';
+                        else 
+                         testaH<=std_logic_vector(unsigned(testaH)+to_unsigned(1,7)); gameOver<='0';
             end if;
      end case;
+     end if;
      end if;
 end process;
 
