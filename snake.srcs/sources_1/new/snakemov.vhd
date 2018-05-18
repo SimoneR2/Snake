@@ -48,6 +48,7 @@ architecture Behavioral of snakemov is
    component edgebutton 
     Port (
         ck : in STD_LOGIC;
+        ck1hz: in std_logic;
         button: in STD_LOGIC;
         buttonout: out  STD_LOGIC);
     end component;
@@ -88,12 +89,12 @@ signal present_state, next_state: fsm_snake_logic;
     
  
 --FSM RAM
-type fsm_ram_logic is (attesa, scritturaTESTA, attesa1, scritturaCODA, attesa2, scritturaVITAMINA);
+type fsm_ram_logic is (attesa, scritturaTESTA, attesa1, scritturaCODA, attesa2, scritturaVITAMINA, attesa3, scritturaCORPO);
 signal RAMpresent_state, RAMnext_state: fsm_ram_logic;                  
 
 begin
-sxbut:edgebutton port map(ck1,btnc,sx);
-dxbut:edgebutton port map(ck1,btnu,dx);
+sxbut:edgebutton port map(ck,ck1,btnc,sx);
+dxbut:edgebutton port map(ck,ck1,btnu,dx);
 
 process (ck1)
 begin
@@ -179,13 +180,21 @@ begin
                          testaH<=std_logic_vector(unsigned(testaH)+to_unsigned(1,7)); gameOver<='0';
             end if;
      end case;
+     for i in 1 to 15 loop
+     if (std_logic_vector(unsigned(testaV)*to_unsigned(80,7) + unsigned(testaH)) = serpente(i)) then gameover<='1';
+     end if;
+     end loop;
      end if;
      end if;
 end process;
 
 process (ck1,rst) --posizione serpente
 begin
-if(rst='0') then lunghezza<=0;
+if(rst='0') then 
+    lunghezza<=0;
+    for i in 0 to 15 loop
+        serpente(i)<= (others=>'0');
+    end loop; 
 elsif(rising_edge(ck1)) then
     if(eaten = '0') then
         coda<=serpente(lunghezza);
@@ -216,14 +225,16 @@ end process;
 process(RAMpresent_state, writeinterval) 
 begin
     case (RAMpresent_state) is
-       when attesa => if(writeinterval='0') then RAMnext_state<=scritturaTESTA;
-                        else RAMnext_state<=attesa;
+       when attesa2 => if(writeinterval='0') then RAMnext_state<=scritturaVITAMINA;
+                        else RAMnext_state<=attesa2;
                         end if;
-       when scritturaTESTA => RAMnext_state<=attesa1;
+       when scritturaVITAMINA => RAMnext_state<=attesa;
+       when attesa => RAMnext_state<=scritturaTESTA;
+       when scritturaTESTA => RAMnext_state<=attesa3;
+       when attesa3 => RAMnext_state<=scritturaCORPO;
+       when scritturaCORPO => RAMnext_state<=attesa1;
        when attesa1 => RAMnext_state<=scritturaCODA;
        when scritturaCODA => RAMnext_state<=attesa2;
-       when attesa2 => RAMnext_state<=scritturaVITAMINA;
-       when scritturaVITAMINA => RAMnext_state<=attesa;
     end case;
 end process;
 
@@ -245,12 +256,34 @@ begin
         when dxx  => dataRAM<= "0011";
         when down   => dataRAM<= "0100";
     end case;   
-    elsif (RAMpresent_state=attesa1) then addRAM<= coda; dataRAM<="0110";  writeRAM<='0';
-    elsif (RAMpresent_state=scritturaCODA) then  writeRAM<='1'; addRAM<= coda; dataRAM<="0110";  writeRAM<='1';
-    elsif (RAMpresent_state=attesa2) then if gameover='0' then addRAM<= std_logic_vector(unsigned(vitaminaV)*to_unsigned(80,7) + unsigned(vitaminaH)); dataRAM<="0101";
-                                                 else addRAM<= std_logic_vector(unsigned(vitaminaV)*to_unsigned(80,7) + unsigned(vitaminaH)); dataRAM<="0110"; end if;
-    elsif (RAMpresent_state=scritturaVITAMINA) then  writeRAM<='1'; if gameover='0' then addRAM<= std_logic_vector(unsigned(vitaminaV)*to_unsigned(80,7) + unsigned(vitaminaH)); dataRAM<="0101";
-                                                                                                  else addRAM<= std_logic_vector(unsigned(vitaminaV)*to_unsigned(80,7) + unsigned(vitaminaH)); dataRAM<="0110"; end if;
+    elsif (RAMpresent_state=attesa1) then 
+        addRAM<= coda; 
+        dataRAM<="0110";  
+        writeRAM<='0';
+    elsif (RAMpresent_state=scritturaCODA) then  
+        addRAM<= coda; 
+        dataRAM<="0110";  
+        writeRAM<='1';
+    elsif (RAMpresent_state=attesa2) then 
+        if gameover='0' then 
+            addRAM<= std_logic_vector(unsigned(vitaminaV)*to_unsigned(80,7) + unsigned(vitaminaH)); 
+            dataRAM<="0101";
+        else addRAM<= std_logic_vector(unsigned(vitaminaV)*to_unsigned(80,7) + unsigned(vitaminaH)); 
+            dataRAM<="0110"; end if;
+    elsif (RAMpresent_state=scritturaVITAMINA) then  
+        writeRAM<='1'; 
+        if gameover='0' then 
+            addRAM<= std_logic_vector(unsigned(vitaminaV)*to_unsigned(80,7) + unsigned(vitaminaH)); 
+            dataRAM<="0101";
+        else addRAM<= std_logic_vector(unsigned(vitaminaV)*to_unsigned(80,7) + unsigned(vitaminaH)); 
+            dataRAM<="0110"; 
+       end if;
+        elsif (RAMpresent_state=attesa3) then 
+            if (lunghezza >0) then addRAM<=serpente(1); dataRAM<="0000";
+            end if;
+        elsif (RAMpresent_state=scritturaCORPO) then 
+                        if (lunghezza >0) then addRAM<=serpente(1); dataRAM<="0000"; writeRAM<='1';
+                        end if;
     else writeRAM<='0'; addram<= (others=>'0');
     end if;
 end process;
@@ -260,8 +293,6 @@ begin
 if (rst='0') then
     vitaminaH<="0001000";
     vitaminaV<="001000";
-    
-    
     flag<='0';
 elsif(rising_edge(ck1))then
     if((vitaminaH=testaH)and(vitaminaV=testaV)) then

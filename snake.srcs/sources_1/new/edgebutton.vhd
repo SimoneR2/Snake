@@ -32,7 +32,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity edgebutton is
-    Port ( ck : in STD_LOGIC;
+    Port ( ck, ck1hz : in STD_LOGIC;
            button: in STD_LOGIC;
            buttonout: out  STD_LOGIC);
             
@@ -52,7 +52,7 @@ end process;
 process (present_state, button) begin
 case present_state is
 when zero => if button = '0' then next_state<=zero; else next_state<=edge; end if;
-when edge => if button = '0' then next_state<=zero; else next_state<=one; end if;
+when edge => if ck1hz = '0' then next_state<=edge; else next_state<=one; end if;
 when one => if button = '0' then next_state<=zero; else next_state<=one; end if;
 end case;
 end process;
