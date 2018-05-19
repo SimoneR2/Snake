@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Fri May 18 12:08:32 2018
+| Date         : Sun May 20 00:11:22 2018
 | Host         : PCSTUDIO running 64-bit major release  (build 9200)
 | Command      : report_methodology -file logicagenerale_methodology_drc_routed.rpt -pb logicagenerale_methodology_drc_routed.pb -rpx logicagenerale_methodology_drc_routed.rpx
 | Design       : logicagenerale
@@ -162,17 +162,17 @@ Related violations: <none>
 
 TIMING-17#24 Warning
 Non-clocked sequential cell  
-The clock pin MOVIMENTO/lunghezza_reg[0]_rep__0/C is not reached by a timing clock
+The clock pin MOVIMENTO/lunghezza_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#25 Warning
 Non-clocked sequential cell  
-The clock pin MOVIMENTO/lunghezza_reg[1]/C is not reached by a timing clock
+The clock pin MOVIMENTO/lunghezza_reg[1]_rep/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#26 Warning
 Non-clocked sequential cell  
-The clock pin MOVIMENTO/lunghezza_reg[1]_rep/C is not reached by a timing clock
+The clock pin MOVIMENTO/lunghezza_reg[1]_rep__0/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#27 Warning

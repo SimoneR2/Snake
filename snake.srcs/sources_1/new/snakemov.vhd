@@ -240,7 +240,7 @@ end process;
 
 process (RAMpresent_state, ck)
 begin
-    if (RAMpresent_state=attesa) then addRAM<= std_logic_vector(unsigned(testaV)*to_unsigned(80,7) + unsigned(testaH)); 
+    if (RAMpresent_state=attesa) then addRAM<= serpente(0); 
         case (present_state) is
         when up => dataRAM<= "0001";
         when sxx  => dataRAM<= "0010";
@@ -249,7 +249,7 @@ begin
     end case;   
     elsif (RAMpresent_state=scritturaTESTA) then  
     writeRAM<='1'; 
-    addRAM<= std_logic_vector(unsigned(testaV)*to_unsigned(80,7) + unsigned(testaH)); 
+    addRAM<= serpente(0); 
     case (present_state) is
         when up => dataRAM<= "0001";
         when sxx  => dataRAM<= "0010";
@@ -284,7 +284,7 @@ begin
         elsif (RAMpresent_state=scritturaCORPO) then 
                         if (lunghezza >0) then addRAM<=serpente(1); dataRAM<="0000"; writeRAM<='1';
                         end if;
-    else writeRAM<='0'; addram<= (others=>'0');
+    else writeRAM<='0';
     end if;
 end process;
 
