@@ -92,13 +92,39 @@ signal present_state, next_state: fsm_snake_logic;
 type fsm_ram_logic is (attesa, scritturaTESTA, attesa1, scritturaCODA, attesa2, scritturaVITAMINA, attesa3, scritturaCORPO);
 signal RAMpresent_state, RAMnext_state: fsm_ram_logic;                  
 
+type fsm_ck is (a1,a2,a3); --a1 attesa, a2 enable1, a3 enable2
+signal ckpresent_state, cknext_state: fsm_ck;
+signal enable1, enable2: std_logic;
 begin
 sxbut:edgebutton port map(ck,enable1hz,btnc,sx);
 dxbut:edgebutton port map(ck,enable1hz,btnu,dx);
-
-process (enable1hz)
+process (ck)
 begin
-if (rising_edge(enable1hz)) then
+    if(rising_edge(ck)) then ckpresent_state<=cknext_state;
+    end if;
+end process;
+
+process (enable1hz, ck)
+begin
+    case ckpresent_state is
+        when a1 => if (enable1hz='1') then cknext_state<=a2; else cknext_state<=a1; end if;
+        when a2 => cknext_state<=a3;
+        when a3 => cknext_state<=a1;
+        end case;
+end process;
+
+process(ck)
+begin
+    case ckpresent_state is
+        when a1 => enable1<='0'; enable2<='0';
+        when a2 => enable1<='1';
+        when a3 => enable1<='0'; enable2<='1';
+        end case;
+        end process;
+
+process (enable1)
+begin
+if (rising_edge(enable1)) then
     tes<=std_logic_vector(unsigned(testaH)+unsigned(testaV)*to_unsigned(80,7));
     end if;
 end process;
@@ -107,7 +133,7 @@ gameo<=gameover;
 process(ck,rst)
 begin
 if rst = '0' then present_state<=up;
-elsif (rising_edge(ck) and (enable1hz='1'))then
+elsif (rising_edge(ck)and (enable1hz='1'))then
    present_state<=next_state;
 end if;
 end process;
@@ -156,7 +182,7 @@ begin
         testaH<="0101000";
         testaV<="011110";
         
-    elsif(rising_edge(ck) and enable1hz='1') then
+    elsif(rising_edge(ck) and enable2='1') then
     if(gameOver='0') then
        case present_state is
           when up =>if ((unsigned(testaV)-to_unsigned(1,6))=to_unsigned(0,6)) then 
@@ -197,7 +223,7 @@ if(rst='0') then
     for i in 0 to 15 loop
         serpente(i)<= (others=>'0');
     end loop; 
-elsif(rising_edge(ck) and enable1hz='1') then
+elsif(rising_edge(ck) and enable2='1') then
     if(eaten = '0') then
         coda<=serpente(lunghezza);
         for i in 1 to 15 loop
@@ -297,7 +323,7 @@ if (rst='0') then
     vitaminaV<="001000";
     flag<='0';
     eaten<='0';
-elsif(rising_edge(ck)and enable1hz='1')then
+elsif(rising_edge(ck)and enable1='1')then
     if((vitaminaH=testaH)and(vitaminaV=testaV)) then
     eaten<='1';
         if(flag='0') then

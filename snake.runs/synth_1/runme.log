@@ -14,9 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8352 
+INFO: Helper process launched with PID 15956 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 392.758 ; gain = 99.707
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 392.770 ; gain = 99.891
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'logicagenerale' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:47]
 INFO: [Synth 8-3491] module 'prescaler1hz' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/prescaler1hz.vhd:34' bound to instance 'PRESCALER' of component 'prescaler1hz' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:116]
@@ -24,8 +24,8 @@ INFO: [Synth 8-638] synthesizing module 'prescaler1hz' [D:/DOCUMENTI LUIGINO/Git
 INFO: [Synth 8-256] done synthesizing module 'prescaler1hz' (1#1) [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/prescaler1hz.vhd:41]
 INFO: [Synth 8-3491] module 'gestione' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:34' bound to instance 'VGA' of component 'gestione' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:117]
 INFO: [Synth 8-638] synthesizing module 'gestione' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:45]
-INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-3804-PCSTUDIO/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'vgaclock' of component 'clk_wiz_0' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:115]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-3804-PCSTUDIO/realtime/clk_wiz_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-11464-PCSTUDIO/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'vgaclock' of component 'clk_wiz_0' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:115]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-11464-PCSTUDIO/realtime/clk_wiz_0_stub.vhdl:13]
 INFO: [Synth 8-3491] module 'vga' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/vga.vhd:34' bound to instance 'vgacmd' of component 'vga' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:121]
 INFO: [Synth 8-638] synthesizing module 'vga' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/vga.vhd:45]
 WARNING: [Synth 8-614] signal 'addressV' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/vga.vhd:56]
@@ -34,10 +34,10 @@ WARNING: [Synth 8-614] signal 'blank' is read in the process but is not in the s
 WARNING: [Synth 8-614] signal 'redpixel' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/vga.vhd:101]
 WARNING: [Synth 8-614] signal 'greenpixel' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/vga.vhd:101]
 INFO: [Synth 8-256] done synthesizing module 'vga' (2#1) [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/vga.vhd:45]
-INFO: [Synth 8-3491] module 'blk_mem_gen_1' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-3804-PCSTUDIO/realtime/blk_mem_gen_1_stub.vhdl:5' bound to instance 'rom' of component 'blk_mem_gen_1' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:125]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_1' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-3804-PCSTUDIO/realtime/blk_mem_gen_1_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'blk_mem_gen_0' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-3804-PCSTUDIO/realtime/blk_mem_gen_0_stub.vhdl:5' bound to instance 'ram' of component 'blk_mem_gen_0' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:128]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-3804-PCSTUDIO/realtime/blk_mem_gen_0_stub.vhdl:23]
+INFO: [Synth 8-3491] module 'blk_mem_gen_1' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-11464-PCSTUDIO/realtime/blk_mem_gen_1_stub.vhdl:5' bound to instance 'rom' of component 'blk_mem_gen_1' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:125]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_1' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-11464-PCSTUDIO/realtime/blk_mem_gen_1_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'blk_mem_gen_0' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-11464-PCSTUDIO/realtime/blk_mem_gen_0_stub.vhdl:5' bound to instance 'ram' of component 'blk_mem_gen_0' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:128]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-11464-PCSTUDIO/realtime/blk_mem_gen_0_stub.vhdl:23]
 WARNING: [Synth 8-614] signal 'addH_lsb' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:156]
 WARNING: [Synth 8-614] signal 'addV_msb' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:171]
 WARNING: [Synth 8-614] signal 'addH_msb' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:171]
@@ -50,22 +50,24 @@ WARNING: [Synth 8-3848] Net dinRAM_A in module/entity gestione does not have dri
 INFO: [Synth 8-256] done synthesizing module 'gestione' (3#1) [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:45]
 INFO: [Synth 8-3491] module 'snakemov' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:34' bound to instance 'MOVIMENTO' of component 'snakemov' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:118]
 INFO: [Synth 8-638] synthesizing module 'snakemov' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:47]
-INFO: [Synth 8-3491] module 'edgebutton' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/edgebutton.vhd:34' bound to instance 'sxbut' of component 'edgebutton' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:96]
+INFO: [Synth 8-3491] module 'edgebutton' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/edgebutton.vhd:34' bound to instance 'sxbut' of component 'edgebutton' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:99]
 INFO: [Synth 8-638] synthesizing module 'edgebutton' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/edgebutton.vhd:41]
 WARNING: [Synth 8-614] signal 'ck1hz' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/edgebutton.vhd:52]
 INFO: [Synth 8-256] done synthesizing module 'edgebutton' (4#1) [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/edgebutton.vhd:41]
-INFO: [Synth 8-3491] module 'edgebutton' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/edgebutton.vhd:34' bound to instance 'dxbut' of component 'edgebutton' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:97]
-WARNING: [Synth 8-614] signal 'enable1hz' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:107]
-WARNING: [Synth 8-614] signal 'enable1hz' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:152]
-WARNING: [Synth 8-614] signal 'enable1hz' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:193]
-WARNING: [Synth 8-614] signal 'serpente' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:243]
-WARNING: [Synth 8-614] signal 'present_state' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:243]
-WARNING: [Synth 8-614] signal 'coda' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:243]
-WARNING: [Synth 8-614] signal 'gameOver' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:243]
-WARNING: [Synth 8-614] signal 'vitaminaV' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:243]
-WARNING: [Synth 8-614] signal 'vitaminaH' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:243]
-WARNING: [Synth 8-614] signal 'lunghezza' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:243]
-WARNING: [Synth 8-614] signal 'enable1hz' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:293]
+INFO: [Synth 8-3491] module 'edgebutton' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/edgebutton.vhd:34' bound to instance 'dxbut' of component 'edgebutton' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:100]
+WARNING: [Synth 8-614] signal 'ckpresent_state' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:107]
+WARNING: [Synth 8-614] signal 'ckpresent_state' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:116]
+WARNING: [Synth 8-614] signal 'enable1hz' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:133]
+WARNING: [Synth 8-614] signal 'enable2' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:178]
+WARNING: [Synth 8-614] signal 'enable2' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:219]
+WARNING: [Synth 8-614] signal 'serpente' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:269]
+WARNING: [Synth 8-614] signal 'present_state' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:269]
+WARNING: [Synth 8-614] signal 'coda' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:269]
+WARNING: [Synth 8-614] signal 'gameOver' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:269]
+WARNING: [Synth 8-614] signal 'vitaminaV' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:269]
+WARNING: [Synth 8-614] signal 'vitaminaH' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:269]
+WARNING: [Synth 8-614] signal 'lunghezza' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:269]
+WARNING: [Synth 8-614] signal 'enable1' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:319]
 INFO: [Synth 8-256] done synthesizing module 'snakemov' (5#1) [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:47]
 	Parameter size bound to: 20 - type: integer 
 INFO: [Synth 8-3491] module 'seven_segment_driver' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/7seg.vhd:34' bound to instance 'SEG' of component 'seven_segment_driver' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:119]
@@ -78,7 +80,7 @@ WARNING: [Synth 8-3848] Net d2 in module/entity logicagenerale does not have dri
 WARNING: [Synth 8-3848] Net d3 in module/entity logicagenerale does not have driver. [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:107]
 INFO: [Synth 8-256] done synthesizing module 'logicagenerale' (7#1) [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:47]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 447.457 ; gain = 154.406
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 448.102 ; gain = 155.223
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -108,10 +110,10 @@ WARNING: [Synth 8-3295] tying undriven pin SEG:digit3[0] to constant 0 [D:/DOCUM
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 447.457 ; gain = 154.406
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 448.102 ; gain = 155.223
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 447.457 ; gain = 154.406
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 448.102 ; gain = 155.223
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -133,18 +135,18 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 804.523 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 803.246 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'VGA/ram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'VGA/rom' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 804.523 ; gain = 511.473
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 803.246 ; gain = 510.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 804.523 ; gain = 511.473
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 803.246 ; gain = 510.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -155,7 +157,7 @@ Applied set_property DONT_TOUCH = true for VGA/vgaclock. (constraint file  auto 
 Applied set_property DONT_TOUCH = true for VGA/ram. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for VGA/rom. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 804.523 ; gain = 511.473
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 803.246 ; gain = 510.367
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "vcount" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -189,6 +191,7 @@ INFO: [Synth 8-5544] ROM "RAMnext_state" won't be mapped to Block RAM because ad
 INFO: [Synth 8-5544] ROM "dataRAM" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "dataRAM" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "vitaminaH" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'ckpresent_state_reg' in module 'snakemov'
 WARNING: [Synth 8-327] inferring latch for variable 'enROM_reg' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:126]
 WARNING: [Synth 8-327] inferring latch for variable 'enableRAM_A_reg' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:131]
 WARNING: [Synth 8-327] inferring latch for variable 'wrRAM_A_reg' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:132]
@@ -201,11 +204,20 @@ WARNING: [Synth 8-327] inferring latch for variable 'addRAM_A_reg' [D:/DOCUMENTI
                      one |                               10 |                               10
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'present_state_reg' using encoding 'sequential' in module 'edgebutton'
-WARNING: [Synth 8-327] inferring latch for variable 'addRAM_reg' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:245]
-WARNING: [Synth 8-327] inferring latch for variable 'writeRAM_reg' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:253]
-WARNING: [Synth 8-327] inferring latch for variable 'dataRAM_reg' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:247]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      a1 |                              001 |                               00
+                      a2 |                              010 |                               01
+                      a3 |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'ckpresent_state_reg' using encoding 'one-hot' in module 'snakemov'
+WARNING: [Synth 8-327] inferring latch for variable 'addRAM_reg' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:271]
+WARNING: [Synth 8-327] inferring latch for variable 'writeRAM_reg' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:279]
+WARNING: [Synth 8-327] inferring latch for variable 'enable2_reg' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:119]
+WARNING: [Synth 8-327] inferring latch for variable 'dataRAM_reg' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:273]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 804.523 ; gain = 511.473
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 803.246 ; gain = 510.367
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -242,18 +254,19 @@ Detailed RTL Component Info :
 	   4 Input      6 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 3     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
 	   9 Input      3 Bit        Muxes := 1     
 	   5 Input      3 Bit        Muxes := 1     
 	   4 Input      3 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 8     
 	   5 Input      2 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 4     
 	   6 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 29    
 	   5 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 2     
 	  16 Input      1 Bit        Muxes := 1     
-	   3 Input      1 Bit        Muxes := 1     
 	   4 Input      1 Bit        Muxes := 3     
 	   6 Input      1 Bit        Muxes := 1     
 	   9 Input      1 Bit        Muxes := 1     
@@ -318,17 +331,18 @@ Detailed RTL Component Info :
 	   4 Input      7 Bit        Muxes := 1     
 	   4 Input      6 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
 	   9 Input      3 Bit        Muxes := 1     
 	   5 Input      3 Bit        Muxes := 1     
 	   4 Input      3 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 2     
 	   6 Input      2 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 3     
 	   2 Input      1 Bit        Muxes := 18    
+	   3 Input      1 Bit        Muxes := 2     
 	  16 Input      1 Bit        Muxes := 1     
-	   3 Input      1 Bit        Muxes := 1     
 	   4 Input      1 Bit        Muxes := 3     
 	   6 Input      1 Bit        Muxes := 1     
 	   9 Input      1 Bit        Muxes := 1     
@@ -380,7 +394,7 @@ WARNING: [Synth 8-3332] Sequential element (MOVIMENTO/tes_reg[12]) is unused and
 WARNING: [Synth 8-3332] Sequential element (MOVIMENTO/vitaminaV_reg[3]) is unused and will be removed from module logicagenerale.
 WARNING: [Synth 8-3332] Sequential element (MOVIMENTO/vitaminaV_reg[4]) is unused and will be removed from module logicagenerale.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 804.523 ; gain = 511.473
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 803.246 ; gain = 510.367
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -394,13 +408,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'VGA/vgaclock/clk_out1' to pin 'VGA/vgaclock/bbstub_clk_out1/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 804.523 ; gain = 511.473
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 803.246 ; gain = 510.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 855.641 ; gain = 562.590
+Finished Timing Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 852.953 ; gain = 560.074
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -412,7 +426,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 856.645 ; gain = 563.594
+Finished Technology Mapping : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 853.961 ; gain = 561.082
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -439,8 +453,9 @@ CRITICAL WARNING: [Synth 8-4442] BlackBox module \VGA/ram  has unconnected pin d
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \VGA/ram  has unconnected pin dina[2]
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \VGA/ram  has unconnected pin dina[1]
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \VGA/ram  has unconnected pin dina[0]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:128]
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 856.645 ; gain = 563.594
+Finished IO Insertion : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 853.961 ; gain = 561.082
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -453,7 +468,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 856.645 ; gain = 563.594
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 853.961 ; gain = 561.082
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -465,25 +480,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 856.645 ; gain = 563.594
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 853.961 ; gain = 561.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 856.645 ; gain = 563.594
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 853.961 ; gain = 561.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 856.645 ; gain = 563.594
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 853.961 ; gain = 561.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 856.645 ; gain = 563.594
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 853.961 ; gain = 561.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -505,63 +520,62 @@ Report Cell Usage:
 |1     |blk_mem_gen_0_bbox_2 |     1|
 |2     |blk_mem_gen_1_bbox_1 |     1|
 |3     |clk_wiz_0_bbox_0     |     1|
-|4     |BUFG                 |     1|
-|5     |CARRY4               |    52|
-|6     |LUT1                 |    15|
-|7     |LUT2                 |    51|
-|8     |LUT3                 |    33|
-|9     |LUT4                 |    40|
-|10    |LUT5                 |    39|
-|11    |LUT6                 |   368|
-|12    |MUXF7                |    34|
-|13    |MUXF8                |    17|
-|14    |FDCE                 |   292|
-|15    |FDPE                 |     9|
-|16    |FDRE                 |    80|
-|17    |FDSE                 |     1|
-|18    |LD                   |    27|
-|19    |LDC                  |     1|
-|20    |LDP                  |     3|
-|21    |IBUF                 |     3|
-|22    |OBUF                 |    35|
+|4     |CARRY4               |    52|
+|5     |LUT1                 |    16|
+|6     |LUT2                 |    54|
+|7     |LUT3                 |    33|
+|8     |LUT4                 |    37|
+|9     |LUT5                 |    37|
+|10    |LUT6                 |   372|
+|11    |MUXF7                |    34|
+|12    |MUXF8                |    17|
+|13    |FDCE                 |   293|
+|14    |FDPE                 |     9|
+|15    |FDRE                 |    83|
+|16    |FDSE                 |     1|
+|17    |LD                   |    28|
+|18    |LDC                  |     1|
+|19    |LDP                  |     3|
+|20    |IBUF                 |     3|
+|21    |OBUF                 |    35|
 +------+---------------------+------+
 
 Report Instance Areas: 
 +------+------------+---------------------+------+
 |      |Instance    |Module               |Cells |
 +------+------------+---------------------+------+
-|1     |top         |                     |  1174|
-|2     |  MOVIMENTO |snakemov             |   794|
+|1     |top         |                     |  1181|
+|2     |  MOVIMENTO |snakemov             |   807|
 |3     |    dxbut   |edgebutton           |     5|
 |4     |    sxbut   |edgebutton_0         |     5|
-|5     |  PRESCALER |prescaler1hz         |    43|
+|5     |  PRESCALER |prescaler1hz         |    41|
 |6     |  SEG       |seven_segment_driver |    37|
-|7     |  VGA       |gestione             |   261|
-|8     |    vgacmd  |vga                  |   145|
+|7     |  VGA       |gestione             |   258|
+|8     |    vgacmd  |vga                  |   142|
 +------+------------+---------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 856.645 ; gain = 563.594
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 853.961 ; gain = 561.082
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 4 critical warnings and 15 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:36 . Memory (MB): peak = 856.645 ; gain = 206.527
-Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 856.645 ; gain = 563.594
+Synthesis finished with 0 errors, 4 critical warnings and 17 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:37 . Memory (MB): peak = 853.961 ; gain = 205.938
+Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 853.961 ; gain = 561.082
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 137 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 138 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 31 instances were transformed.
-  LD => LDCE: 27 instances
+  A total of 32 instances were transformed.
+  LD => LDCE: 28 instances
   LDC => LDCE: 1 instances
   LDP => LDPE: 3 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-94 Infos, 64 Warnings, 4 Critical Warnings and 0 Errors encountered.
+96 Infos, 68 Warnings, 4 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:00:49 . Memory (MB): peak = 856.645 ; gain = 575.066
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:50 . Memory (MB): peak = 853.961 ; gain = 572.555
 INFO: [Common 17-1381] The checkpoint 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/logicagenerale.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file logicagenerale_utilization_synth.rpt -pb logicagenerale_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 856.645 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue May 22 20:49:07 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 853.961 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue May 22 23:18:36 2018...
