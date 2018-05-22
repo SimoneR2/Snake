@@ -41,7 +41,7 @@ entity snakemov is
            tes: out std_logic_vector(12 downto 0); --just for test
            s,r,u,d: out std_logic;
            dataRAM: out std_logic_vector(3 downto 0)
-           );--button di ingresso a caso...da verificare
+           );
 end snakemov;
 
 architecture Behavioral of snakemov is

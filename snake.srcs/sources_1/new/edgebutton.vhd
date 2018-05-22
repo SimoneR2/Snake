@@ -39,8 +39,8 @@ entity edgebutton is
 end edgebutton;
 
 architecture Behavioral of edgebutton is
-type std_logic is (zero,edge,one); --non premuto, fronte, premuto
-signal present_state, next_state: std_logic;
+type fsm_edge_button is (zero,edge,one); --non premuto, fronte, premuto
+signal present_state, next_state: fsm_edge_button;
 begin
 
 process (ck) begin
