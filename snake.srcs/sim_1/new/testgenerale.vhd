@@ -56,9 +56,9 @@ u1: logicagenerale port map (ck,rst,btn1,btn2,sinch,sincv,r,g,b, gameOver, ca,cb
 CLK: process
 begin
     ck<='0';
-    wait for 5ns;
+    wait for 100ps;
     ck<='1';
-    wait for 5ns;
+    wait for 100ps;
 end process;
 process
 begin

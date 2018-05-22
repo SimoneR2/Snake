@@ -39,7 +39,6 @@ entity logicagenerale is
     r,g,b: out std_logic_vector(3 downto 0);
     gameOver: out std_logic;
     CA, CB, CC, CD, CE, CF, CG, DP : out std_logic;
-    clock1hz: out std_logic;
     sinistra,destra,su,giu: out std_logic;
     AN : out std_logic_vector( 7 downto 0 )
    );
@@ -50,7 +49,7 @@ architecture Behavioral of logicagenerale is
 component prescaler1hz is
   Port (
         ck: in std_logic;
-        ck1: out std_logic 
+        enable: out std_logic 
         );
 end component;
 
@@ -65,7 +64,7 @@ component gestione Port (
 end component; 
 
 component snakemov  
-  Port ( ck,ck1,rst: in STD_LOGIC;--clock da 1 o 0.5 secondi
+  Port ( ck,enable1hz,rst: in STD_LOGIC;--clock da 1 o 0.5 secondi
              BTNC,BTNU: in std_logic;
              writeinterval: in std_logic;
              addRAM: out std_logic_vector(12 downto 0);
@@ -96,7 +95,7 @@ generic (
     AN : out std_logic_vector( 7 downto 0 )
   );
 end component;
-signal ck1: std_logic;
+signal enable1hz: std_logic;
 signal addRAM: std_logic_vector (12 downto 0);
 signal writeREQUEST: std_logic;
 signal dinRAM: std_logic_vector (3 downto 0);
@@ -114,11 +113,10 @@ signal testa: std_logic_vector(12 downto 0);
 begin
 
 
-PRESCALER: prescaler1hz port map (ck, ck1);
+PRESCALER: prescaler1hz port map (ck, enable1hz);
 VGA: gestione port map (ck,rst, addRAM, dinRAM, writeREQUEST,  sinch,sincvert,r,g,b);
-MOVIMENTO: snakemov port map (ck, ck1, rst, BTN1, BTN2,sincVert, addRAM, writeREQUEST,gameo,testa, sinistra,destra,su,giu, dinRAM);
+MOVIMENTO: snakemov port map (ck, enable1hz, rst, BTN1, BTN2,sincVert, addRAM, writeREQUEST,gameo,testa, sinistra,destra,su,giu, dinRAM);
 SEG: seven_segment_driver port map (ck, rst, d0,d1,d2,d3,testa(3 downto 0),testa(7 downto 4),testa(11 downto 8),(others=>'0'),ca,cb,cc,cd,ce,cf,cg,dp,AN);
-clock1hz<=ck1;
 sincv<=sincvert;
 gameOver<=gameo;
 end Behavioral;

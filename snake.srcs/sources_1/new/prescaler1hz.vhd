@@ -34,25 +34,22 @@ use IEEE.NUMERIC_STD.ALL;
 entity prescaler1hz is
   Port (
         ck: in std_logic;
-        ck1: out std_logic 
+        enable: out std_logic 
         );
 end prescaler1hz;
 
 architecture Behavioral of prescaler1hz is
-signal count: std_logic_vector(24 downto 0):="0000000000000000000000000";
+signal count: std_logic_vector(24 downto 0):="1111111110000000000000000";
 signal clock: std_logic:='0';
 begin
-ck1<=clock;
+enable<=clock;
 process (ck)
 begin
 if (rising_edge(ck)) then
-if (count="1111111111000000000000000") then
---if (count="0000000000000000000000111") then --solo per simulare
-    count<= (others=>'0');
-    clock <= not(clock);
-else
- count<=std_logic_vector(unsigned(count)+1);
+if (count="1111111111111111111100000") then clock <= '1';
+elsif (count = "1111111111111111111100010") then clock <= '0'; count<=(others=>'0');
 end if;
+count<=std_logic_vector(unsigned(count)+1);
 end if;
 end process;
 end Behavioral;

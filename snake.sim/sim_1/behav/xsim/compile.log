@@ -1,4 +1,4 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/edgebutton.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity edgebutton
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity snakemov
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/prescaler1hz.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity prescaler1hz
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sim_1/new/testgenerale.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity testgenerale
