@@ -361,7 +361,9 @@ if((vitaminaH=testaH)and(vitaminaV=testaV)) then
             tmpv := Qv(4) XOR Qv(3) XOR Qv(2) XOR Qv(0);
             Qv <= tmph & Qv(4 downto 1);
             vitaminaV<= std_logic_vector(unsigned(Qv)+to_unsigned(14,6));
+     else eaten<='0';
      end if;
+     
 end if;
 end process;
 end Behavioral;
