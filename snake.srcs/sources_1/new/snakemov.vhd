@@ -100,7 +100,7 @@ signal enable1, enable2: std_logic;
 --prova mia
 signal Qh: STD_LOGIC_VECTOR(5 downto 0) := "000001";
 signal Qv: STD_LOGIC_VECTOR(4 downto 0) := "00001";
-signal punteggio_inout: unsigned (7 downto 0);
+signal punteggio_inout: unsigned (7 downto 0):="00000000";
 
 begin
 sxbut:edgebutton port map(ck,enable1hz,btnc,sx);
