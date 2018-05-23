@@ -40,7 +40,8 @@ entity snakemov is
            gameO: out std_logic;
            tes: out std_logic_vector(12 downto 0); --just for test
            s,r,u,d: out std_logic;
-           dataRAM: out std_logic_vector(3 downto 0)
+           dataRAM: out std_logic_vector(3 downto 0);
+           punt: out std_logic_vector(7 downto 0)
            );
 end snakemov;
 
@@ -99,7 +100,7 @@ signal enable1, enable2: std_logic;
 --prova mia
 signal Qh: STD_LOGIC_VECTOR(5 downto 0) := "000001";
 signal Qv: STD_LOGIC_VECTOR(4 downto 0) := "00001";
-
+signal punteggio_inout: unsigned (7 downto 0);
 
 begin
 sxbut:edgebutton port map(ck,enable1hz,btnc,sx);
@@ -238,6 +239,8 @@ elsif(rising_edge(ck) and enable2='1') then
         serpente(lunghezza+1)<=(others=>'0');
    serpente(0)<=std_logic_vector(unsigned(testaH)+unsigned(testaV)*to_unsigned(80,7));
     elsif (eaten = '1') then
+        punteggio_inout<=punteggio_inout+to_unsigned(1,8);
+        punt<=std_logic_vector(punteggio_inout);
         lunghezza<=lunghezza+1; 
         for i in 1 to 15 loop
              serpente(15-i+1)<=serpente(15-i);

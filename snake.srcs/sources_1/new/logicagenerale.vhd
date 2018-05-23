@@ -72,8 +72,9 @@ component snakemov
              gameO: out std_logic;
              tes: out std_logic_vector(12 downto 0);
              s,r,u,d: out std_logic;
-             dataRAM: out std_logic_vector(3 downto 0)
-             );--button di ingresso a caso...da verificare
+             dataRAM: out std_logic_vector(3 downto 0);
+             punt: out std_logic_vector(7 downto 0)
+             );
   end component;
   
 component seven_segment_driver
@@ -110,13 +111,27 @@ signal d5: std_logic_vector(3 downto 0);
 signal d6: std_logic_vector(3 downto 0);
 signal d7: std_logic_vector(3 downto 0);
 signal testa: std_logic_vector(12 downto 0);
+signal punteggio:std_logic_vector(7 downto 0);
 begin
 
 
 PRESCALER: prescaler1hz port map (ck, enable1hz);
 VGA: gestione port map (ck,rst, addRAM, dinRAM, writeREQUEST,  sinch,sincvert,r,g,b);
-MOVIMENTO: snakemov port map (ck, enable1hz, rst, BTN1, BTN2,sincVert, addRAM, writeREQUEST,gameo,testa, sinistra,destra,su,giu, dinRAM);
-SEG: seven_segment_driver port map (ck, rst, d0,d1,d2,d3,testa(3 downto 0),testa(7 downto 4),testa(11 downto 8),(others=>'0'),ca,cb,cc,cd,ce,cf,cg,dp,AN);
+MOVIMENTO: snakemov port map (ck, enable1hz, rst, BTN1, BTN2,sincVert, addRAM, writeREQUEST,gameo,testa, sinistra,destra,su,giu, dinRAM,punteggio);
+--SEG: seven_segment_driver port map (ck, rst, d0,d1,d2,d3,testa(3 downto 0),testa(7 downto 4),testa(11 downto 8),(others=>'0'),ca,cb,cc,cd,ce,cf,cg,dp,AN);
+SEG: seven_segment_driver port map (ck, rst, d0,d1,d2,d3,punteggio(3 downto 0),punteggio(7 downto 4),(others=>'0'),(others=>'0'),ca,cb,cc,cd,ce,cf,cg,dp,AN);
 sincv<=sincvert;
 gameOver<=gameo;
+
+process(ck)
+begin
+if (punteggio(3 downto 0)>"1001") then 
+    punteggio(3 downto 0)<= std_logic_vector(unsigned(punteggio(3 downto 0))+to_unsigned(6,4));
+    if (punteggio(7 downto 4)>"1001") then
+    punteggio<="00000000";
+    else
+    punteggio (7 downto 4)<= std_logic_vector(unsigned(punteggio(7 downto 4))+to_unsigned(1,4));
+    end if;
+    end if;
+end process;
 end Behavioral;
