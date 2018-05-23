@@ -352,6 +352,7 @@ elsif(rising_edge(ck)and enable1='1')then
 
 --prova mia
 if((vitaminaH=testaH)and(vitaminaV=testaV)) then
+      eaten<='1';
       Qh <= "000001";
       tmph := Qh(4) XOR Qh(3) XOR Qh(2) XOR Qh(0);
       Qh <= tmph & Qh(5 downto 1);
