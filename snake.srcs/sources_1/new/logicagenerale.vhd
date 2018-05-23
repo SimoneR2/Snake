@@ -122,16 +122,4 @@ MOVIMENTO: snakemov port map (ck, enable1hz, rst, BTN1, BTN2,sincVert, addRAM, w
 SEG: seven_segment_driver port map (ck, rst, d0,d1,d2,d3,punteggio(3 downto 0),punteggio(7 downto 4),(others=>'0'),(others=>'0'),ca,cb,cc,cd,ce,cf,cg,dp,AN);
 sincv<=sincvert;
 gameOver<=gameo;
-
-process(ck)
-begin
-if (punteggio(3 downto 0)>"1001") then 
-    punteggio(3 downto 0)<= std_logic_vector(unsigned(punteggio(3 downto 0))+to_unsigned(6,4));
-    if (punteggio(7 downto 4)>"1001") then
-    punteggio<="00000000";
-    else
-    punteggio (7 downto 4)<= std_logic_vector(unsigned(punteggio(7 downto 4))+to_unsigned(1,4));
-    end if;
-    end if;
-end process;
 end Behavioral;

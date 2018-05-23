@@ -240,6 +240,14 @@ elsif(rising_edge(ck) and enable2='1') then
    serpente(0)<=std_logic_vector(unsigned(testaH)+unsigned(testaV)*to_unsigned(80,7));
     elsif (eaten = '1') then
         punteggio_inout<=punteggio_inout+to_unsigned(1,8);
+                if (punteggio_inout(3 downto 0)>"1001") then 
+                    punteggio_inout(3 downto 0)<=(punteggio_inout(3 downto 0)+to_unsigned(6,4));
+                    if (punteggio_inout(7 downto 4)>"1001") then
+                    punteggio_inout<="00000000";
+                    else
+                    punteggio_inout (7 downto 4)<= (punteggio_inout(7 downto 4)+to_unsigned(1,4));
+                    end if;
+                    end if;
         punt<=std_logic_vector(punteggio_inout);
         lunghezza<=lunghezza+1; 
         for i in 1 to 15 loop
@@ -356,15 +364,15 @@ elsif(rising_edge(ck)and enable1='1')then
 --prova mia
 if((vitaminaH=testaH)and(vitaminaV=testaV)) then
       eaten<='1';
-      Qh <= "000001";
+      --Qh <= "000001";
       tmph := Qh(4) XOR Qh(3) XOR Qh(2) XOR Qh(0);
       Qh <= tmph & Qh(5 downto 1);
       vitaminaH<= std_logic_vector(unsigned(Qh)+to_unsigned(8,7));
       
-      Qv <= "00001";
-            tmpv := Qv(4) XOR Qv(3) XOR Qv(2) XOR Qv(0);
-            Qv <= tmpv & Qv(4 downto 1);
-            vitaminaV<= std_logic_vector(unsigned(Qv)+to_unsigned(14,6));
+      --Qv <= "00001";
+     tmpv := Qv(4) XOR Qv(3) XOR Qv(2) XOR Qv(0);
+     Qv <= tmpv & Qv(4 downto 1);
+     vitaminaV<= std_logic_vector(unsigned(Qv)+to_unsigned(14,6));
      else eaten<='0';
      end if;
      
