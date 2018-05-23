@@ -95,6 +95,12 @@ signal RAMpresent_state, RAMnext_state: fsm_ram_logic;
 type fsm_ck is (a1,a2,a3); --a1 attesa, a2 enable1, a3 enable2
 signal ckpresent_state, cknext_state: fsm_ck;
 signal enable1, enable2: std_logic;
+
+--prova mia
+signal Qh: STD_LOGIC_VECTOR(5 downto 0) := "000001";
+signal Qv: STD_LOGIC_VECTOR(4 downto 0) := "00001";
+
+
 begin
 sxbut:edgebutton port map(ck,enable1hz,btnc,sx);
 dxbut:edgebutton port map(ck,enable1hz,btnu,dx);
@@ -317,6 +323,11 @@ begin
 end process;
 
 process (ck,rst) 
+
+-- prova mia
+variable tmph : STD_LOGIC := '0';
+variable tmpv : STD_LOGIC := '0';
+
 begin
 if (rst='0') then
     vitaminaH<="0001000";
@@ -324,19 +335,33 @@ if (rst='0') then
     flag<='0';
     eaten<='0';
 elsif(rising_edge(ck)and enable1='1')then
-    if((vitaminaH=testaH)and(vitaminaV=testaV)) then
-    eaten<='1';
-        if(flag='0') then
-            vitaminaH<="0101000";
-            vitaminaV<="101000";
-            flag<='1';
-        elsif(flag='1') then
-            vitaminaH<="0001000";
-            vitaminaV<="001000";
-            flag<='0';
-        end if;      
-    else eaten<='0';
-    end if;
+--    if((vitaminaH=testaH)and(vitaminaV=testaV)) then
+--    eaten<='1';
+--        if(flag='0') then
+--            vitaminaH<="0101000";
+--            vitaminaV<="101000";
+--            flag<='1';
+--        elsif(flag='1') then
+--            vitaminaH<="0001000";
+--            vitaminaV<="001000";
+--            flag<='0';
+--       end if;      
+--    else eaten<='0';
+--    end if;
+
+
+--prova mia
+if((vitaminaH=testaH)and(vitaminaV=testaV)) then
+      Qh <= "000001";
+      tmph := Qh(4) XOR Qh(3) XOR Qh(2) XOR Qh(0);
+      Qh <= tmph & Qh(5 downto 1);
+      vitaminaH<= std_logic_vector(unsigned(Qh)+to_unsigned(8,7));
+      
+      Qv <= "00001";
+            tmpv := Qv(4) XOR Qv(3) XOR Qv(2) XOR Qv(0);
+            Qv <= tmph & Qv(4 downto 1);
+            vitaminaV<= std_logic_vector(unsigned(Qv)+to_unsigned(14,6));
+     end if;
 end if;
 end process;
 end Behavioral;
