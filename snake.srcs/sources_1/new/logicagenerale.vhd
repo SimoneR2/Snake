@@ -73,7 +73,8 @@ component snakemov
              tes: out std_logic_vector(12 downto 0);
              s,r,u,d: out std_logic;
              dataRAM: out std_logic_vector(3 downto 0);
-             punt: out std_logic_vector(7 downto 0)
+             primaC: out std_logic_vector(3 downto 0);
+             secondaC: out std_logic_vector(1 downto 0)
              );
   end component;
   
@@ -111,15 +112,17 @@ signal d5: std_logic_vector(3 downto 0);
 signal d6: std_logic_vector(3 downto 0);
 signal d7: std_logic_vector(3 downto 0);
 signal testa: std_logic_vector(12 downto 0);
-signal punteggio:std_logic_vector(7 downto 0);
+signal primacifra: std_logic_vector(3 downto 0);
+signal secondacifra: std_logic_vector(1 downto 0);
 begin
 
 
 PRESCALER: prescaler1hz port map (ck, enable1hz);
 VGA: gestione port map (ck,rst, addRAM, dinRAM, writeREQUEST,  sinch,sincvert,r,g,b);
-MOVIMENTO: snakemov port map (ck, enable1hz, rst, BTN1, BTN2,sincVert, addRAM, writeREQUEST,gameo,testa, sinistra,destra,su,giu, dinRAM,punteggio);
+MOVIMENTO: snakemov port map (ck, enable1hz, rst, BTN1, BTN2,sincVert, addRAM, writeREQUEST,gameo,testa, sinistra,destra,su,giu, dinRAM,primacifra, secondacifra);
 --SEG: seven_segment_driver port map (ck, rst, d0,d1,d2,d3,testa(3 downto 0),testa(7 downto 4),testa(11 downto 8),(others=>'0'),ca,cb,cc,cd,ce,cf,cg,dp,AN);
-SEG: seven_segment_driver port map (ck, rst, d0,d1,d2,d3,punteggio(3 downto 0),punteggio(7 downto 4),(others=>'0'),(others=>'0'),ca,cb,cc,cd,ce,cf,cg,dp,AN);
+d5<=(0=>secondacifra(0), 1=>secondacifra(1), others=>'0');
+SEG: seven_segment_driver port map (ck, rst, d0,d1,d2,d3,primacifra,d5,(others=>'0'),(others=>'0'),ca,cb,cc,cd,ce,cf,cg,dp,AN);
 sincv<=sincvert;
 gameOver<=gameo;
 end Behavioral;
