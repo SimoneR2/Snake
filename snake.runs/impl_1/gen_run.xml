@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1527201123">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1527252274">
   <File Type="PWROPT-DCP" Name="logicagenerale_pwropt.dcp"/>
   <File Type="ROUTE-PWR" Name="logicagenerale_power_routed.rpt"/>
   <File Type="PA-TCL" Name="logicagenerale.tcl"/>
@@ -66,6 +66,12 @@
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/7seg.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/animazioni.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>

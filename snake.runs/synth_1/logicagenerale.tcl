@@ -34,6 +34,7 @@ add_files {{D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/ip/romvideo.c
 add_files {{D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/ip/blk_mem_gen_0/raminit.coe}}
 read_vhdl -library xil_defaultlib {
   {D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/7seg.vhd}
+  {D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/animazioni.vhd}
   {D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/edgebutton.vhd}
   {D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd}
   {D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/prescaler1hz.vhd}

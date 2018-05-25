@@ -2,8 +2,8 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Fri May 25 00:32:05 2018
-# Process ID: 14900
+# Start of session at: Fri May 25 14:44:36 2018
+# Process ID: 11912
 # Current directory: D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1
 # Command line: vivado.exe -log logicagenerale.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source logicagenerale.tcl
 # Log file: D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/logicagenerale.vds
@@ -15,18 +15,18 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 13104 
+INFO: Helper process launched with PID 13968 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 393.215 ; gain = 100.508
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 393.152 ; gain = 100.098
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'logicagenerale' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:47]
-INFO: [Synth 8-3491] module 'prescaler1hz' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/prescaler1hz.vhd:34' bound to instance 'PRESCALER' of component 'prescaler1hz' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:120]
+INFO: [Synth 8-3491] module 'prescaler1hz' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/prescaler1hz.vhd:34' bound to instance 'PRESCALER' of component 'prescaler1hz' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:126]
 INFO: [Synth 8-638] synthesizing module 'prescaler1hz' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/prescaler1hz.vhd:41]
 INFO: [Synth 8-256] done synthesizing module 'prescaler1hz' (1#1) [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/prescaler1hz.vhd:41]
-INFO: [Synth 8-3491] module 'gestione' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:34' bound to instance 'VGA' of component 'gestione' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:121]
+INFO: [Synth 8-3491] module 'gestione' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:34' bound to instance 'VGA' of component 'gestione' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:127]
 INFO: [Synth 8-638] synthesizing module 'gestione' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:45]
-INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-14900-PCSTUDIO/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'vgaclock' of component 'clk_wiz_0' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:115]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-14900-PCSTUDIO/realtime/clk_wiz_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-11912-PCSTUDIO/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'vgaclock' of component 'clk_wiz_0' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:115]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-11912-PCSTUDIO/realtime/clk_wiz_0_stub.vhdl:13]
 INFO: [Synth 8-3491] module 'vga' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/vga.vhd:34' bound to instance 'vgacmd' of component 'vga' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:121]
 INFO: [Synth 8-638] synthesizing module 'vga' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/vga.vhd:45]
 WARNING: [Synth 8-614] signal 'addressV' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/vga.vhd:56]
@@ -35,10 +35,10 @@ WARNING: [Synth 8-614] signal 'blank' is read in the process but is not in the s
 WARNING: [Synth 8-614] signal 'redpixel' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/vga.vhd:101]
 WARNING: [Synth 8-614] signal 'greenpixel' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/vga.vhd:101]
 INFO: [Synth 8-256] done synthesizing module 'vga' (2#1) [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/vga.vhd:45]
-INFO: [Synth 8-3491] module 'blk_mem_gen_1' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-14900-PCSTUDIO/realtime/blk_mem_gen_1_stub.vhdl:5' bound to instance 'rom' of component 'blk_mem_gen_1' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:125]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_1' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-14900-PCSTUDIO/realtime/blk_mem_gen_1_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'blk_mem_gen_0' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-14900-PCSTUDIO/realtime/blk_mem_gen_0_stub.vhdl:5' bound to instance 'ram' of component 'blk_mem_gen_0' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:128]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-14900-PCSTUDIO/realtime/blk_mem_gen_0_stub.vhdl:23]
+INFO: [Synth 8-3491] module 'blk_mem_gen_1' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-11912-PCSTUDIO/realtime/blk_mem_gen_1_stub.vhdl:5' bound to instance 'rom' of component 'blk_mem_gen_1' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:125]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_1' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-11912-PCSTUDIO/realtime/blk_mem_gen_1_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'blk_mem_gen_0' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-11912-PCSTUDIO/realtime/blk_mem_gen_0_stub.vhdl:5' bound to instance 'ram' of component 'blk_mem_gen_0' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:128]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/.Xil/Vivado-11912-PCSTUDIO/realtime/blk_mem_gen_0_stub.vhdl:23]
 WARNING: [Synth 8-614] signal 'addH_lsb' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:156]
 WARNING: [Synth 8-614] signal 'addV_msb' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:171]
 WARNING: [Synth 8-614] signal 'addH_msb' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:171]
@@ -49,36 +49,38 @@ WARNING: [Synth 8-614] signal 'debug' is read in the process but is not in the s
 WARNING: [Synth 8-3848] Net greenpixel in module/entity gestione does not have driver. [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:94]
 WARNING: [Synth 8-3848] Net dinRAM_A in module/entity gestione does not have driver. [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:103]
 INFO: [Synth 8-256] done synthesizing module 'gestione' (3#1) [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:45]
-INFO: [Synth 8-3491] module 'snakemov' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:34' bound to instance 'MOVIMENTO' of component 'snakemov' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:122]
-INFO: [Synth 8-638] synthesizing module 'snakemov' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:49]
-INFO: [Synth 8-3491] module 'edgebutton' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/edgebutton.vhd:34' bound to instance 'sxbut' of component 'edgebutton' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:108]
+INFO: [Synth 8-3491] module 'snakemov' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:34' bound to instance 'MOVIMENTO' of component 'snakemov' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:128]
+INFO: [Synth 8-638] synthesizing module 'snakemov' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:47]
+INFO: [Synth 8-3491] module 'edgebutton' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/edgebutton.vhd:34' bound to instance 'sxbut' of component 'edgebutton' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:106]
 INFO: [Synth 8-638] synthesizing module 'edgebutton' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/edgebutton.vhd:41]
 WARNING: [Synth 8-614] signal 'ck1hz' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/edgebutton.vhd:52]
 INFO: [Synth 8-256] done synthesizing module 'edgebutton' (4#1) [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/edgebutton.vhd:41]
-INFO: [Synth 8-3491] module 'edgebutton' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/edgebutton.vhd:34' bound to instance 'dxbut' of component 'edgebutton' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:109]
-WARNING: [Synth 8-614] signal 'ckpresent_state' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:120]
-WARNING: [Synth 8-614] signal 'ckpresent_state' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:129]
-WARNING: [Synth 8-614] signal 'enable1hz' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:146]
-WARNING: [Synth 8-614] signal 'enable2' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:191]
-WARNING: [Synth 8-614] signal 'enable2' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:232]
-WARNING: [Synth 8-614] signal 'lunghezza' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:258]
-WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:268]
-WARNING: [Synth 8-614] signal 'enable1' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:354]
-WARNING: [Synth 8-6014] Unused sequential element tmph_reg was removed.  [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:386]
-WARNING: [Synth 8-6014] Unused sequential element tmpv_reg was removed.  [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:391]
-INFO: [Synth 8-256] done synthesizing module 'snakemov' (5#1) [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:49]
+INFO: [Synth 8-3491] module 'edgebutton' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/edgebutton.vhd:34' bound to instance 'dxbut' of component 'edgebutton' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:107]
+WARNING: [Synth 8-614] signal 'ckpresent_state' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:118]
+WARNING: [Synth 8-614] signal 'ckpresent_state' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:127]
+WARNING: [Synth 8-614] signal 'enable1hz' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:137]
+WARNING: [Synth 8-614] signal 'enable2' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:172]
+WARNING: [Synth 8-614] signal 'enable2' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:213]
+WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:255]
+WARNING: [Synth 8-614] signal 'enable1' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:341]
+WARNING: [Synth 8-6014] Unused sequential element tmph_reg was removed.  [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:373]
+WARNING: [Synth 8-6014] Unused sequential element tmpv_reg was removed.  [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:378]
+INFO: [Synth 8-256] done synthesizing module 'snakemov' (5#1) [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:47]
+INFO: [Synth 8-3491] module 'animazioni' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/animazioni.vhd:34' bound to instance 'ANIMAZIONE' of component 'animazioni' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:129]
+INFO: [Synth 8-638] synthesizing module 'animazioni' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/animazioni.vhd:41]
+WARNING: [Synth 8-614] signal 'gameover' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/animazioni.vhd:45]
+WARNING: [Synth 8-614] signal 'counter' is read in the process but is not in the sensitivity list [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/animazioni.vhd:54]
+INFO: [Synth 8-256] done synthesizing module 'animazioni' (6#1) [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/animazioni.vhd:41]
 	Parameter size bound to: 20 - type: integer 
-INFO: [Synth 8-3491] module 'seven_segment_driver' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/7seg.vhd:34' bound to instance 'SEG' of component 'seven_segment_driver' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:125]
+INFO: [Synth 8-3491] module 'seven_segment_driver' declared at 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/7seg.vhd:34' bound to instance 'SEG' of component 'seven_segment_driver' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:156]
 INFO: [Synth 8-638] synthesizing module 'seven_segment_driver' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/7seg.vhd:55]
 	Parameter size bound to: 20 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'seven_segment_driver' (6#1) [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/7seg.vhd:55]
-WARNING: [Synth 8-3848] Net d0 in module/entity logicagenerale does not have driver. [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:106]
-WARNING: [Synth 8-3848] Net d1 in module/entity logicagenerale does not have driver. [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:107]
-WARNING: [Synth 8-3848] Net d2 in module/entity logicagenerale does not have driver. [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:108]
-WARNING: [Synth 8-3848] Net d3 in module/entity logicagenerale does not have driver. [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:109]
-INFO: [Synth 8-256] done synthesizing module 'logicagenerale' (7#1) [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:47]
+INFO: [Synth 8-256] done synthesizing module 'seven_segment_driver' (7#1) [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/7seg.vhd:55]
+INFO: [Synth 8-4471] merging register 'd6_reg[4:0]' into 'd2_reg[4:0]' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:141]
+WARNING: [Synth 8-6014] Unused sequential element d6_reg was removed.  [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:141]
+INFO: [Synth 8-256] done synthesizing module 'logicagenerale' (8#1) [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:47]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 448.699 ; gain = 155.992
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 448.426 ; gain = 155.371
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -88,30 +90,14 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 WARNING: [Synth 8-3295] tying undriven pin vgacmd:greenpixel to constant 0 [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/gestione.vhd:121]
-WARNING: [Synth 8-3295] tying undriven pin SEG:digit0[3] to constant 0 [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:125]
-WARNING: [Synth 8-3295] tying undriven pin SEG:digit0[2] to constant 0 [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:125]
-WARNING: [Synth 8-3295] tying undriven pin SEG:digit0[1] to constant 0 [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:125]
-WARNING: [Synth 8-3295] tying undriven pin SEG:digit0[0] to constant 0 [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:125]
-WARNING: [Synth 8-3295] tying undriven pin SEG:digit1[3] to constant 0 [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:125]
-WARNING: [Synth 8-3295] tying undriven pin SEG:digit1[2] to constant 0 [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:125]
-WARNING: [Synth 8-3295] tying undriven pin SEG:digit1[1] to constant 0 [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:125]
-WARNING: [Synth 8-3295] tying undriven pin SEG:digit1[0] to constant 0 [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:125]
-WARNING: [Synth 8-3295] tying undriven pin SEG:digit2[3] to constant 0 [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:125]
-WARNING: [Synth 8-3295] tying undriven pin SEG:digit2[2] to constant 0 [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:125]
-WARNING: [Synth 8-3295] tying undriven pin SEG:digit2[1] to constant 0 [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:125]
-WARNING: [Synth 8-3295] tying undriven pin SEG:digit2[0] to constant 0 [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:125]
-WARNING: [Synth 8-3295] tying undriven pin SEG:digit3[3] to constant 0 [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:125]
-WARNING: [Synth 8-3295] tying undriven pin SEG:digit3[2] to constant 0 [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:125]
-WARNING: [Synth 8-3295] tying undriven pin SEG:digit3[1] to constant 0 [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:125]
-WARNING: [Synth 8-3295] tying undriven pin SEG:digit3[0] to constant 0 [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/logicagenerale.vhd:125]
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 448.699 ; gain = 155.992
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 448.426 ; gain = 155.371
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 448.699 ; gain = 155.992
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 448.426 ; gain = 155.371
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -133,18 +119,18 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 802.980 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 803.992 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'VGA/ram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'VGA/rom' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 802.980 ; gain = 510.273
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 803.992 ; gain = 510.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 802.980 ; gain = 510.273
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 803.992 ; gain = 510.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -155,7 +141,7 @@ Applied set_property DONT_TOUCH = true for VGA/vgaclock. (constraint file  auto 
 Applied set_property DONT_TOUCH = true for VGA/ram. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for VGA/rom. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 802.980 ; gain = 510.273
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 803.992 ; gain = 510.938
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "vcount" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -166,18 +152,10 @@ INFO: [Synth 8-802] inferred FSM for state register 'present_state_reg' in modul
 INFO: [Synth 8-5544] ROM "buttonout" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "u" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "u" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "s" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "r" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "gameOver" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "gameOver" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "testaV" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "testaH" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5544] ROM "u" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "u" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "s" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "r" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "gameOver" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "gameOver" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "testaV" won't be mapped to RAM because it is too sparse
@@ -210,9 +188,9 @@ INFO: [Synth 8-3354] encoded FSM with state register 'present_state_reg' using e
                       a3 |                              100 |                               10
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'ckpresent_state_reg' using encoding 'one-hot' in module 'snakemov'
-WARNING: [Synth 8-327] inferring latch for variable 'enable2_reg' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:132]
+WARNING: [Synth 8-327] inferring latch for variable 'enable2_reg' [D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.srcs/sources_1/new/snakemov.vhd:130]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 802.980 ; gain = 510.273
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 803.992 ; gain = 510.938
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -229,20 +207,20 @@ Detailed RTL Component Info :
 	   2 Input     11 Bit       Adders := 1     
 	   2 Input     10 Bit       Adders := 3     
 	   2 Input      7 Bit       Adders := 3     
-	   2 Input      6 Bit       Adders := 3     
+	   2 Input      6 Bit       Adders := 4     
 	   2 Input      4 Bit       Adders := 2     
 +---XORs : 
 	   4 Input      1 Bit         XORs := 2     
 +---Registers : 
-	               13 Bit    Registers := 21    
+	               13 Bit    Registers := 20    
 	               11 Bit    Registers := 1     
 	               10 Bit    Registers := 3     
-	                7 Bit    Registers := 2     
+	                7 Bit    Registers := 4     
 	                6 Bit    Registers := 3     
-	                5 Bit    Registers := 1     
-	                4 Bit    Registers := 4     
-	                2 Bit    Registers := 3     
-	                1 Bit    Registers := 13    
+	                5 Bit    Registers := 7     
+	                4 Bit    Registers := 6     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 9     
 +---Muxes : 
 	  12 Input     13 Bit        Muxes := 1     
 	   2 Input     13 Bit        Muxes := 31    
@@ -251,7 +229,9 @@ Detailed RTL Component Info :
 	   8 Input      8 Bit        Muxes := 1     
 	   4 Input      7 Bit        Muxes := 1     
 	   4 Input      6 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 4     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 5     
+	   2 Input      4 Bit        Muxes := 5     
 	  15 Input      4 Bit        Muxes := 1     
 	  12 Input      4 Bit        Muxes := 1     
 	   3 Input      3 Bit        Muxes := 1     
@@ -261,9 +241,9 @@ Detailed RTL Component Info :
 	   5 Input      2 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 4     
 	   6 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 24    
+	   2 Input      1 Bit        Muxes := 12    
 	  12 Input      1 Bit        Muxes := 5     
-	   3 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 3     
 	  16 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
@@ -273,6 +253,14 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
+Module logicagenerale 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 6     
+	                4 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 5     
+	   2 Input      4 Bit        Muxes := 1     
 Module prescaler1hz 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -318,13 +306,13 @@ Detailed RTL Component Info :
 +---XORs : 
 	   4 Input      1 Bit         XORs := 2     
 +---Registers : 
-	               13 Bit    Registers := 20    
+	               13 Bit    Registers := 19    
 	                7 Bit    Registers := 2     
 	                6 Bit    Registers := 3     
 	                5 Bit    Registers := 1     
-	                4 Bit    Registers := 3     
-	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 7     
+	                4 Bit    Registers := 4     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 3     
 +---Muxes : 
 	  12 Input     13 Bit        Muxes := 1     
 	   2 Input     13 Bit        Muxes := 31    
@@ -340,10 +328,18 @@ Detailed RTL Component Info :
 	   3 Input      2 Bit        Muxes := 2     
 	   6 Input      2 Bit        Muxes := 1     
 	  12 Input      1 Bit        Muxes := 5     
-	   3 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 13    
+	   2 Input      1 Bit        Muxes := 1     
 	  16 Input      1 Bit        Muxes := 1     
+Module animazioni 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	                7 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      6 Bit        Muxes := 1     
 Module seven_segment_driver 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -369,27 +365,67 @@ INFO: [Synth 8-5546] ROM "VGA/vgacmd/vcount" won't be mapped to RAM because it i
 WARNING: [Synth 8-3917] design logicagenerale has port g[2] driven by constant 0
 WARNING: [Synth 8-3917] design logicagenerale has port g[1] driven by constant 0
 WARNING: [Synth 8-3917] design logicagenerale has port g[0] driven by constant 0
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ANIMAZIONE/counter_reg[6] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\VGA/enableRAM_B_reg )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\VGA/wrRAM_A_reg[0] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\VGA/enableRAM_A_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MOVIMENTO/secondacifra_reg[1] )
+INFO: [Synth 8-3886] merging instance 'd7_reg[2]' (FDS) to 'd0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'd5_reg[2]' (FD) to 'd5_reg[3]'
+INFO: [Synth 8-3886] merging instance 'd3_reg[2]' (FD) to 'd3_reg[4]'
+INFO: [Synth 8-3886] merging instance 'd2_reg[2]' (FDS) to 'd0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'd1_reg[2]' (FDS) to 'd1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'd0_reg[2]' (FDS) to 'd0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'd7_reg[3]' (FDS) to 'd0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'd3_reg[3]' (FD) to 'd3_reg[4]'
+INFO: [Synth 8-3886] merging instance 'd2_reg[3]' (FDS) to 'd0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'd1_reg[3]' (FDS) to 'd0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'd0_reg[3]' (FDS) to 'd0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'd7_reg[0]' (FDS) to 'd0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'd3_reg[0]' (FD) to 'd3_reg[4]'
+INFO: [Synth 8-3886] merging instance 'd2_reg[0]' (FDS) to 'd1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'd1_reg[0]' (FDS) to 'd0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'd0_reg[0]' (FDS) to 'd7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'd7_reg[1]' (FDS) to 'd2_reg[1]'
+INFO: [Synth 8-3886] merging instance 'd3_reg[1]' (FD) to 'd3_reg[4]'
+INFO: [Synth 8-3886] merging instance 'd2_reg[1]' (FDS) to 'd1_reg[4]'
+INFO: [Synth 8-3886] merging instance 'd1_reg[1]' (FDS) to 'd1_reg[4]'
+INFO: [Synth 8-3886] merging instance 'd0_reg[1]' (FDS) to 'd0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'd7_reg[4]' (FDS) to 'd0_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\d5_reg[4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\d3_reg[4] )
+INFO: [Synth 8-3886] merging instance 'd2_reg[4]' (FDS) to 'd0_reg[4]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\d0_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ANIMAZIONE/counter_reg_rep[6] )
+INFO: [Synth 8-3886] merging instance 'd5_reg[3]' (FD) to 'd5_reg[1]'
 WARNING: [Synth 8-3332] Sequential element (VGA/enableRAM_A_reg) is unused and will be removed from module logicagenerale.
 WARNING: [Synth 8-3332] Sequential element (VGA/wrRAM_A_reg[0]) is unused and will be removed from module logicagenerale.
-WARNING: [Synth 8-3332] Sequential element (MOVIMENTO/tes_reg[12]) is unused and will be removed from module logicagenerale.
-WARNING: [Synth 8-3332] Sequential element (MOVIMENTO/tes_reg[11]) is unused and will be removed from module logicagenerale.
-WARNING: [Synth 8-3332] Sequential element (MOVIMENTO/tes_reg[10]) is unused and will be removed from module logicagenerale.
-WARNING: [Synth 8-3332] Sequential element (MOVIMENTO/tes_reg[9]) is unused and will be removed from module logicagenerale.
-WARNING: [Synth 8-3332] Sequential element (MOVIMENTO/tes_reg[8]) is unused and will be removed from module logicagenerale.
-WARNING: [Synth 8-3332] Sequential element (MOVIMENTO/tes_reg[7]) is unused and will be removed from module logicagenerale.
-WARNING: [Synth 8-3332] Sequential element (MOVIMENTO/tes_reg[6]) is unused and will be removed from module logicagenerale.
-WARNING: [Synth 8-3332] Sequential element (MOVIMENTO/tes_reg[5]) is unused and will be removed from module logicagenerale.
-WARNING: [Synth 8-3332] Sequential element (MOVIMENTO/tes_reg[4]) is unused and will be removed from module logicagenerale.
-WARNING: [Synth 8-3332] Sequential element (MOVIMENTO/tes_reg[3]) is unused and will be removed from module logicagenerale.
-WARNING: [Synth 8-3332] Sequential element (MOVIMENTO/tes_reg[2]) is unused and will be removed from module logicagenerale.
-WARNING: [Synth 8-3332] Sequential element (MOVIMENTO/tes_reg[1]) is unused and will be removed from module logicagenerale.
-WARNING: [Synth 8-3332] Sequential element (MOVIMENTO/tes_reg[0]) is unused and will be removed from module logicagenerale.
+WARNING: [Synth 8-3332] Sequential element (MOVIMENTO/secondacifra_reg[1]) is unused and will be removed from module logicagenerale.
 WARNING: [Synth 8-3332] Sequential element (VGA/enableRAM_B_reg) is unused and will be removed from module logicagenerale.
+WARNING: [Synth 8-3332] Sequential element (ANIMAZIONE/counter_reg[6]) is unused and will be removed from module logicagenerale.
+WARNING: [Synth 8-3332] Sequential element (ANIMAZIONE/counter_reg_rep[6]) is unused and will be removed from module logicagenerale.
+WARNING: [Synth 8-3332] Sequential element (d3_reg[4]) is unused and will be removed from module logicagenerale.
+WARNING: [Synth 8-3332] Sequential element (d5_reg[4]) is unused and will be removed from module logicagenerale.
+WARNING: [Synth 8-3332] Sequential element (d0_reg[4]) is unused and will be removed from module logicagenerale.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 802.980 ; gain = 510.273
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 803.992 ; gain = 510.938
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++---------------------+----------------+---------------+----------------+
+|Module Name          | RTL Object     | Depth x Width | Implemented As | 
++---------------------+----------------+---------------+----------------+
+|animazioni           | LED            | 128x16        | LUT            | 
+|seven_segment_driver | cathodes       | 32x8          | LUT            | 
+|logicagenerale       | ANIMAZIONE/LED | 128x16        | LUT            | 
+|logicagenerale       | SEG/cathodes   | 32x8          | LUT            | 
++---------------------+----------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -403,13 +439,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'VGA/vgaclock/clk_out1' to pin 'VGA/vgaclock/bbstub_clk_out1/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 802.980 ; gain = 510.273
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 803.992 ; gain = 510.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 842.336 ; gain = 549.629
+Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 845.059 ; gain = 552.004
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -421,7 +457,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 851.363 ; gain = 558.656
+Finished Technology Mapping : Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 850.422 ; gain = 557.367
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -449,7 +485,7 @@ CRITICAL WARNING: [Synth 8-4442] BlackBox module \VGA/ram  has unconnected pin d
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \VGA/ram  has unconnected pin dina[1]
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \VGA/ram  has unconnected pin dina[0]
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 851.363 ; gain = 558.656
+Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 850.422 ; gain = 557.367
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -462,7 +498,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 851.363 ; gain = 558.656
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 850.422 ; gain = 557.367
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -474,25 +510,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 851.363 ; gain = 558.656
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 850.422 ; gain = 557.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 851.363 ; gain = 558.656
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 850.422 ; gain = 557.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 851.363 ; gain = 558.656
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 850.422 ; gain = 557.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 851.363 ; gain = 558.656
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 850.422 ; gain = 557.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -515,43 +551,43 @@ Report Cell Usage:
 |2     |blk_mem_gen_1_bbox_1 |     1|
 |3     |clk_wiz_0_bbox_0     |     1|
 |4     |CARRY4               |    60|
-|5     |LUT1                 |    14|
+|5     |LUT1                 |    15|
 |6     |LUT2                 |    63|
-|7     |LUT3                 |    53|
-|8     |LUT4                 |    37|
-|9     |LUT5                 |    45|
-|10    |LUT6                 |   381|
+|7     |LUT3                 |    56|
+|8     |LUT4                 |    41|
+|9     |LUT5                 |    43|
+|10    |LUT6                 |   404|
 |11    |MUXF7                |    34|
 |12    |MUXF8                |    17|
-|13    |FDCE                 |   300|
+|13    |FDCE                 |   313|
 |14    |FDPE                 |    11|
-|15    |FDRE                 |   118|
-|16    |FDSE                 |     1|
-|17    |LD                   |    14|
-|18    |LDP                  |     1|
-|19    |IBUF                 |     3|
-|20    |OBUF                 |    35|
+|15    |FDRE                 |   127|
+|16    |LD                   |    14|
+|17    |LDP                  |     1|
+|18    |IBUF                 |     3|
+|19    |OBUF                 |    46|
 +------+---------------------+------+
 
 Report Instance Areas: 
-+------+------------+---------------------+------+
-|      |Instance    |Module               |Cells |
-+------+------------+---------------------+------+
-|1     |top         |                     |  1260|
-|2     |  MOVIMENTO |snakemov             |   882|
-|3     |    dxbut   |edgebutton           |     5|
-|4     |    sxbut   |edgebutton_0         |     5|
-|5     |  PRESCALER |prescaler1hz         |    41|
-|6     |  SEG       |seven_segment_driver |    37|
-|7     |  VGA       |gestione             |   262|
-|8     |    vgacmd  |vga                  |   145|
-+------+------------+---------------------+------+
++------+-------------+---------------------+------+
+|      |Instance     |Module               |Cells |
++------+-------------+---------------------+------+
+|1     |top          |                     |  1321|
+|2     |  ANIMAZIONE |animazioni           |    34|
+|3     |  MOVIMENTO  |snakemov             |   881|
+|4     |    dxbut    |edgebutton           |     5|
+|5     |    sxbut    |edgebutton_0         |     5|
+|6     |  PRESCALER  |prescaler1hz         |    41|
+|7     |  SEG        |seven_segment_driver |    46|
+|8     |  VGA        |gestione             |   263|
+|9     |    vgacmd   |vga                  |   146|
++------+-------------+---------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 851.363 ; gain = 558.656
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 850.422 ; gain = 557.367
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 4 critical warnings and 24 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:35 . Memory (MB): peak = 851.363 ; gain = 204.375
-Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 851.363 ; gain = 558.656
+Synthesis finished with 0 errors, 4 critical warnings and 17 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:36 . Memory (MB): peak = 850.422 ; gain = 201.801
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 850.422 ; gain = 557.367
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 129 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -564,10 +600,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   LDP => LDPE: 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-82 Infos, 72 Warnings, 4 Critical Warnings and 0 Errors encountered.
+108 Infos, 47 Warnings, 4 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 851.363 ; gain = 570.129
+synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:00:49 . Memory (MB): peak = 850.422 ; gain = 568.840
 INFO: [Common 17-1381] The checkpoint 'D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.runs/synth_1/logicagenerale.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file logicagenerale_utilization_synth.rpt -pb logicagenerale_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 851.363 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri May 25 00:33:01 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 850.422 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri May 25 14:45:33 2018...

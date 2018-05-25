@@ -38,8 +38,6 @@ entity snakemov is
            addRAM: out std_logic_vector(12 downto 0);
            writeRAM: out std_logic;
            gameO: out std_logic;
-           tes: out std_logic_vector(12 downto 0); --just for test
-           s,r,u,d: out std_logic;
            dataRAM: out std_logic_vector(3 downto 0);
            primaC: out std_logic_vector(3 downto 0);
            secondaC: out std_logic_vector(1 downto 0)
@@ -135,13 +133,6 @@ begin
         end case;
         end process;
 
-process (enable1)
-begin
-if (rising_edge(enable1)) then
-    tes<=std_logic_vector(unsigned(testaH)+unsigned(testaV)*to_unsigned(80,7));
-    end if;
-end process;
-
 
 process(ck,rst) --FSM posizione serpente
 begin
@@ -177,16 +168,6 @@ end case;
 end if;
 end process;
 
-process (ck) 
-begin
-if (rising_edge(ck)) then
-if (next_state=up) then u<='1'; s<='0'; r<='0'; d<='0';
-elsif (next_state=down) then u<='0'; s<='0'; r<='0'; d<='1';
-elsif (next_state=dxx) then u<='0'; s<='0'; r<='1'; d<='0';
-elsif (next_state=sxx) then u<='0'; s<='1'; r<='0'; d<='0';
-end if;
-end if;
-end process;
 
 process(rst,ck)
 begin

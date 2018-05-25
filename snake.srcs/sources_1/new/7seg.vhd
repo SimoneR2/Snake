@@ -38,14 +38,14 @@ entity seven_segment_driver is
   Port (
     clock : in std_logic;
     reset : in std_logic;
-    digit0 : in std_logic_vector( 3 downto 0 );
-    digit1 : in std_logic_vector( 3 downto 0 );
-    digit2 : in std_logic_vector( 3 downto 0 );
-    digit3 : in std_logic_vector( 3 downto 0 );
-    digit4 : in std_logic_vector( 3 downto 0 );
-    digit5 : in std_logic_vector( 3 downto 0 );
-    digit6 : in std_logic_vector( 3 downto 0 );
-    digit7 : in std_logic_vector( 3 downto 0 );
+    digit0 : in std_logic_vector( 4 downto 0 );
+    digit1 : in std_logic_vector( 4 downto 0 );
+    digit2 : in std_logic_vector( 4 downto 0 );
+    digit3 : in std_logic_vector( 4 downto 0 );
+    digit4 : in std_logic_vector( 4 downto 0 );
+    digit5 : in std_logic_vector( 4 downto 0 );
+    digit6 : in std_logic_vector( 4 downto 0 );
+    digit7 : in std_logic_vector( 4 downto 0 );
     CA, CB, CC, CD, CE, CF, CG, DP : out std_logic;
     AN : out std_logic_vector( 7 downto 0 )
   );
@@ -60,7 +60,7 @@ architecture Behavioral of seven_segment_driver is
   -- by 2^20.
   signal flick_counter : unsigned( size - 1 downto 0 );
   -- The digit is temporarily stored here
-  signal digit : std_logic_vector( 3 downto 0 );
+  signal digit : std_logic_vector( 4 downto 0 );
   -- Collect the values of the cathodes here
   signal cathodes : std_logic_vector( 7 downto 0 );
 
@@ -103,23 +103,26 @@ begin
   with digit select
     cathodes <=
       -- DP, CG, CF, CE, CD, CC, CB, CA
-      "11000000" when "0000",
-      "11111001" when "0001",
-      "10100100" when "0010",
-      "10110000" when "0011",
-      "10011001" when "0100",
-      "10010010" when "0101",
-      "10000010" when "0110",
-      "11111000" when "0111",
-      "10000000" when "1000",
-      "10010000" when "1001",
-      "10001000" when "1010",
-      "10000011" when "1011",
-      "11000110" when "1100",
-      "10100001" when "1101",
-      "10000110" when "1110",
-      "10001110" when others;
-
+      "11000000" when "00000", --0
+      "11111001" when "00001", --1
+      "10100100" when "00010", --2
+      "10110000" when "00011", --3
+      "10011001" when "00100", --4
+      "10010010" when "00101", --5
+      "10000010" when "00110", --6
+      "11111000" when "00111", --7
+      "10000000" when "01000", --8
+      "10010000" when "01001", --9
+      "10001000" when "01010", --A
+      "10000011" when "01011", --B
+      "11000110" when "01100", --C
+      "10100001" when "01101", --D
+      "10000110" when "01110", --E
+      "10001110" when "01111", --F
+      "10001100" when "10000", --P
+      "10101111" when "10001", --R
+      "10000111" when "10010", --T
+      "11111111" when others; --vuoto
   DP <= cathodes( 7 );
   CG <= cathodes( 6 );
   CF <= cathodes( 5 );
