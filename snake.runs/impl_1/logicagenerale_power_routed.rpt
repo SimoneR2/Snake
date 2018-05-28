@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Fri May 25 14:47:07 2018
+| Date             : Mon May 28 23:15:18 2018
 | Host             : PCSTUDIO running 64-bit major release  (build 9200)
 | Command          : report_power -file logicagenerale_power_routed.rpt -pb logicagenerale_power_summary_routed.pb -rpx logicagenerale_power_routed.rpx
 | Design           : logicagenerale
@@ -53,16 +53,16 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        5 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1227 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      568 |     63400 |            0.90 |
-|   Register     |    <0.001 |      466 |    126800 |            0.37 |
+| Slice Logic    |    <0.001 |     1223 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      563 |     63400 |            0.89 |
+|   Register     |    <0.001 |      465 |    126800 |            0.37 |
 |   CARRY4       |    <0.001 |       60 |     15850 |            0.38 |
 |   F7/F8 Muxes  |    <0.001 |       51 |     63400 |            0.08 |
 |   Others       |     0.000 |       28 |       --- |             --- |
-| Signals        |     0.001 |      778 |       --- |             --- |
+| Signals        |     0.001 |      780 |       --- |             --- |
 | Block RAM      |     0.005 |        2 |       135 |            1.48 |
 | MMCM           |     0.116 |        1 |         6 |           16.67 |
-| I/O            |     0.014 |       50 |       210 |           23.81 |
+| I/O            |     0.014 |       52 |       210 |           24.76 |
 | Static Power   |     0.098 |          |           |                 |
 | Total          |     0.238 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+

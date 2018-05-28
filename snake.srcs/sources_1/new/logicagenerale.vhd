@@ -37,8 +37,9 @@ entity logicagenerale is
     BTN1, BTN2: in std_logic;
     sincH, sincV: out std_logic;
     r,g,b: out std_logic_vector(3 downto 0);
-    --gameOver: out std_logic;
     LED: out std_logic_vector (15 downto 0); --per animazioni varie
+    win: out std_logic;
+    gameOver: out std_logic;
     CA, CB, CC, CD, CE, CF, CG, DP : out std_logic;
     AN : out std_logic_vector( 7 downto 0 )
    );
@@ -70,6 +71,7 @@ component snakemov
              addRAM: out std_logic_vector(12 downto 0);
              writeRAM: out std_logic;
              gameO: out std_logic;
+             victory: out std_logic;
              dataRAM: out std_logic_vector(3 downto 0);
              primaC: out std_logic_vector(3 downto 0);
              secondaC: out std_logic_vector(1 downto 0)
@@ -98,7 +100,7 @@ end component;
 
 component animazioni
 Port (
-    enable1hz, rst, gameover: in std_logic;
+    enable1hz, rst, trigger: in std_logic;
     led: out std_logic_vector(15 downto 0)
   );
 end component;
@@ -108,6 +110,8 @@ signal writeREQUEST: std_logic;
 signal dinRAM: std_logic_vector (3 downto 0);
 signal sincVert: std_logic;
 signal gameo: std_logic;
+signal trigger: std_logic;
+signal vic: std_logic;
 signal d0: std_logic_vector(4 downto 0);
 signal d1: std_logic_vector(4 downto 0);
 signal d2: std_logic_vector(4 downto 0);
@@ -125,9 +129,12 @@ begin --INIZIO ARCHIETTETTURA
 LED<=light;
 PRESCALER: prescaler1hz port map (ck, enable1hz);
 VGA: gestione port map (ck,rst, addRAM, dinRAM, writeREQUEST,  sinch,sincvert,r,g,b);
-MOVIMENTO: snakemov port map (ck, enable1hz, rst, BTN1, BTN2,sincVert, addRAM, writeREQUEST,gameo,dinRAM ,primacifra , secondacifra);
-ANIMAZIONE: animazioni port map (enable1hz, rst, gameo, LIGHT);
---SEG: seven_segment_driver port map (ck, rst, d0,d1,d2,d3,testa(3 downto 0),testa(7 downto 4),testa(11 downto 8),(others=>'0'),ca,cb,cc,cd,ce,cf,cg,dp,AN);
+MOVIMENTO: snakemov port map (ck, enable1hz, rst, BTN1, BTN2,sincVert, addRAM, writeREQUEST,gameo,vic,dinRAM ,primacifra , secondacifra);
+ANIMAZIONE: animazioni port map (enable1hz, rst, trigger, LIGHT);
+SEG: seven_segment_driver port map (ck, rst, d0,d1,d2,d3,d4,d5,d6,d7,ca,cb,cc,cd,ce,cf,cg,dp,AN);
+gameOver<=gameO;
+trigger<=(gameO or vic);
+win<=vic;
 process(ck) begin
 if(rising_edge(ck)) then
 if(gameo='0') then
@@ -153,6 +160,6 @@ end if;
 end if;
 end process;
 
-SEG: seven_segment_driver port map (ck, rst, d0,d1,d2,d3,d4,d5,d6,d7,ca,cb,cc,cd,ce,cf,cg,dp,AN);
+
 sincv<=sincvert;
 end Behavioral;

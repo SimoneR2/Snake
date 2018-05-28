@@ -38,6 +38,7 @@ entity snakemov is
            addRAM: out std_logic_vector(12 downto 0);
            writeRAM: out std_logic;
            gameO: out std_logic;
+           victory: out std_logic;
            dataRAM: out std_logic_vector(3 downto 0);
            primaC: out std_logic_vector(3 downto 0);
            secondaC: out std_logic_vector(1 downto 0)
@@ -102,6 +103,7 @@ signal Qh: STD_LOGIC_VECTOR(5 downto 0) := "000001";
 signal Qv: STD_LOGIC_VECTOR(4 downto 0) := "00001";
 signal primacifra: std_logic_vector(3 downto 0):="0000";
 signal secondacifra: std_logic_vector(1 downto 0):="00";
+signal win: std_logic;
 begin
 sxbut:edgebutton port map(ck,enable1hz,btnc,sx);
 dxbut:edgebutton port map(ck,enable1hz,btnu,dx);
@@ -109,6 +111,7 @@ dxbut:edgebutton port map(ck,enable1hz,btnu,dx);
 gameo<=gameover;
 primaC<=primacifra;
 secondaC<=secondacifra;
+victory<=win;
 process (ck)
 begin
     if(rising_edge(ck)) then ckpresent_state<=cknext_state;
@@ -177,7 +180,7 @@ begin
         testaV<="011110";
         
     elsif(rising_edge(ck) and enable2='1') then
-    if(gameOver='0') then
+    if((gameOver='0')and(win='0')) then
        case present_state is
           when up =>if ((unsigned(testaV)-to_unsigned(1,6))=to_unsigned(0,6)) then 
                 gameOver <= '1';
@@ -213,6 +216,7 @@ end process;
 process (ck,rst) --posizione serpente
 begin
 if(rst='0') then 
+    win<='0';
     lunghezza<=0;
     for i in 0 to 15 loop
         serpente(i)<= (others=>'0');
@@ -231,7 +235,9 @@ elsif(rising_edge(ck) and enable2='1') then
              serpente(15-i+1)<=serpente(15-i);
         end loop;
    serpente(0)<=std_logic_vector(unsigned(testaH)+unsigned(testaV)*to_unsigned(80,7));
+   
 end if;
+if (lunghezza>14) then win<='1'; end if;
 end if;
 end process;
 
@@ -256,7 +262,7 @@ process(RAMpresent_state, writeinterval)
 begin
     case (RAMpresent_state) is
        when attesa2 => if(writeinterval='0') then RAMnext_state<=scritturaVITAMINA;
-                       elsif (rst='0') then RAMnext_state<=calcoloINDIRIZZI;
+                       elsif ((rst='0')or(win='1') or (gameover='1')) then RAMnext_state<=calcoloINDIRIZZI;
                         else RAMnext_state<=attesa2;
                         end if;
        when scritturaVITAMINA => RAMnext_state<=attesa;
@@ -268,7 +274,7 @@ begin
        when scritturaCODA => RAMnext_state<=attesa2;
        when calcoloINDIRIZZI=> RAMnext_state<=delete;
        when delete=> RAMnext_state<= attesa4;
-       when attesa4=> if(rst='1') then RAMnext_state<=attesa;
+       when attesa4=> if((rst='1')and(win ='0') and (gameover='0')) then RAMnext_state<=attesa;
                         else RAMnext_state<=calcoloINDIRIZZI;
                         end if;
     end case;
@@ -311,7 +317,7 @@ begin
             dataRAM<="0110"; end if;
     when scritturaVITAMINA => 
         writeRAM<='1'; 
-        if gameover='0' then 
+        if (gameover='0' and win='0') then 
             addRAM<= std_logic_vector(unsigned(vitaminaV)*to_unsigned(80,7) + unsigned(vitaminaH)); 
             dataRAM<="0101";
         else addRAM<= std_logic_vector(unsigned(vitaminaV)*to_unsigned(80,7) + unsigned(vitaminaH)); 
@@ -368,16 +374,16 @@ elsif(rising_edge(ck)and enable1='1')then
 
 --prova mia
 if((vitaminaH=testaH)and(vitaminaV=testaV)) then
-      eaten<='1';
-      --Qh <= "000001";
-      tmph := Qh(4) XOR Qh(3) XOR Qh(2) XOR Qh(0);
-      Qh <= tmph & Qh(5 downto 1);
-      vitaminaH<= std_logic_vector(unsigned(Qh)+to_unsigned(8,7));
+        eaten<='1';
+        --Qh <= "000001";
+        tmph := Qh(4) XOR Qh(3) XOR Qh(2) XOR Qh(0);
+        Qh <= tmph & Qh(5 downto 1);
+        vitaminaH<= std_logic_vector(unsigned(Qh)+to_unsigned(8,7));
       
-      --Qv <= "00001";
-     tmpv := Qv(4) XOR Qv(3) XOR Qv(2) XOR Qv(0);
-     Qv <= tmpv & Qv(4 downto 1);
-     vitaminaV<= std_logic_vector(unsigned(Qv)+to_unsigned(14,6));
+        --Qv <= "00001";
+        tmpv := Qv(4) XOR Qv(3) XOR Qv(2) XOR Qv(0);
+        Qv <= tmpv & Qv(4 downto 1);
+        vitaminaV<= std_logic_vector(unsigned(Qv)+to_unsigned(14,6));
      else eaten<='0';
      end if;
      

@@ -33,7 +33,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity animazioni is
  Port (
-    enable1hz, rst, gameover: in std_logic;
+    enable1hz, rst, trigger: in std_logic;
     LED: out std_logic_vector(15 downto 0)
   );
 end animazioni;
@@ -43,9 +43,9 @@ signal counter: natural range 0 to 100;
 begin
 
 process (enable1hz, rst) begin
-if ((rst='0')or(gameover='0')) then counter<=0;
+if ((rst='0')or(trigger='0')) then counter<=0;
 elsif (rising_edge(enable1hz)) then
-    if(counter<41) then counter<=counter+1;
+    if(counter<37) then counter<=counter+1;
     else counter<=0;
     end if;
 end if;
@@ -84,16 +84,12 @@ case counter is
     when 28 => led<="0100000000000010";
     when 29 => led<="1000000000000001";
     when 30 => led<="0000000000000000";
-    when 31 => led<="1010101010101010";
-    when 32 => led<="0101010101010101";
-    when 33 => led<="1010101010101010";
-    when 34 => led<="0101010101010101";
-    when 35 => led<="1010101010101010";
-    when 36 => led<="0101010101010101";
-    when 37 => led<="0000000000000000";
-    when 38 => led<="1111111111111111";
-    when 39 => led<="0000000000000000";
-    when 40 => led<="1111111111111111";
+    when 31 => led<="0000000000000000";
+    when 32 => led<="1111111111111111";
+    when 33 => led<="0000000000000000";
+    when 34 => led<="1111111111111111";
+    when 35 => led<="0000000000000000";
+    when 36 => led<="1111111111111111";
     when others=> led<="0000000000000000";
     end case;
     end process;
