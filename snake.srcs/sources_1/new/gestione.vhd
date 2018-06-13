@@ -154,7 +154,6 @@ end if;
 end process;
 
 process (present_state) begin
-    --next_state<=present_state;
     case present_state is
     when init => if (addH_lsb="0110") then 
                         next_state<= read_ram; 
@@ -179,9 +178,6 @@ process (present_state) begin
         enROM<='1';
               
     end if;
-    --if present_state = init then
-    --    enableRAM_A<='0';  
-    --end if;
 end process;    
 
 process(clk) --scrittura ram

@@ -241,7 +241,7 @@ if (lunghezza>14) then win<='1'; end if;
 end if;
 end process;
 
---GESTIONE PUNTEGGIO SU 7SEGMENTI+
+--GESTIONE PUNTEGGIO SU 7SEGMENTI
 process(ck)
 begin
     if(rising_edge(ck)) then 
@@ -293,14 +293,7 @@ begin
         end case; 
         deleteRAM<=(others=>'0');  
     when scritturaTESTA =>  
-        writeRAM<='1'; 
---        addRAM<= serpente(0); 
---        case (present_state) is
---            when up => dataRAM<= "0001";
---            when sxx  => dataRAM<= "0010";
---            when dxx  => dataRAM<= "0011";
---            when down   => dataRAM<= "0100";
---        end case;   
+        writeRAM<='1';   
     when attesa1 => 
         addRAM<= coda; 
         dataRAM<="0110";  
@@ -346,7 +339,6 @@ end process;
 
 process (ck,rst) 
 
--- prova mia
 variable tmph : STD_LOGIC := '0';
 variable tmpv : STD_LOGIC := '0';
 
@@ -357,30 +349,13 @@ if (rst='0') then
     flag<='0';
     eaten<='0';
 elsif(rising_edge(ck)and enable1='1')then
---    if((vitaminaH=testaH)and(vitaminaV=testaV)) then
---    eaten<='1';
---        if(flag='0') then
---            vitaminaH<="0101000";
---            vitaminaV<="101000";
---            flag<='1';
---        elsif(flag='1') then
---            vitaminaH<="0001000";
---            vitaminaV<="001000";
---            flag<='0';
---       end if;      
---    else eaten<='0';
---    end if;
-
-
---prova mia
 if((vitaminaH=testaH)and(vitaminaV=testaV)) then
         eaten<='1';
-        --Qh <= "000001";
+ 
         tmph := Qh(4) XOR Qh(3) XOR Qh(2) XOR Qh(0);
         Qh <= tmph & Qh(5 downto 1);
         vitaminaH<= std_logic_vector(unsigned(Qh)+to_unsigned(8,7));
-      
-        --Qv <= "00001";
+
         tmpv := Qv(4) XOR Qv(3) XOR Qv(2) XOR Qv(0);
         Qv <= tmpv & Qv(4 downto 1);
         vitaminaV<= std_logic_vector(unsigned(Qv)+to_unsigned(14,6));

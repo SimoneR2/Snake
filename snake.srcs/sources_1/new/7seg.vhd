@@ -54,19 +54,18 @@ end seven_segment_driver;
 
 architecture Behavioral of seven_segment_driver is
 
-  -- We will use a counter to derive the frequency for the displays
-  -- Clock is 100 MHz, we use 3 bits to address the display, so we count every
-  -- size - 3 bits. To get ~100 Hz per digit, we need 20 bits, so that we divide
-  -- by 2^20.
+  --Useremo un contatore per ricavare la frequenza per i display. 
+  --Il clock è a 100 MHz, usiamo 3 bit per indirizzare il display, quindi contiamo ogni dimensione 
+  -- 3 bit. Per ottenere ~ 100 Hz per cifra, abbiamo bisogno di 20 bit, in modo da dividere per 2 ^ 20.
   signal flick_counter : unsigned( size - 1 downto 0 );
-  -- The digit is temporarily stored here
+  -- il digit è temporaneamente salvato qui
   signal digit : std_logic_vector( 4 downto 0 );
-  -- Collect the values of the cathodes here
+  -- raccogliamo i valori del catodo qui
   signal cathodes : std_logic_vector( 7 downto 0 );
 
 begin
 
-  -- Divide the clock
+  -- Dividiamo il clock
   process ( clock, reset ) begin
     if reset = '0' then
       flick_counter <= ( others => '0' );
@@ -75,7 +74,7 @@ begin
     end if;
   end process;
 
-  -- Select the anode
+  -- Selezioniamo l'anodo
   with flick_counter( size - 1 downto size - 3 ) select
     AN <=
       "11111110" when "000",
@@ -87,7 +86,7 @@ begin
       "10111111" when "110",
       "01111111" when others;
 
-  -- Select the digit
+  -- Selezioniamo il digit
   with flick_counter( size - 1 downto size - 3 ) select
     digit <=
       digit0 when "000",
@@ -99,7 +98,7 @@ begin
       digit6 when "110",
       digit7 when others;
 
-  -- Decode the digit
+  -- Decodifica digit
   with digit select
     cathodes <=
       -- DP, CG, CF, CE, CD, CC, CB, CA

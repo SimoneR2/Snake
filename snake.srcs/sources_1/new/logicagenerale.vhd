@@ -5,7 +5,7 @@
 -- Create Date: 11.05.2018 15:55:53
 -- Design Name: 
 -- Module Name: logicagenerale - Behavioral
--- Project Name: 
+-- Project Name:
 -- Target Devices: 
 -- Tool Versions: 
 -- Description: 
