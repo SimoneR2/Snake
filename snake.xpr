@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="36" Path="D:/Personali Gianlorenzo/Documenti/GitHub/Snake/snake.xpr">
+<Project Version="7" Minor="36" Path="D:/DOCUMENTI LUIGINO/GitHub/Snake/snake.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="a72e3c3731a54cbc9562f032f7dc352d"/>

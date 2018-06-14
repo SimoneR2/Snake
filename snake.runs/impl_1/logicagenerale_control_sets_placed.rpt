@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Mon May 28 23:14:34 2018
+| Date         : Thu Jun 14 16:51:17 2018
 | Host         : PCSTUDIO running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file logicagenerale_control_sets_placed.rpt
 | Design       : logicagenerale
@@ -70,8 +70,8 @@ Table of Contents
 +--------------------------------+---------------------------------+---------------------------------+------------------+----------------+
 |  ck_IBUF_BUFG                  | MOVIMENTO/enable1               | MOVIMENTO/eaten_i_2_n_0         |                1 |              1 |
 |  ck_IBUF_BUFG                  | MOVIMENTO/enable1               | MOVIMENTO/testaH[6]_i_3_n_0     |                1 |              1 |
-|  MOVIMENTO/enable2_reg_i_1_n_0 |                                 |                                 |                1 |              1 |
 |  VGA/enROM_reg_i_1_n_0         |                                 | VGA/enROM_reg_i_2_n_0           |                1 |              1 |
+|  MOVIMENTO/enable2_reg_i_1_n_0 |                                 |                                 |                1 |              1 |
 |  VGA/vgaclock/inst/clk_out1    |                                 |                                 |                1 |              1 |
 |  VGA/vgaclock/inst/clk_out1    | VGA/vgacmd/sincH7_out           | MOVIMENTO/AR[0]                 |                1 |              1 |
 |  ck_IBUF_BUFG                  |                                 | MOVIMENTO/testaH[6]_i_3_n_0     |                2 |              4 |

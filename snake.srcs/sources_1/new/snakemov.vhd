@@ -182,10 +182,10 @@ begin
     elsif(rising_edge(ck) and enable2='1') then
     if((gameOver='0')and(win='0')) then
        case present_state is
-          when up =>if ((unsigned(testaV)-to_unsigned(1,6))=to_unsigned(0,6)) then 
+          when up => if ((unsigned(testaV)-to_unsigned(1,6))=to_unsigned(0,6)) then 
                 gameOver <= '1';
             else 
-                   testaV<=std_logic_vector(unsigned(testaV)-to_unsigned(1,6)); gameOver<='0';
+                testaV<=std_logic_vector(unsigned(testaV)-to_unsigned(1,6)); gameOver<='0';
             end if;
             
             when down => if ((unsigned(testaV)+to_unsigned(1,6))=to_unsigned(60,6)) then 
@@ -276,7 +276,7 @@ begin
        when delete=> RAMnext_state<= attesa4;
        when attesa4=> if((rst='1')and(win ='0') and (gameover='0')) then RAMnext_state<=attesa;
                         else RAMnext_state<=calcoloINDIRIZZI;
-                        end if;
+                      end if;
     end case;
 end process;
 
